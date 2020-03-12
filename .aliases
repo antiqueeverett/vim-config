@@ -1,0 +1,6 @@
+#!/bin/zsh
+
+#
+# update vim auto commands
+#
+alias vim-auto-config='cp -R ~/Repositories/dot-files/vim-config/.vim ~/.'
