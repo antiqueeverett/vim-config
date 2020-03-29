@@ -1,7 +1,7 @@
 "
 " indenting
 "
-nnoremap <S-T> gg=G
+nnoremap <C-T> gg=G
 
 
 "
@@ -32,6 +32,19 @@ map <Leader>ss :setlocal spell!<cr>
 
 
 "
+" fzf find
+"
+map ; :Files<CR>
+
+
+"
+" toggle between set number and relative number
+"
+map , :call ToggleNumber()<CR>
+
+
+
+"
 " double tapping ESC instead of :noh
 "
 nnoremap <silent> <Esc><Esc> :let @/=""<CR>
@@ -41,4 +54,3 @@ nnoremap <silent> <Esc><Esc> :let @/=""<CR>
 " toggling rainbow parentheses
 "
 nnoremap <F5> :RainbowParenthesesToggle<cr>
-

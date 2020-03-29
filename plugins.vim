@@ -8,6 +8,8 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
+Plug 'junegunn/fzf'
+Plug 'vim-scripts/taglist.vim'
 Plug 'sjl/vitality.vim'
 Plug 'godlygeek/tabular'
 Plug 'raimondi/delimitmate'
