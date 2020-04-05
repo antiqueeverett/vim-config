@@ -1,22 +1,4 @@
 "
-" indenting
-"
-nnoremap <S-T> gg=G
-
-
-"
-" toggling global folds
-"
-nnoremap <C-F> zi
-
-
-"
-" toggling line fold
-"
-nnoremap <Space> za
-
-
-"
 " split navigation
 "
 nnoremap <C-J> <C-W><C-J>
@@ -24,21 +6,47 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+"
+" fzf find
+"
+map ' :FZF<CR>
 
 "
-" toggling spell checking
+" toggling line fold
 "
-map <Leader>ss :setlocal spell!<cr>
-
+nnoremap <silent> <tab> za
 
 "
-" double tapping ESC instead of :noh
+" toggling global folds
+"
+nnoremap <silent> <C-F> zi
+
+"
+" indenting
+"
+nnoremap <silent> <C-T> gg=G
+
+"
+" source .vimrc file
+"
+nnoremap <silent> <`> :source ~/.vimrc<CR>
+
+"
+" toggling spell check
+"
+nnoremap <silent> <C-S> :setlocal spell!<CR>
+
+"
+" double ESC instead of :noh
 "
 nnoremap <silent> <Esc><Esc> :let @/=""<CR>
-
 
 "
 " toggling rainbow parentheses
 "
-nnoremap <F5> :RainbowParenthesesToggle<cr>
+nnoremap <C-P> :RainbowParenthesesToggle<CR>
 
+"
+" toggle between set number and relative number
+"
+nnoremap <silent> <Space> :call ToggleNumber()<CR>
