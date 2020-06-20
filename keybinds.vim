@@ -30,7 +30,6 @@ nnoremap <silent> <C-S> :setlocal spell!<CR>
 
 
 " -- escaping search highlight (double tapping escape)
-"
 nnoremap <silent> <Esc><Esc> :let @/=""<CR>
 
 

@@ -32,21 +32,21 @@ set spelllang=en_us,de_de spell
 set spellfile=~/Dropbox/config/spellings.utf-8.add
 
 
-" -- automatically strip empty white spaces on write
+" -- AUTO COMMANDS:
+
+" -- stripping empty white spaces on write
 augroup strip_ws_on_write
     autocmd!
     autocmd BufWritePre * %s/\s\+$//e
 augroup END
 
-
-" -- automatically indent on write
+" -- indenting on write
 augroup indent_on_write
     autocmd!
     autocmd BufWritePre *.html *.cpp *.java *.tex *.md :normal gg=G
 augroup END
 
-
-" -- toggle between number and relative number
+" -- toggling between number and relative number
 function! ToggleNumber()
     if(&relativenumber == 1)
         set norelativenumber

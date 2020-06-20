@@ -1,6 +1,4 @@
-"
-" Auto-load plugins
-"
+" -- auto-loading plugins
 if empty(glob('~/.vim/autoload/plug.vim'))
     silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
                 \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -30,44 +28,32 @@ Plug 'sukima/xmledit'
 call plug#end()
 
 
-"
-" airline settings
-"
+" -- airline settings
 let g:airline_powerline_fonts = 1           " Powerline with vim-airline
 
 
-"
-" gruvbox settings
-"
+" -- gruvbox settings
 let g:gruvbox_guisp_fallback = 'bg'
-
 let g:gruvbox_contrast_dark = 'hard'        " Changing the dark mode contrast
 color gruvbox                               " Use gruvbox theme
 set background=dark                         " Use the dark background
 
 
-"
-" NERDTree settings
-"
+" -- NERDTree settings
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
 let NERDTreeMouseMode=2
 let NERDTreeHighlightCursorline=1
 let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
             \ '\.o$', '\.so$', '\.egg$', '^\.git$', '__pycache__', '\.DS_Store' ]
 
 
-"
-" indent-line settings
-"
+" -- indent-line settings
 let g:indentLine_color_term = 239
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
 
-"
-" rainbow parentheses settings
-"
+" -- rainbow parentheses settings
 let g:rbpt_colorpairs = [
     \ ['brown',       'RoyalBlue3'],
     \ ['Darkblue',    'SeaGreen3'],
@@ -85,16 +71,11 @@ let g:rbpt_colorpairs = [
     \ ['darkcyan',    'SeaGreen3'],
     \ ['darkred',     'DarkOrchid3'],
     \ ]
-
 let g:rbpt_max = 16
 let g:rbpt_loadcmd_toggle = 0
 
 
-"
-" fzf
-"
-" Customize fzf colors to match your color scheme
-" - fzf#wrap translates this to a set of `--color` options
+"-- fzf settings
 let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],
   \ 'bg':      ['bg', 'Normal'],
@@ -109,3 +90,4 @@ let g:fzf_colors =
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
+
