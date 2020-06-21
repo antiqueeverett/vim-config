@@ -33,9 +33,8 @@ set spellfile=~/Dropbox/config/spellings.utf-8.add
 
 
 " -- AUTO COMMANDS:
-
 " -- stripping empty white spaces on write
-augroup strip_ws_on_write
+augroup strip_whitespaces_on_write
     autocmd!
     autocmd BufWritePre * %s/\s\+$//e
 augroup END
@@ -46,6 +45,8 @@ augroup indent_on_write
     autocmd BufWritePre *.html *.cpp *.java *.tex *.md :normal gg=G
 augroup END
 
+
+" -- CUSTOM FUNCTIONS:
 " -- toggling between number and relative number
 function! ToggleNumber()
     if(&relativenumber == 1)
