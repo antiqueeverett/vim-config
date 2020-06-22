@@ -17,6 +17,10 @@ if &term == 'xterm-256color' || &term == 'screen-256color'
 endif
 
 
+set colorcolumn=80
+highlight ColorColumn ctermbg=0 guibg=lightgrey
+
+
 " if exists('$TMUX')
 "     let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 "     let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
