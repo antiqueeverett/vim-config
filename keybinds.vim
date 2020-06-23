@@ -40,3 +40,4 @@ nnoremap <C-P> :RainbowParenthesesToggle<CR>
 " -- toggling between set number and relative number
 nnoremap <silent> <Space> :call ToggleNumber()<CR>
 
+silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
