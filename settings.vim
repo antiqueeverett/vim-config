@@ -31,6 +31,10 @@ set shiftwidth=4 softtabstop=4 expandtab
 set spelllang=en_us,de_de spell
 set spellfile=~/Dropbox/config/spellings.utf-8.add
 
+" -- ignoring git files for faster
+if executable('rg')
+    let g:rg_derive_root='true'
+endif
 
 " -- AUTO COMMANDS:
 " -- stripping empty white spaces on write
