@@ -61,3 +61,7 @@ function! ToggleNumber()
     endif
 endfunc
 
+set hidden
+set cmdheight=2
+set updatetime=300
+set shortmess+=c
