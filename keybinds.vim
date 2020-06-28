@@ -9,17 +9,17 @@ let mapleader = ";"
 
 " -- pinky friendly caption
 nnoremap <Leader>c ~
-" idiomatic (c) for caption
+" mnemonic (c) for caption
 
 
 " -- toggling folds (global)
 nnoremap <Leader>f zi
-" idiomatic (f) for fold
+" mnemonic (f) for fold
 
 
 " -- indenting (global)
 nnoremap <Leader>t gg=G``
-" idiomatic (t) for tab
+" mnemonic (t) for tab
 
 
 " -- splitting
