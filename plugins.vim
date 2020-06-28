@@ -9,7 +9,9 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'valloric/youcompleteme'
+Plug 'vhdirk/vim-cmake'
 
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-eunuch'
@@ -39,18 +41,12 @@ Plug 'kien/rainbow_parentheses.vim'
 call plug#end()
 
 
-" -- central location for ever-growing plugin configuration
+" -- .../plugin-conf/ is a central location for separate plugin configurations
 source ~/Repositories/dotfiles/vim/plugin-conf/fzf.vim
 source ~/Repositories/dotfiles/vim/plugin-conf/gruvbox.vim
-source ~/Repositories/dotfiles/vim/plugin-conf/neoclide.vim
-"source ~/Repositories/dotfiles/vim/plugin-conf/NERDTree.vim
 source ~/Repositories/dotfiles/vim/plugin-conf/indent-line.vim
 source ~/Repositories/dotfiles/vim/plugin-conf/rainbow-parenth.vim
+source ~/Repositories/dotfiles/vim/plugin-conf/youcompleteme.vim
 
-" -- ignoring git files for faster
-if executable('rg')
-    let g:rg_derive_root='true'
-endif
-
-" -- mapping leader key
-let mapleader = " "
+"source ~/Repositories/dotfiles/vim/plugin-conf/neoclide.vim
+"source ~/Repositories/dotfiles/vim/plugin-conf/NERDTree.vim
