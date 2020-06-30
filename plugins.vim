@@ -44,9 +44,9 @@ call plug#end()
 " -- .../plugin-conf/ is a central location for separate plugin configurations
 source ~/Repositories/dotfiles/vim/plugin-conf/fzf.vim
 source ~/Repositories/dotfiles/vim/plugin-conf/gruvbox.vim
+source ~/Repositories/dotfiles/vim/plugin-conf/NERDTree.vim
 source ~/Repositories/dotfiles/vim/plugin-conf/indent-line.vim
 source ~/Repositories/dotfiles/vim/plugin-conf/rainbow-parenth.vim
 source ~/Repositories/dotfiles/vim/plugin-conf/youcompleteme.vim
 
 "source ~/Repositories/dotfiles/vim/plugin-conf/neoclide.vim
-"source ~/Repositories/dotfiles/vim/plugin-conf/NERDTree.vim
