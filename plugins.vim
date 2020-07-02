@@ -20,7 +20,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-fireplace'
 
 Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/syntastic'
+"Plug 'scrooloose/syntastic'
+Plug 'dense-analysis/ale'
 
 Plug 'vim-scripts/taglist.vim'
 Plug 'vim-airline/vim-airline'
