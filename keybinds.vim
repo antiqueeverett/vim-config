@@ -1,6 +1,7 @@
 " -- quick exit
 map q :wq! <CR>
-map Q :wqa! <CR>
+map Q :qa! <CR>
+map <Leader>q :q! <CR>
 
 
 " --leader

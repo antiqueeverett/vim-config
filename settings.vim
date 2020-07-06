@@ -31,37 +31,5 @@ set shiftwidth=4 softtabstop=4 expandtab
 set spelllang=en_us,de_de spell
 set spellfile=~/Dropbox/config/spellings.utf-8.add
 
-" -- ignoring git files for faster
-if executable('rg')
-    let g:rg_derive_root='true'
-endif
-
-" -- AUTO COMMANDS:
-" -- stripping empty white spaces on write
-augroup strip_whitespaces_on_write
-    autocmd!
-    autocmd BufWritePre * %s/\s\+$//e
-augroup END
-
-" -- indenting on write
-augroup indent_on_write
-    autocmd!
-    autocmd BufWritePre *.html *.cpp *.java *.tex *.md :normal gg=G
-augroup END
-
-
-" -- CUSTOM FUNCTIONS:
-" -- toggling between number and relative number
-function! ToggleNumber()
-    if(&relativenumber == 1)
-        set norelativenumber
-        set number
-    else
-        set relativenumber
-    endif
-endfunc
-
-set hidden
-set cmdheight=2
-set updatetime=300
-set shortmess+=c
+source ~/Repositories/dotfiles/vim/autocommands.vim
+source ~/Repositories/dotfiles/vim/functions.vim
