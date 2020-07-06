@@ -1,11 +1,11 @@
+" --leader
+let mapleader = ";"
+
+
 " -- quick exit
 map q :wq! <CR>
 map Q :qa! <CR>
 map <Leader>q :q! <CR>
-
-
-" --leader
-let mapleader = ";"
 
 
 " -- pinky friendly caption
