@@ -24,7 +24,9 @@ Plug 'scrooloose/nerdtree'
 Plug 'dense-analysis/ale'
 
 Plug 'vim-scripts/taglist.vim'
+
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 Plug 'godlygeek/tabular'
 Plug 'yggdroot/indentline'
@@ -35,19 +37,23 @@ Plug 'clojure-emacs/cider-nrepl'
 
 Plug 'lervag/vimtex'
 
-Plug 'morhetz/gruvbox'
+" Plug 'morhetz/gruvbox'
+Plug 'arcticicestudio/nord-vim'
 
 Plug 'raimondi/delimitmate'
 Plug 'kien/rainbow_parentheses.vim'
 call plug#end()
 
 
-" -- .../plugin-conf/ is a central location for separate plugin configurations
+" -- PLUGIN CONFIGURATION FILES ~ easier to manage individually!
 source ~/Repositories/dotfiles/vim/plugin-conf/fzf.vim
-source ~/Repositories/dotfiles/vim/plugin-conf/gruvbox.vim
-source ~/Repositories/dotfiles/vim/plugin-conf/NERDTree.vim
-source ~/Repositories/dotfiles/vim/plugin-conf/indent-line.vim
-source ~/Repositories/dotfiles/vim/plugin-conf/rainbow-parenth.vim
+source ~/Repositories/dotfiles/vim/plugin-conf/airline.vim
+source ~/Repositories/dotfiles/vim/plugin-conf/nerdtree.vim
+source ~/Repositories/dotfiles/vim/plugin-conf/nord_vim.vim
+source ~/Repositories/dotfiles/vim/plugin-conf/indent_line.vim
 source ~/Repositories/dotfiles/vim/plugin-conf/youcompleteme.vim
+source ~/Repositories/dotfiles/vim/plugin-conf/rainbow_parenth.vim
 
+" -- temp deprecation
+"source ~/Repositories/dotfiles/vim/plugin-conf/gruvbox.vim
 "source ~/Repositories/dotfiles/vim/plugin-conf/neoclide.vim
