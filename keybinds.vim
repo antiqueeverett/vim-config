@@ -2,6 +2,10 @@
 let mapleader = ";"
 
 
+" -- sourcing .vimrc
+nnoremap <leader>s :source ~/.vimrc<CR>
+
+
 " -- quick exit
 map q :wq! <CR>
 map Q :qa! <CR>
@@ -45,7 +49,7 @@ nnoremap <silent> <C-S> :setlocal spell!<CR>
 
 
 " -- escaping highlight
-nnoremap <silent> <Esc><Esc> :let @/=""<CR>
+nnoremap <silent> <Leader><Esc> :let @/=""<CR>
 
 
 " -- toggling rainbow parentheses
@@ -63,38 +67,18 @@ nnoremap <Leader>r :%s/
 "    e.g. :%s/pattern/replace-pattern/gc
 
 
-"--------------------------------------------------------------
 "-------------------- 'tpope/vim-repeat' ----------------------
-"--------------------------------------------------------------
 silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
 
 
-"--------------------------------------------------------------
 "-------------------------- 'fzf' -----------------------------
-"--------------------------------------------------------------
 nnoremap <silent>[ :FZF $HOME/Repositories <CR>
 
 
-"--------------------------------------------------------------
 "--------------------- 'YouCompleteMe' ------------------------
-"--------------------------------------------------------------
-nnoremap <silent> <Leader>j2def  :YcmCompleter GoToDefinition<CR>
-nnoremap <silent> <Leader>j2dec  :YcmCompleter GoToDeclaration<CR>
-nnoremap <silent> <Leader>j2inc  :YcmCompleter GoToInclude<CR>
-nnoremap <silent> <Leader>j2imp  :YcmCompleter GoToImplementation<CR>
-nnoremap <silent> <Leader>j2Ref  :YcmCompleter GoToReferences<CR>
-
-
-" -- OPEN real-estate:
-" --------------------
-"  tab
-"  <Leader> tab
-"  <C-O>
-"  <Leader> o
-"  <Leader>
-
-
-" -- sourcing .vimrc
-nnoremap <leader>s :source ~/.vimrc<CR>
-
+nnoremap <silent> <Leader>2df  :YcmCompleter GoToDefinition<CR>
+nnoremap <silent> <Leader>2dc  :YcmCompleter GoToDeclaration<CR>
+nnoremap <silent> <Leader>2inc  :YcmCompleter GoToInclude<CR>
+nnoremap <silent> <Leader>2imp  :YcmCompleter GoToImplementation<CR>
+nnoremap <silent> <Leader>2ref  :YcmCompleter GoToReferences<CR>
 
