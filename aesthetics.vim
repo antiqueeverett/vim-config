@@ -27,10 +27,4 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 " endif
 
 
-" -- AUTO COMMANDS:
-" -- overriding theme background color to make terminal background persistent
-augroup use_terminal_background
-    autocmd!
-    autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
-augroup END
 

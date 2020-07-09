@@ -12,6 +12,10 @@ map Q :qa! <CR>
 map <Leader>q :q! <CR>
 
 
+" -- quick exit
+map <Leader>w :w <CR>
+
+
 " -- pinky friendly caption
 nnoremap <Leader>c ~
 " mnemonic (c) for caption
@@ -23,7 +27,7 @@ nnoremap <Leader>f zi
 
 
 " -- indenting (global)
-nnoremap <Leader>t gg=G``
+nnoremap <Leader>i gg=G``
 " mnemonic (t) for tab
 
 
@@ -60,11 +64,8 @@ nnoremap <C-P> :RainbowParenthesesToggle<CR>
 nnoremap <silent> <Space> :call ToggleNumber()<CR>
 
 
-" -- searching and replacing globally
-nnoremap <Leader>r :%s/
-" -- This is only a mere helper to reduce key strokes.
-"    One would still need to complete the search and replace pattern
-"    e.g. :%s/pattern/replace-pattern/gc
+"---------------------- ' NERDTree' --------------------------
+nnoremap <silent> <Leader>t :NERDTree <CR>
 
 
 "-------------------- 'tpope/vim-repeat' ----------------------
@@ -72,7 +73,7 @@ silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
 
 
 "-------------------------- 'fzf' -----------------------------
-nnoremap <silent>[ :FZF $HOME/Repositories <CR>
+nnoremap <silent><Leader>' :FZF $HOME/Repositories <CR>
 
 
 "--------------------- 'YouCompleteMe' ------------------------

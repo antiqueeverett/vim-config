@@ -14,8 +14,5 @@
 "   \ 'header':  ['fg', 'Comment'] }
 "
 "
-" Always enable preview window on the right with 60% width
-let g:fzf_preview_window = 'right:60%'
-
 " Empty value to disable preview window altogether
 let g:fzf_preview_window = ''
