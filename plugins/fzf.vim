@@ -12,7 +12,17 @@
 "   \ 'marker':  ['fg', 'Keyword'],
 "   \ 'spinner': ['fg', 'Label'],
 "   \ 'header':  ['fg', 'Comment'] }
-"
-"
-" Empty value to disable preview window altogether
+
+
+" -- using the current working directory (cwd) for ripgrep
+if executable('rg')
+    let g:rg_derive_root='true'
+endif
+
+
+" -- disabling preview window
 let g:fzf_preview_window = ''
+
+
+nnoremap <silent><Leader>' :FZF $HOME/Repositories <CR>
+

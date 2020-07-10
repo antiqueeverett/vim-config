@@ -19,5 +19,5 @@ function! AntiqueRefactor(arg)
 endfunction
 
 
-" -- binding the plugin to a key
+" -- binding plugin to key
 nnoremap <Leader>r  :call AntiqueRefactor("
