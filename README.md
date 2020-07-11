@@ -45,6 +45,8 @@ source <path/to>/dotfiles/vim-dotfiles/plugins/development/heist.vim
 source <path/to>/dotfiles/vim-dotfiles/plugins/development/refactor.vim
 ```
 
+why keep plugin configs in a different files? Vim goodness is all about growth, but sometimes it can get hard to follow what goese where. So this way, it becomes much simpler to keep up with ever-growing settings and customization. If you can stomach multiple sources, you can bask in readable vim gooddness. 
+
 * * *
 
 #### Screen cast
