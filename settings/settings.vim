@@ -69,9 +69,9 @@ set spellfile=~/Dropbox/config/spellings.utf-8.add
 
 
 " -- + utility (easier to follow in sep files)
-source ~/Repositories/dotfiles/vim/settings/keybinds.vim
-source ~/Repositories/dotfiles/vim/settings/functions.vim
-source ~/Repositories/dotfiles/vim/settings/autocommands.vim
+source ~/Repositories/dotfiles/vim-dotfiles/settings/keybinds.vim
+source ~/Repositories/dotfiles/vim-dotfiles/settings/functions.vim
+source ~/Repositories/dotfiles/vim-dotfiles/settings/autocommands.vim
 
 
 " -- blink cursor | line (insert) vs block (normal)

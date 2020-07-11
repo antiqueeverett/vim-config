@@ -51,21 +51,21 @@ call plug#end()
 
 
 " -- Plugin settings organized in exclusive files
-source ~/Repositories/dotfiles/vim/plugins/fzf.vim
-source ~/Repositories/dotfiles/vim/plugins/nord.vim
-source ~/Repositories/dotfiles/vim/plugins/repeat.vim
-source ~/Repositories/dotfiles/vim/plugins/vimtext.vim
-source ~/Repositories/dotfiles/vim/plugins/airline.vim
-source ~/Repositories/dotfiles/vim/plugins/nerdtree.vim
-source ~/Repositories/dotfiles/vim/plugins/indentline.vim
-source ~/Repositories/dotfiles/vim/plugins/youcompleteme.vim
-source ~/Repositories/dotfiles/vim/plugins/vimautoformat.vim
-source ~/Repositories/dotfiles/vim/plugins/rainbowparenth.vim
-" source ~/Repositories/dotfiles/vim/plugins/gruvbox.vim
-" source ~/Repositories/dotfiles/vim/plugins/neoclide.vim
+source ~/Repositories/dotfiles/vim-dotfiles/plugins/fzf.vim
+source ~/Repositories/dotfiles/vim-dotfiles/plugins/nord.vim
+source ~/Repositories/dotfiles/vim-dotfiles/plugins/repeat.vim
+source ~/Repositories/dotfiles/vim-dotfiles/plugins/vimtext.vim
+source ~/Repositories/dotfiles/vim-dotfiles/plugins/airline.vim
+source ~/Repositories/dotfiles/vim-dotfiles/plugins/nerdtree.vim
+source ~/Repositories/dotfiles/vim-dotfiles/plugins/indentline.vim
+source ~/Repositories/dotfiles/vim-dotfiles/plugins/youcompleteme.vim
+source ~/Repositories/dotfiles/vim-dotfiles/plugins/vimautoformat.vim
+source ~/Repositories/dotfiles/vim-dotfiles/plugins/rainbowparenth.vim
+" source ~/Repositories/dotfiles/vim-dotfiles/plugins/gruvbox.vim
+" source ~/Repositories/dotfiles/vim-dotfiles/plugins/neoclide.vim
 
 
 " -- under development
-source ~/Repositories/dotfiles/vim/plugins/development/heist.vim
-source ~/Repositories/dotfiles/vim/plugins/development/refactor.vim
+source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/heist.vim
+source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/refactor.vim
 

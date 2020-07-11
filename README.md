@@ -4,8 +4,8 @@
 
 1. In your `.vimrc` simply add:
 ```
-source <path/to>/dotfiles/vim/settings/settings.vim
-source <path/to>/dotfiles/vim/plugins/plugins.vim
+source <path/to>/dotfiles/vim-dotfiles/settings/settings.vim
+source <path/to>/dotfiles/vim-dotfiles/plugins/plugins.vim
 ```
 
 I keep all my dotfiles under `$HOME/Repositories/dotfiles/`.
@@ -13,36 +13,36 @@ If you have a similar repo naming convention, these dotfiles will work out-of-th
 If not, be sure to change the relative paths: ` see steps (2 & 3)`
 
 ```
-source ~/Repositories/dotfiles/vim/settings/settings.vim
-source ~/Repositories/dotfiles/vim/plugins/plugins.vim
+source ~/Repositories/dotfiles/vim-dotfiles/settings/settings.vim
+source ~/Repositories/dotfiles/vim-dotfiles/plugins/plugins.vim
 ```
 
 
 2. in [ settings.vim ](https://github.com/edisonslightbulbs/vim-dotfiles/blob/master/settings/settings.vim)
 ```
-source <path/to>/dotfiles/vim/settings/keybinds.vim
-source <path/to>/dotfiles/vim/settings/functions.vim
-source <path/to>/dotfiles/vim/settings/autocommands.vim
+source <path/to>/dotfiles/vim-dotfiles/settings/keybinds.vim
+source <path/to>/dotfiles/vim-dotfiles/settings/functions.vim
+source <path/to>/dotfiles/vim-dotfiles/settings/autocommands.vim
 ```
 
 3. in [ plugins/plugins.vim ](https://github.com/edisonslightbulbs/vim-dotfiles/blob/master/plugins/plugins.vim)
 ```
 " -- Plugin settings organized in exclusive files
-source <path/to>/dotfiles/vim/plugins/fzf.vim
-source <path/to>/dotfiles/vim/plugins/nord.vim
-source <path/to>/dotfiles/vim/plugins/repeat.vim
-source <path/to>/dotfiles/vim/plugins/airline.vim
-source <path/to>/dotfiles/vim/plugins/vimtext.vim
-source <path/to>/dotfiles/vim/plugins/gruvbox.vim
-source <path/to>/dotfiles/vim/plugins/neoclide.vim
-source <path/to>/dotfiles/vim/plugins/nerdtree.vim
-source <path/to>/dotfiles/vim/plugins/indentline.vim
-source <path/to>/dotfiles/vim/plugins/youcompleteme.vim
-source <path/to>/dotfiles/vim/plugins/vimautoformat.vim
-source <path/to>/dotfiles/vim/plugins/rainbowparenth.vim
+source <path/to>/dotfiles/vim-dotfiles/plugins/fzf.vim
+source <path/to>/dotfiles/vim-dotfiles/plugins/nord.vim
+source <path/to>/dotfiles/vim-dotfiles/plugins/repeat.vim
+source <path/to>/dotfiles/vim-dotfiles/plugins/airline.vim
+source <path/to>/dotfiles/vim-dotfiles/plugins/vimtext.vim
+source <path/to>/dotfiles/vim-dotfiles/plugins/gruvbox.vim
+source <path/to>/dotfiles/vim-dotfiles/plugins/neoclide.vim
+source <path/to>/dotfiles/vim-dotfiles/plugins/nerdtree.vim
+source <path/to>/dotfiles/vim-dotfiles/plugins/indentline.vim
+source <path/to>/dotfiles/vim-dotfiles/plugins/youcompleteme.vim
+source <path/to>/dotfiles/vim-dotfiles/plugins/vimautoformat.vim
+source <path/to>/dotfiles/vim-dotfiles/plugins/rainbowparenth.vim
 
-source <path/to>/dotfiles/vim/plugins/development/heist.vim
-source <path/to>/dotfiles/vim/plugins/development/refactor.vim
+source <path/to>/dotfiles/vim-dotfiles/plugins/development/heist.vim
+source <path/to>/dotfiles/vim-dotfiles/plugins/development/refactor.vim
 ```
 
 * * *
