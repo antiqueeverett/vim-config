@@ -1,4 +1,4 @@
-# NOTHING BUT PURE VIM GOODNESS! A better template for managing ever-growing vim dotfiles
+# NOTHING BUT PURE VIM GOODNESS! 
 
 #### Usage
 
