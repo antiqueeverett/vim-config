@@ -45,7 +45,7 @@ source <path/to>/dotfiles/vim-dotfiles/plugins/development/heist.vim
 source <path/to>/dotfiles/vim-dotfiles/plugins/development/refactor.vim
 ```
 
-why keep plugin configs in a different files? Vim goodness is all about growth, but sometimes it can get hard to follow what goese where. So this way, it becomes much simpler to keep up with ever-growing settings and customization. If you can stomach multiple sources, you can bask in readable vim gooddness. 
+Why keep plugin configs in endless separate files? Vim goodness is all about growth, constant growth. Sometimes it can get hard to keep up with changes explicitly for specific plugins. With this dotfile-template, it becomes easier, much easier to keep up with ever-growing settings. If you can stomach multiple sources, you can enjoy basking in readable vim goodness. 
 
 * * *
 
