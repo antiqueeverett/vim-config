@@ -15,4 +15,4 @@ function!  GitCommit(arg)
     execute ":Gwrite"
     execute ":Gcommit -m \"" . a:arg . "\""
 endfunction
-nnoremap <Leader>gg  :call GitCommit("
+nnoremap <Leader>g  :call GitCommit("
