@@ -31,7 +31,7 @@ filetype plugin on
 
 
 " -- number lines
-set number
+set relativenumber
 
 
 " -- silence
