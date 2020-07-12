@@ -1,11 +1,11 @@
-# NOTHING BUT PURE VIM GOODNESS! 
+# NOTHING BUT PURE VIM GOODNESS!
 
 #### Usage
 
 1. In your `.vimrc` simply add:
 ```
-source <path/to>/dotfiles/vim-dotfiles/settings/settings.vim
-source <path/to>/dotfiles/vim-dotfiles/plugins/plugins.vim
+source $HOME/<path-to>/dotfiles/vim-dotfiles/settings/settings.vim
+source $HOME/<path-to>/dotfiles/vim-dotfiles/plugins/plugins.vim
 ```
 
 I keep all my dotfiles under `$HOME/Repositories/dotfiles/`.
@@ -20,32 +20,32 @@ source ~/Repositories/dotfiles/vim-dotfiles/plugins/plugins.vim
 
 2. in [ settings.vim ](https://github.com/edisonslightbulbs/vim-dotfiles/blob/master/settings/settings.vim)
 ```
-source <path/to>/dotfiles/vim-dotfiles/settings/keybinds.vim
-source <path/to>/dotfiles/vim-dotfiles/settings/functions.vim
-source <path/to>/dotfiles/vim-dotfiles/settings/autocommands.vim
+source $HOME/<path-to>/dotfiles/vim-dotfiles/settings/keybinds.vim
+source $HOME/<path-to>/dotfiles/vim-dotfiles/settings/functions.vim
+source $HOME/<path-to>/dotfiles/vim-dotfiles/settings/autocommands.vim
 ```
 
 3. in [ plugins/plugins.vim ](https://github.com/edisonslightbulbs/vim-dotfiles/blob/master/plugins/plugins.vim)
 ```
 " -- Plugin settings organized in exclusive files
-source <path/to>/dotfiles/vim-dotfiles/plugins/fzf.vim
-source <path/to>/dotfiles/vim-dotfiles/plugins/nord.vim
-source <path/to>/dotfiles/vim-dotfiles/plugins/repeat.vim
-source <path/to>/dotfiles/vim-dotfiles/plugins/airline.vim
-source <path/to>/dotfiles/vim-dotfiles/plugins/vimtext.vim
-source <path/to>/dotfiles/vim-dotfiles/plugins/gruvbox.vim
-source <path/to>/dotfiles/vim-dotfiles/plugins/neoclide.vim
-source <path/to>/dotfiles/vim-dotfiles/plugins/nerdtree.vim
-source <path/to>/dotfiles/vim-dotfiles/plugins/indentline.vim
-source <path/to>/dotfiles/vim-dotfiles/plugins/youcompleteme.vim
-source <path/to>/dotfiles/vim-dotfiles/plugins/vimautoformat.vim
-source <path/to>/dotfiles/vim-dotfiles/plugins/rainbowparenth.vim
+source $HOME/<path-to>/dotfiles/vim-dotfiles/plugins/fzf.vim
+source $HOME/<path-to>/dotfiles/vim-dotfiles/plugins/nord.vim
+source $HOME/<path-to>/dotfiles/vim-dotfiles/plugins/repeat.vim
+source $HOME/<path-to>/dotfiles/vim-dotfiles/plugins/airline.vim
+source $HOME/<path-to>/dotfiles/vim-dotfiles/plugins/vimtext.vim
+source $HOME/<path-to>/dotfiles/vim-dotfiles/plugins/gruvbox.vim
+source $HOME/<path-to>/dotfiles/vim-dotfiles/plugins/neoclide.vim
+source $HOME/<path-to>/dotfiles/vim-dotfiles/plugins/nerdtree.vim
+source $HOME/<path-to>/dotfiles/vim-dotfiles/plugins/indentline.vim
+source $HOME/<path-to>/dotfiles/vim-dotfiles/plugins/youcompleteme.vim
+source $HOME/<path-to>/dotfiles/vim-dotfiles/plugins/vimautoformat.vim
+source $HOME/<path-to>/dotfiles/vim-dotfiles/plugins/rainbowparenth.vim
 
-source <path/to>/dotfiles/vim-dotfiles/plugins/development/heist.vim
-source <path/to>/dotfiles/vim-dotfiles/plugins/development/refactor.vim
+source $HOME/<path-to>/dotfiles/vim-dotfiles/plugins/development/heist.vim
+source $HOME/<path-to>/dotfiles/vim-dotfiles/plugins/development/refactor.vim
 ```
 
-Why keep plugin configs in endless separate files? Vim goodness is all about growth, constant growth. Sometimes it can get hard to keep up with changes explicitly for specific plugins. With this dotfile-template, it becomes easier, much easier to keep up with ever-growing settings. If you can stomach multiple sources, you can enjoy basking in readable vim goodness. 
+Why keep plugin configs in endless separate files? Vim goodness is all about growth, constant growth. Sometimes it can get hard to keep up with changes explicitly for specific plugins. With this dotfile-template, it becomes easier, much easier to keep up with ever-growing settings. If you can stomach multiple sources, you can enjoy basking in readable vim goodness.
 
 * * *
 
