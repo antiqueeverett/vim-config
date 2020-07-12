@@ -54,3 +54,6 @@ nnoremap <silent> <C-S> :setlocal spell!<CR>
 
 " -- escaping highlight search
 nnoremap <silent> <Leader><Esc> :let @/=""<CR>
+
+" -- closing a buffer
+nnoremap <silent> <Leader>x :bdelete<CR>
