@@ -1,11 +1,11 @@
 " -- 1) the function (executing vim-fugitive Gwrite and Gcommit -m)
-function! AntiqueGitCommit(arg)
-execute ":Gwrite"
-execute ":Gcommit -m \"" . a:arg . "\""
+function! AntiqueGreaterGitCommit(...)
+    execute ":Gwrite"
+    execute ":Gcommit -m \"" . join(a:000) . "\""
 endfunction
 
 " -- 2) linking to command
-command! -nargs=* GitCommit :call AntiqueGitCommit(<f-args>)
+command! -nargs=* GreaterGitCommit :call AntiqueGreaterGitCommit(<f-args>)
 
 " -- 3) keybinding
-nnoremap <Leader>gg  :GitCommit
+nnoremap <Leader>gg  :GreaterGitCommit
