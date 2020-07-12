@@ -1,27 +1,26 @@
-" DEFINING AND USING A COMMAND:
-" -- 1) defining a function
+" -- 1) the function (refactoring a word, file-wide)
 function! Antiquerefactor(arg)
     execute ":%s/" . expand("<cword>") . "/" . a:arg . "/gc"
 endfunction
 
-" -- 2) linking the function to a command
+" -- 2) linking to command
 command! -nargs=* Refactorword :call Antiquerefactor(<f-args>)
 
-" -- 3) keybinding command
+" -- 3) keybinding
 nnoremap <Leader>r  :Refactorword
 
 
-
-" DEFINING AND USING A PLUGIN:
-" -- 1) defining a function
+" -- 1) the function (refactoring a WORD, file-wide)
 function! AntiqueRefactor(arg)
     execute ":%s/" . expand("<cWORD>") . "/" . a:arg . "/gc"
 endfunction
 
-" -- 2) linking the function to a command
+" -- 2) linking to a command
 command! -nargs=* RefactorWORD :call AntiqueRefactor(<f-args>)
-"command! -nargs=* HookRefactorWORD :call AntiqueRefactor(<f-args>)  <-todo
 
-" -- 3) keybinding plug-link
+" -- 3) keybinding
 nnoremap <Leader>R  :RefactorWORD
-"nnoremap <Leader>R <Plug>RefactorWORD :execute 'HookRefactorWORD'  <-todo
+
+" TODO: plugin linking?
+"command! -nargs=* HookRefactorWORD :call AntiqueRefactor(<f-args>)
+"nnoremap <Leader>R <Plug>RefactorWORD :execute 'HookRefactorWORD'
