@@ -8,11 +8,3 @@ function! ToggleNumber()
     endif
 endfunc
 nnoremap <silent> <Space> :call ToggleNumber()<CR>
-
-
-" -- Gwrite and Gcommit in one go
-function!  GitCommit(arg)
-    execute ":Gwrite"
-    execute ":Gcommit -m \"" . a:arg . "\""
-endfunction
-nnoremap <Leader>g  :call GitCommit("
