@@ -30,8 +30,11 @@ filetype indent on
 filetype plugin on
 
 
-" -- number lines
+" -- lines
+set wrap
 set relativenumber
+set colorcolumn=80
+highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 
 " -- silence
@@ -49,12 +52,7 @@ set nowritebackup
 set foldmethod=indent
 set foldnestmax=3
 
-
-" -- visual limit
-set colorcolumn=80
-highlight ColorColumn ctermbg=0 guibg=lightgrey
-
-
+" -- ignore patterns
 set wildmenu
 set wildignore=*.swp,*.bak,*.pyc,*.class
 
