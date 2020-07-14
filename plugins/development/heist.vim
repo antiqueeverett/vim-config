@@ -1,42 +1,61 @@
-" -- 1) the function (game to practice relative number)
+" ---------- A GAME TO PRACTICE RELATIVE NUMBERS MOVEMENT ----------"
 function! AntiqueHeist()
-    " -- create temp buffer
+    " -- create new buffer
     vnew
 
-    " -- get temp buffer number
+    " -- get buffer number
     let heist_buffer = bufnr('%')
 
-    " -- add 50 empty lines
-    for i in range(1,60) | call append(line("."), "") | endfor
+    " -- add 50 empty lines to buffer
+    for i in range(1,50) | call append(line("."), "") | endfor
 
-    " -- redirect output of execute command into variable
-    redir => line_number_str
-    silent execute"ruby puts Random.rand(57)"
-    redir END
+    let g:ln_num = "0"
 
-    "substitute(system('echo dani'), '\n\+$', '', '')
-    let line_number_nr = str2nr(line_number_str)
+    function! CriminalMasterMind() closure
+        if g:ln_num == "0"
+            " -- save next :execute-output into variable
+            redir => rnd_num
 
-    "execute "call setbufline(" . heist_buffer . ", " . line_number_nr .", 'Helsinki')"
-    execute "call setbufline(" . heist_buffer . ", " . 1 .", 'Helsinki')"
+            " -- execute rnd number output
+            execute"ruby puts Random.rand(57)"
 
-    " if empty(random_number_str)
-    "     echoerr "something went wrong"
-    " else
-    "     "let ln = str2nr(random_number_str)
-    "     "echo ln
-    "     " -- generating a heist member on heist buffer on a random line
-    "     "echo heist_buffer . random_number
-    "     "call setline(random_number, 'Helsinki')
-    "     " check if line status
-    "     "echo getline(line("random_number"))
-    " endif
+            " -- redirect random number output to rnd_num
+            redir END
 
+            " -- set a rnd line number
+            let g:ln_num = substitute(rnd_num, '\n', '', 'g')
+            " Unix commands usually terminate output with newline, i.e.,
+            " the ^@ (NULL character 0x00), which vim uses in certain cases to store a
+            " newline, 0x0a. We substitute() to get rid of that terminating new line.
+
+            " -- use generated rnd number to write to a rnd line
+            silent execute "call setbufline(" . heist_buffer . ", " . g:ln_num .", 'Helsinki')"
+        else
+            if getline(g:ln_num) == ""
+                call append(line("."), "")
+                redir => rnd_num
+                execute"ruby puts Random.rand(57)"
+                redir END
+                let g:ln_num = substitute(rnd_num, '\n', '', 'g')
+                silent execute "call setbufline(" . heist_buffer . ", " . g:ln_num .", 'Helsinki')"
+            endif
+        endif
+    endfunction
+
+
+    " -- call only executes once, thereafter, triggered by the auto command
+    call CriminalMasterMind()
+
+    " -- auto command for cursor movements (specific to the game buffer)
+    augroup monitor_movement
+        autocmd! * <buffer=heist_buffer>
+        autocmd CursorMoved * :call CriminalMasterMind()
+    augroup END
 
 endfunction
 
-" -- 2) linking to command
+" -- linking to command
 command! -nargs=* Heist :call AntiqueHeist(<f-args>)
 
-" -- 3) keybinding (temp)
+" -- keybinding
 nnoremap <silent><Leader>1  :Heist <CR>
