@@ -78,3 +78,6 @@ if &term == 'xterm-256color' || &term == 'screen-256color'
     let &t_EI = "\<Esc>[1 q"
 endif
 
+
+" -- dir navigation (change to the current file's directory)
+set autochdir

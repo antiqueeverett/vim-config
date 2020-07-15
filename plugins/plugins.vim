@@ -36,6 +36,7 @@ Plug 'raimondi/delimitmate'
 Plug 'kien/rainbow_parentheses.vim'
 
 " -- aesthetics
+Plug 'jmckiern/vim-venter'
 Plug 'arcticicestudio/nord-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -53,6 +54,7 @@ call plug#end()
 " -- Plugin settings organized in exclusive files
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/fzf.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/nord.vim
+source ~/Repositories/dotfiles/vim-dotfiles/plugins/venter.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/repeat.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/vimtext.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/airline.vim
@@ -67,6 +69,7 @@ source ~/Repositories/dotfiles/vim-dotfiles/plugins/rainbowparenth.vim
 
 " -- under development
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/heist.vim
+source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/newfile.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/refactor.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/greatergit.vim
 
