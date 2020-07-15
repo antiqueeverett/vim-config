@@ -1,8 +1,9 @@
-" -- stripping empty white spaces on write (vimautoformat does it the right way?)
+" -- strip white spaces on save
 augroup strip_on_save
     autocmd!
     autocmd BufWritePre * %s/\s\+$//e
 augroup END
+
 
 " -- overriding theme colors
 augroup theme-overrides
@@ -11,3 +12,7 @@ augroup theme-overrides
     autocmd ColorScheme * highlight Search ctermfg=7*
     autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
 augroup END
+
+
+" -- auto wrap text @ text width demarkation
+au BufRead,BufNewFile * setlocal textwidth=80
