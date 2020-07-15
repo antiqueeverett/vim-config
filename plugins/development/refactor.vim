@@ -1,26 +1,35 @@
-" -- 1) the function (refactoring a word, file-wide)
+" -- define function
 function! Antiquerefactor(arg)
     execute ":%s/" . expand("<cword>") . "/" . a:arg . "/gc"
 endfunction
 
-" -- 2) linking to command
+" -- link command
 command! -nargs=* Refactorword :call Antiquerefactor(<f-args>)
 
-" -- 3) keybinding
+" -- keybind
 nnoremap <Leader>r  :Refactorword
 
 
-" -- 1) the function (refactoring a WORD, file-wide)
+" -- define function
 function! AntiqueRefactor(arg)
     execute ":%s/" . expand("<cWORD>") . "/" . a:arg . "/gc"
 endfunction
 
-" -- 2) linking to a command
+" -- link command
 command! -nargs=* RefactorWORD :call AntiqueRefactor(<f-args>)
 
-" -- 3) keybinding
+" -- keybind
 nnoremap <Leader>R  :RefactorWORD
 
-" TODO: plugin linking?
-"command! -nargs=* HookRefactorWORD :call AntiqueRefactor(<f-args>)
-"nnoremap <Leader>R <Plug>RefactorWORD :execute 'HookRefactorWORD'
+
+
+" " -- define function
+" function! AntiqueRefactor(arg)
+"     execute ":%s/" . expand("<cWORD>") . "/" . a:arg . "/gc"
+" endfunction
+"
+" " -- link command
+" command! -nargs=* RefactorWORD :call AntiqueRefactor(<f-args>)
+"
+" " -- keybind
+" nnoremap <Leader>riw  :RefactorWORD
