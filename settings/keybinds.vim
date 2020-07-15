@@ -1,4 +1,4 @@
-" --leader
+"  --leader
 let mapleader = ";"
 
 
@@ -32,8 +32,8 @@ nnoremap <Leader>i :Autoformat<CR>
 
 
 " -- splitting
-nnoremap <leader>( :vsp<CR>
-nnoremap <leader>) :sp<CR>
+nnoremap <leader>( :vnew<CR>
+nnoremap <leader>) :hnew<CR>
 
 
 " -- split navigation
@@ -55,5 +55,14 @@ nnoremap <silent> <C-S> :setlocal spell!<CR>
 " -- escaping highlight search
 nnoremap <silent> <Leader><Esc> :let @/=""<CR>
 
-" -- closing a buffer
-nnoremap <silent> <Leader>x :bdelete!<CR>
+" -- deleting a buffer
+nnoremap <Leader>x :bdelete!<CR>
+
+" -- deleting a buffer + file
+nnoremap <Leader>d :Delete<CR>
+
+" -- rename on disk and on buffer
+nnoremap <Leader>r :Rename<CR>
+
+" -- focus
+nnoremap <silent><Leader>v :VenterToggle<CR>
