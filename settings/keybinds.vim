@@ -1,55 +1,52 @@
 "  --leader
 let mapleader = ";"
 
-" -- sourcing .vimrc
-nnoremap <leader>` :source ~/.vimrc<CR>
+" -- (C)-lear search highlight
+nnoremap <silent><Leader>c :let @/=""<CR>
 
-" -- quick exit
-map q :wq! <CR>
-map Q :qa! <CR>
-
-" -- deleting a buffer
-nnoremap <Leader>~ :bdelete!<CR>
-
-" -- quick exit
-map <Leader>w :w <CR>
-
-" -- pinky friendly: mnemonic (c) for caption
+" -- (c)-aption
 nnoremap <Leader>c ~
 
+" -- (d)-elete buffer
+nnoremap <Leader>d :bdelete!<CR>
 
-" -- toggling folds: mnemonic (f) for fold
-nnoremap <Leader>f zi
+" -- (D)-elete current buffer and file
+nnoremap <Leader>D :Delete<CR>
 
-" -- indenting (global): mnemonic (f) for fold
+" -- (f)-old
+nnoremap <Leader>f za
+
+" -- (F)-ocus (center buffer on screen)
+nnoremap <silent><Leader>F :VenterToggle<CR>
+
+" -- (i)-ndenting
 nnoremap <Leader>i :Autoformat<CR>
 
-" -- the only split that actually matters
-nnoremap <leader>| :vnew<CR>
+" -- (q)-uit
+nnoremap q :q! <CR>
 
-" -- split navigation
-nnoremap <C-J><C-W><C-J>
-nnoremap <C-K><C-W><C-K>
-nnoremap <C-L><C-W><C-L>
-nnoremap <C-H><C-W><C-H>
+" -- (r)-ename current buffer and file
+nnoremap <Leader>r :Rename<CR>
 
-" -- split resizing
+" -- CTRL (s)-pell
+nnoremap <silent><C-S> :setlocal spell!<CR>
+
+" -- (w)-rite file
+nnoremap <Leader>w :w <CR>
+
+" -- | spit
+nnoremap <leader><bar> :vnew<CR>
+
+" -- (+)(-) split resizing
 nnoremap <Leader>= :vertical resize +25<CR>
 nnoremap <Leader>- :vertical resize -25<CR>
 
+" -- split navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
-" -- toggling spell-check
-nnoremap <silent><C-S> :setlocal spell!<CR>
+" -- ($)-ource
+nnoremap <leader>$ :source ~/.vimrc<CR>
 
-
-" -- escaping highlight search
-nnoremap <silent><Leader><Esc> :let @/=""<CR>
-
-" -- deleting a buffer + file
-nnoremap <Leader>d :Delete<CR>
-
-" -- rename on disk and on buffer
-nnoremap <Leader>r :Rename<CR>
-
-" -- focus
-nnoremap <silent><Leader>v :VenterToggle<CR>
