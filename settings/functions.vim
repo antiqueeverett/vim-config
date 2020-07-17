@@ -8,4 +8,4 @@ function! ToggleNumber()
         set relativenumber
     endif
 endfunc
-nnoremap <silent> <Space> :call ToggleNumber()<CR>
+nnoremap <silent>n :call ToggleNumber()<CR>
