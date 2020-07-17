@@ -22,11 +22,11 @@ nnoremap <silent><Leader>F :VenterToggle<CR>
 " -- (i)-ndenting
 nnoremap <Leader>i :Autoformat<CR>
 
+" -- (m)-move current buffer and file
+nnoremap <Leader>m :Rename
+
 " -- (q)-uit
 nnoremap q :q! <CR>
-
-" -- (r)-ename current buffer and file
-nnoremap <Leader>r :Rename<CR>
 
 " -- CTRL (s)-pell
 nnoremap <silent><C-S> :setlocal spell!<CR>
