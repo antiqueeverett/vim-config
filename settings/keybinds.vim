@@ -2,7 +2,7 @@
 let mapleader = ";"
 
 " -- (C)-lear search highlight
-nnoremap <silent><Leader>C :noh<CR>
+nnoremap <silent><Leader>C :let @/=""<CR>
 
 " -- (c)-aption
 nnoremap <Leader>c ~
