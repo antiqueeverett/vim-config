@@ -24,5 +24,11 @@ endif
 let g:fzf_preview_window = ''
 
 
-nnoremap <silent><Leader>' :FZF $HOME/Repositories <CR>
+function! SaveOnCall()
+    silent execute "write"
+    silent execute ":FZF"
+endfunc
+
+"nnoremap <silent><Leader>' :call SaveOnCall()<CR>"
+nnoremap <silent><Leader>' :FZF<CR>
 

@@ -58,6 +58,8 @@ source ~/Repositories/dotfiles/vim-dotfiles/plugins/venter.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/repeat.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/vimtext.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/airline.vim
+source ~/Repositories/dotfiles/vim-dotfiles/plugins/fugitive.vim
+source ~/Repositories/dotfiles/vim-dotfiles/plugins/surround.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/nerdtree.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/indentline.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/youcompleteme.vim
@@ -67,10 +69,9 @@ source ~/Repositories/dotfiles/vim-dotfiles/plugins/rainbowparenth.vim
 " source ~/Repositories/dotfiles/vim-dotfiles/plugins/neoclide.vim
 
 
-" -- under development
+" -- custom dev
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/heist.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/newfile.vim
+source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/replace.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/refactor.vim
-source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/surround.vim
-source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/greatergit.vim
 

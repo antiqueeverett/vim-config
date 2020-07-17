@@ -1,35 +1,14 @@
-" -- define function
-function! Antiquerefactor(arg)
+function! WordRefactorFunction(arg)
     execute ":%s/" . expand("<cword>") . "/" . a:arg . "/gc"
 endfunction
+command! -nargs=* Refactorword :call WordRefactorFunction(<f-args>)
 
-" -- link command
-command! -nargs=* Refactorword :call Antiquerefactor(<f-args>)
-
-" -- keybind
-nnoremap <Leader>r  :Refactorword
-
-
-" -- define function
-function! AntiqueRefactor(arg)
+function! WORDRefactorFunction(arg)
     execute ":%s/" . expand("<cWORD>") . "/" . a:arg . "/gc"
 endfunction
+command! -nargs=* RefactorWORD :call WORDRefactorFunction(<f-args>)
 
-" -- link command
-command! -nargs=* RefactorWORD :call AntiqueRefactor(<f-args>)
-
-" -- keybind
+nnoremap <Leader>r  :Refactorword
 nnoremap <Leader>R  :RefactorWORD
 
 
-
-" " -- define function
-" function! AntiqueRefactor(arg)
-"     execute ":%s/" . expand("<cWORD>") . "/" . a:arg . "/gc"
-" endfunction
-"
-" " -- link command
-" command! -nargs=* RefactorWORD :call AntiqueRefactor(<f-args>)
-"
-" " -- keybind
-" nnoremap <Leader>riw  :RefactorWORD

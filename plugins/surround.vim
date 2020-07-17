@@ -17,4 +17,3 @@ command! -nargs=* SurroundLine :call SurroundLineFunction(<f-args>)
 nnoremap <Leader>s :Surroundword
 nnoremap <Leader>S :SurroundWORD
 nnoremap <Leader><Space> :SurroundLine
-

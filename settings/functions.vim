@@ -1,4 +1,3 @@
-
 " -- toggling between number and relative number
 function! ToggleNumber()
     if(&relativenumber == 1)

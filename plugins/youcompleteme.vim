@@ -1,4 +1,3 @@
-
 " https://jonasdevlieghere.com/a-better-youcompleteme-config/
 "
 " To have semantic completion for C-family languages, you need tell the compiler

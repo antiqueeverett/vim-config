@@ -17,3 +17,6 @@ au BufRead,BufNewFile * setlocal textwidth=80
 
 " -- automatically changing the current directory
 autocmd BufEnter * silent! lcd %:p:h
+
+" -- closing last NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif

@@ -15,6 +15,7 @@ nnoremap <Leader>D :Delete<CR>
 
 " -- (f)-old
 nnoremap <Leader>f za
+nnoremap <Leader>z zi
 
 " -- (F)-ocus (center buffer on screen)
 nnoremap <silent><Leader>F :VenterToggle<CR>
