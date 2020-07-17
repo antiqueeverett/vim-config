@@ -1,9 +1,8 @@
-" -- strip white spaces on save
+" -- stripping white spaces on save
 augroup strip_on_save
     autocmd!
     autocmd BufWritePre * %s/\s\+$//e
 augroup END
-
 
 " -- overriding theme colors
 augroup theme-overrides
@@ -13,6 +12,8 @@ augroup theme-overrides
     autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
 augroup END
 
-
-" -- auto wrap text @ text width demarkation
+" -- auto wrapping text @ textwidth demarkation
 au BufRead,BufNewFile * setlocal textwidth=80
+
+" -- automatically changing the current directory
+autocmd BufEnter * silent! lcd %:p:h
