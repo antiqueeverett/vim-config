@@ -8,4 +8,4 @@ endfunc
 command! -nargs=* NewFile :call AntiqueNewFile(<f-args>)
 
 " -- keybind
-nnoremap <Leader>n  :NewFile
+nnoremap <Leader>N  :NewFile

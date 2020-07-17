@@ -71,5 +71,6 @@ source ~/Repositories/dotfiles/vim-dotfiles/plugins/rainbowparenth.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/heist.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/newfile.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/refactor.vim
+source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/surround.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/greatergit.vim
 
