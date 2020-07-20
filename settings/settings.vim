@@ -40,8 +40,8 @@ set noswapfile
 set nowritebackup
 
 " -- fold
-set foldmethod=indent
-set foldnestmax=3
+" set foldmethod=indent
+" set foldnestmax=3
 
 " -- ignore patterns
 set wildmenu
