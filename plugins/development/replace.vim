@@ -9,7 +9,7 @@ function! PasteFunction()
 endfunction
 command! -nargs=* Paste :call PasteFunction(<f-args>)
 
-nnoremap <Leader>x  :Cut<CR>
+nnoremap <Leader>x  :Xut<CR>
 nnoremap <Leader>p  :Paste<CR>
 
 

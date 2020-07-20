@@ -1,19 +1,20 @@
 function! SurroundwordFunction(arg)
     execute "normal \<Plug>Ysurroundiw" . a:arg
 endfunc
-command! -nargs=* Surroundword :call SurroundwordFunction(<f-args>)
+command! -nargs=* Siw :call SurroundwordFunction(<f-args>)
 
 function! SurroundWORDFunction(arg)
     execute "normal \<Plug>YsurroundiW" . a:arg
 endfunc
-command! -nargs=* SurroundWORD :call SurroundWORDFunction(<f-args>)
+command! -nargs=* SiW :call SurroundWORDFunction(<f-args>)
 
 function! SurroundLineFunction(arg)
     execute "normal \<Plug>Yssurround" . a:arg
 endfunc
-command! -nargs=* SurroundLine :call SurroundLineFunction(<f-args>)
+command! -nargs=* Sil :call SurroundLineFunction(<f-args>)
 
 " -- (s)-urround
-nnoremap <Leader>s :Surroundword
-nnoremap <Leader>S :SurroundWORD
-nnoremap <Leader><Space> :SurroundLine
+nnoremap <Leader>s :Siw
+nnoremap <Leader>S :SiW
+nnoremap <Leader><Space> :"Sil"
+

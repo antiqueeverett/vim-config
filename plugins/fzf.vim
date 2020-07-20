@@ -20,6 +20,7 @@ if executable('rg')
 endif
 
 
+
 " -- disabling preview window
 let g:fzf_preview_window = ''
 
@@ -29,6 +30,5 @@ function! SaveOnCall()
     silent execute ":FZF"
 endfunc
 
-"nnoremap <silent><Leader>' :call SaveOnCall()<CR>"
-nnoremap <silent><Leader>' :FZF<CR>
+nnoremap <silent><Leader>' :FZF $HOME/Repositories<CR>
 
