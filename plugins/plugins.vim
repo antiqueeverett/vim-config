@@ -52,6 +52,7 @@ call plug#end()
 
 
 " -- Plugin settings organized in exclusive files
+source ~/Repositories/dotfiles/vim-dotfiles/plugins/ale.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/fzf.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/nord.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/venter.vim

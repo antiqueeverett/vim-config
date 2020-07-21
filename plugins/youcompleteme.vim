@@ -6,11 +6,11 @@
 " Fortunately however, YCM supports you to define a global configuration file.
 let g:ycm_global_ycm_extra_conf = '~/.vim/youcompleteme/.ycm_extra_conf.py'
 
-nnoremap <silent><Leader>2df  :YcmCompleter GoToDefinition<CR>
-nnoremap <silent><Leader>2dc  :YcmCompleter GoToDeclaration<CR>
-nnoremap <silent><Leader>2inc  :YcmCompleter GoToInclude<CR>
-nnoremap <silent><Leader>2imp  :YcmCompleter GoToImplementation<CR>
-nnoremap <silent><Leader>2ref  :YcmCompleter GoToReferences<CR>
+nnoremap <silent><Leader>1  :YcmCompleter GoToDeclaration<CR>
+nnoremap <silent><Leader>2 :YcmCompleter GoToDefinition<CR>
+nnoremap <silent><Leader>3 :YcmCompleter GoToReferences<CR>
+nnoremap <silent><Leader>4 :YcmCompleter GoToImplementation<CR>
+nnoremap <silent><Leader>6 :YcmCompleter GoToInclude<CR>
 
 let g:ycm_filetype_blacklist = {
       \ 'markdown': 1,

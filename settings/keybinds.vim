@@ -8,7 +8,7 @@ nnoremap <silent><Leader>C :let @/=""<CR>
 nnoremap <Leader>c ~
 
 " -- (d)-elete buffer
-nnoremap <Leader>d :bdelete!<CR>
+" nnoremap <Leader>d :bdelete!<CR>
 
 " -- (D)-elete current buffer and file
 nnoremap <Leader>D :Delete<CR>
@@ -23,8 +23,8 @@ nnoremap <silent><Leader>F :VenterToggle<CR>
 " -- (i)-ndenting
 nnoremap <Leader>i :Autoformat<CR>
 
-" -- (m)-move current buffer and file
-nnoremap <Leader>m :Rename
+" -- (M)-move current buffer and file
+nnoremap <Leader>M :Rename
 
 " -- (q)-uit
 nnoremap q :q! <CR>
