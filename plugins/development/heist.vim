@@ -38,4 +38,4 @@ endfunction
 command! -nargs=* Heist :call AntiqueHeist(<f-args>)
 
 " -- keybinding
-nnoremap <silent><Leader>1  :Heist <CR>
+nnoremap <silent><Leader>0  :Heist <CR>
