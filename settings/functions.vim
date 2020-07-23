@@ -7,4 +7,4 @@ function! ToggleNumber()
         set relativenumber
     endif
 endfunc
-nnoremap <silent><Leader><Tab> :call ToggleNumber()<CR>
+nnoremap <silent><Leader>? :call ToggleNumber()<CR>

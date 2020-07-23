@@ -51,3 +51,5 @@ nnoremap <C-H> <C-W><C-H>
 " -- ($)-ource
 nnoremap <leader>$ :source ~/.vimrc<CR>
 
+" -- cycling through buffers
+nnoremap <leader><Tab> :bn<CR>
