@@ -1,53 +1,22 @@
-" -- enable using compile commands
+" always show sign column | false
+let g:ale_sign_column_always = 0
+
+" info, error, and warning signs
+let g:ale_sign_info = ''
+let g:ale_sign_error = '✖︎✖︎'
+let g:ale_sign_style_error = '✖︎✖︎'
+let g:ale_sign_warning = ''
+let g:ale_sign_style_warning = ''
+
+" info, error, and warning messages (with vim airline)
+let g:ale_echo_msg_error_str = 'Error'
+let g:ale_echo_msg_warning_str = 'Warning'
+let g:ale_echo_msg_format = '[%severity%] [%linter%] %s'
+
+" CXX ---------------------------------------------------------
+" fetch flags from CMake: set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 let g:ale_c_parse_compile_commands = 1
+let g:ale_linters = {'c': ['clangtidy', 'gcc'], 'cpp': ['clangtidy', 'gcc']}
 
-" -- error symbol
-let g:ale_sign_error = '‼'
-
-" -- warning symbol
-let g:ale_sign_warning = '⁉'
-
-" -- highlight
-highlight ALEWarning ctermbg=DarkMagenta
-
-" -- error navigation
-"nmap <silent> <Plug>(ale_previous_wrap)
+" navigate gutter warnings and errors
 nmap <silent><Leader>5 <Plug>(ale_next_wrap)
-
-" -- config local list
-let g:ale_set_loclist = 0
-
-" -- config quick fix
-let g:ale_set_quickfix = 1
-
-" -- config clang-tidy
-let g:ale_linters = {
-            \   'cpp': ['clangtidy'],
-            \   'c': ['clangtidy'],
-            \}
-
-let g:ale_fixers={
-            \   'cpp': ['clang-format'],
-            \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-            \}
-let g:ale_cpp_clangtidy_checks = []
-let g:ale_cpp_clangtidy_executable = 'clang-tidy'
-let g:ale_c_parse_compile_commands=1
-let g:ale_cpp_clangtidy_extra_options = ''
-let g:ale_cpp_clangtidy_options = ''
-let g:ale_set_balloons=1
-let g:ale_linters_explicit=1
-let g:airline#extensions#ale#enabled=1
-
-" -- config messages
-let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_warning_str = 'W'
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-
-" -- airline + ale
-let g:airline#extensions#ale#enabled = 1
-let airline#extensions#ale#error_symbol = 'E:'
-let airline#extensions#ale#warning_symbol = 'W:'
-let airline#extensions#ale#show_line_numbers = 1
-let airline#extensions#ale#open_lnum_symbol = '(L'
-let airline#extensions#ale#close_lnum_symbol = ')'
