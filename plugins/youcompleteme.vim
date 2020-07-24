@@ -18,5 +18,10 @@ let g:ycm_filetype_blacklist = {
       \ 'mail': 1
       \}
 
+" completion menu when inside strings | true
 let g:ycm_complete_in_strings = 1
-let g:ycm_disable_signature_help = 1
+
+" When using YCM with ALE, both issue diagnostics.
+" YCM diagnostics are disabled here to default to ALE diagnostics.
+let g:ycm_show_diagnostics_ui = 0
+let g:ycm_enable_diagnostic_signs = 0
