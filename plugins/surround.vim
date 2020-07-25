@@ -16,5 +16,5 @@ command! -nargs=* Sil :call SurroundLineFunction(<f-args>)
 " -- (s)-urround
 nnoremap <Leader>s :Siw
 nnoremap <Leader>S :SiW
-nnoremap <Leader><Space> :"Sil"
+nnoremap <Leader>l :"Sil"
 

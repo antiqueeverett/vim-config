@@ -19,4 +19,4 @@ let g:ale_c_parse_compile_commands = 1
 let g:ale_linters = {'c': ['clangtidy', 'gcc'], 'cpp': ['clangtidy', 'gcc']}
 
 " navigate gutter warnings and errors
-nmap <silent><Leader>5 <Plug>(ale_next_wrap)
+nmap <silent><Leader>0 <Plug>(ale_next_wrap)

@@ -2,13 +2,7 @@
 let mapleader = ";"
 
 " -- (C)-lear search highlight
-nnoremap <silent><Leader>C :let @/=""<CR>
-
-" -- (c)-aption
-nnoremap <Leader>c ~
-
-" -- (d)-elete buffer
-" nnoremap <Leader>d :bdelete!<CR>
+nnoremap <silent><C-C> :let @/=""<CR>
 
 " -- (D)-elete current buffer and file
 nnoremap <Leader>D :Delete<CR>
@@ -53,3 +47,10 @@ nnoremap <leader>$ :source ~/.vimrc<CR>
 
 " -- cycling through buffers
 nnoremap <leader><Tab> :bn<CR>
+
+" -- caption
+nnoremap <Leader><Space> ~
+
+" -- delete buffer
+nnoremap <Leader><Esc> :bdelete!<CR>
+
