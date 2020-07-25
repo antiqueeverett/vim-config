@@ -46,14 +46,9 @@ Plug 'vim-airline/vim-airline-themes'
 " Format
 Plug 'lervag/vimtex'
 Plug 'Chiel92/vim-autoformat'
-
-" Deprecated
-"Plug 'morhetz/gruvbox'
-"Plug 'scrooloose/syntastic'
-"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
-"plugin config sources
+" source configurations
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/ale.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/fzf.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/nord.vim
@@ -68,11 +63,15 @@ source ~/Repositories/dotfiles/vim-dotfiles/plugins/indentline.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/youcompleteme.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/vimautoformat.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/rainbowparenth.vim
-" source ~/Repositories/dotfiles/vim-dotfiles/plugins/gruvbox.vim
-" source ~/Repositories/dotfiles/vim-dotfiles/plugins/neoclide.vim
-
-" plugin sandbox
+" sandbox
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/heist.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/newfile.vim
-source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/replace.vim
+source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/xpaste.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/refactor.vim
+
+"Plug 'morhetz/gruvbox'
+"Plug 'scrooloose/syntastic'
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"source ~/Repositories/dotfiles/vim-dotfiles/plugins/gruvbox.vim
+"source ~/Repositories/dotfiles/vim-dotfiles/plugins/neoclide.vim
+
