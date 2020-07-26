@@ -1,6 +1,7 @@
 " -- color
 set t_Co=256
 
+
 " -- status
 set laststatus=2
 
@@ -67,3 +68,5 @@ if &term == 'xterm-256color' || &term == 'screen-256color'
     let &t_EI = "\<Esc>[1 q"
 endif
 
+" --  send nothing to the terminal
+set t_ti= t_te=

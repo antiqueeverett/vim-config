@@ -18,7 +18,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 " CXX
-Plug 'vhdirk/vim-cmake'
+"Plug 'vhdirk/vim-cmake'
 Plug 'valloric/youcompleteme'
 Plug 'vim-scripts/taglist.vim'
 
@@ -39,9 +39,14 @@ Plug 'dense-analysis/ale'
 
 " Aesthetics
 Plug 'jmckiern/vim-venter'
-Plug 'arcticicestudio/nord-vim'
+
+" Status
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
+" Theme
+Plug 'arcticicestudio/nord-vim'
+Plug 'octol/vim-cpp-enhanced-highlight'
 
 " Format
 Plug 'lervag/vimtex'
@@ -63,15 +68,20 @@ source ~/Repositories/dotfiles/vim-dotfiles/plugins/indentline.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/youcompleteme.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/vimautoformat.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/rainbowparenth.vim
+source ~/Repositories/dotfiles/vim-dotfiles/plugins/cppenhancedhighlight.vim
 " sandbox
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/heist.vim
-source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/newfile.vim
+source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/cmake.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/xpaste.vim
-source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/refactor.vim
+source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/newfile.vim
+source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/replace.vim
 
 "Plug 'morhetz/gruvbox'
 "Plug 'scrooloose/syntastic'
+"Plug 'chriskempson/base16-vim'
+"Plug 'mhartington/oceanic-next'
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"source ~/Repositories/dotfiles/vim-dotfiles/plugins/oceanic.vim
 "source ~/Repositories/dotfiles/vim-dotfiles/plugins/gruvbox.vim
 "source ~/Repositories/dotfiles/vim-dotfiles/plugins/neoclide.vim
 

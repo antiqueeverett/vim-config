@@ -3,8 +3,8 @@ let g:ale_sign_column_always = 0
 
 " info, error, and warning signs
 let g:ale_sign_info = ''
-let g:ale_sign_error = '✖︎✖︎'
-let g:ale_sign_style_error = '✖︎✖︎'
+let g:ale_sign_error = ''
+let g:ale_sign_style_error = ''
 let g:ale_sign_warning = ''
 let g:ale_sign_style_warning = ''
 
@@ -20,3 +20,6 @@ let g:ale_linters = {'c': ['clangtidy', 'gcc'], 'cpp': ['clangtidy', 'gcc']}
 
 " navigate gutter warnings and errors
 nmap <silent><Leader>0 <Plug>(ale_next_wrap)
+
+" SHELL -------------------------------------------------------
+let g:ale_sh_shellcheck_options = '-x'
