@@ -51,6 +51,9 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 " Format
 Plug 'lervag/vimtex'
 Plug 'Chiel92/vim-autoformat'
+
+"Git
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 " source configurations
@@ -64,6 +67,7 @@ source ~/Repositories/dotfiles/vim-dotfiles/plugins/airline.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/fugitive.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/surround.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/nerdtree.vim
+source ~/Repositories/dotfiles/vim-dotfiles/plugins/gitgutter.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/indentline.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/youcompleteme.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/vimautoformat.vim
