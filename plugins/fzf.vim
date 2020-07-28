@@ -19,16 +19,14 @@ if executable('rg')
     let g:rg_derive_root='true'
 endif
 
-
-
-" -- disabling preview window
 let g:fzf_preview_window = ''
+"let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
+"let $FZF_DEFAULT_OPTS='--reverse'
 
-
-function! SaveOnCall()
-    silent execute "write"
-    silent execute ":FZF"
+function! FZFSaveOnCall()
+    execute "update"
+    execute "FZF $HOME/Repositories"
 endfunc
 
-nnoremap <silent><Leader>' :FZF $HOME/Repositories<CR>
-
+"nnoremap <silent><Leader>' :FZF $HOME/Repositories<CR>
+nnoremap <silent><Leader>' :call FZFSaveOnCall()<CR>

@@ -12,11 +12,11 @@ augroup theme-overrides
     autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
 augroup END
 
-" -- auto wrapping text @ textwidth demarkation
+" wrap text
 au BufRead,BufNewFile * setlocal textwidth=80
 
-" -- automatically changing the current directory
+" default cwd to current buffer
 autocmd BufEnter * silent! lcd %:p:h
 
-" -- closing last NERDTree
+" close if remaining buffer is NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif

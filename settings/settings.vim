@@ -69,4 +69,4 @@ if &term == 'xterm-256color' || &term == 'screen-256color'
 endif
 
 " --  send nothing to the terminal
-set t_ti= t_te=
+"set t_ti= t_te=

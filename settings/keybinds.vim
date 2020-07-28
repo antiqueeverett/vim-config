@@ -4,9 +4,6 @@ let mapleader = ";"
 " -- (C)-lear search highlight
 nnoremap <silent><C-C> :let @/=""<CR>
 
-" -- (d) elete buffer
-nnoremap <Leader>d :bdelete!<CR>
-
 " -- (D)-elete current buffer and file
 nnoremap <Leader>D :Delete<CR>
 
@@ -22,9 +19,6 @@ nnoremap <Leader>i :Autoformat<CR>
 
 " -- (M)-move current buffer and file
 nnoremap <Leader>M :Rename
-
-" -- (q)-uit
-nnoremap q :q! <CR>
 
 " -- CTRL (s)-pell
 nnoremap <silent><C-S> :setlocal spell!<CR>
@@ -45,8 +39,3 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-" -- ($)-ource
-nnoremap <leader>$ :source ~/.vimrc<CR>
-
-" -- cycling through buffers
-nnoremap <leader><Tab> :bn<CR>
