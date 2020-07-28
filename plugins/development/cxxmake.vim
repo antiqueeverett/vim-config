@@ -1,5 +1,6 @@
 function! CMakeFunction()
     silent execute 'Dispatch $HOME/Repositories/dotfiles/res/helpers/cmake.sh'
+    bufdo e
 endfunction
 
 " -- linking to command

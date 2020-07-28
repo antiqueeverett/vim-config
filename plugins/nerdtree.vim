@@ -8,3 +8,5 @@ let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
 
 nnoremap <silent><Leader><Space> :NERDTreeToggle<CR>
 
+" close: Iff remaining buffer is NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif

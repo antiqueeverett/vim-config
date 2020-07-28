@@ -1,10 +1,10 @@
 function! ReplaceWordFunction(arg)
-    execute ":%s/" . "shellescape(expand("<cWORD>"))" . "/" . a:arg . "/gc"
+    execute "%s/" . expand("<cword>") . "/" . a:arg . "/gc"
 endfunction
 command! -nargs=* Repword :call ReplaceWordFunction(<f-args>)
 
 function! ReplaceWORDFunction(arg)
-    execute ":%s/" . "shellescape(expand("<cWORD>"))" . "/" . a:arg . "/gc"
+    execute "%s/" . expand("<cWORD>") . "/" . a:arg . "/gc"
 endfunction
 command! -nargs=* RepWORD :call ReplaceWORDFunction(<f-args>)
 

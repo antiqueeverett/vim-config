@@ -44,28 +44,31 @@ Plug 'jmckiern/vim-venter'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-" Theme
+" Themes
 Plug 'arcticicestudio/nord-vim'
-Plug 'octol/vim-cpp-enhanced-highlight'
 
 " Format
 Plug 'lervag/vimtex'
 Plug 'Chiel92/vim-autoformat'
+Plug 'morhetz/gruvbox'
 
 "Git
 Plug 'airblade/vim-gitgutter'
 
 " Experimental
 Plug 'tpope/vim-dispatch'
-
+Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'ayu-theme/ayu-vim'
 call plug#end()
 
 " source configurations
+source ~/Repositories/dotfiles/vim-dotfiles/plugins/ayu.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/ale.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/fzf.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/nord.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/venter.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/repeat.vim
+source ~/Repositories/dotfiles/vim-dotfiles/plugins/gruvbox.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/vimtext.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/airline.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/fugitive.vim
@@ -84,12 +87,5 @@ source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/cxxmake.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/newfile.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/replace.vim
 
-"Plug 'morhetz/gruvbox'
-"Plug 'scrooloose/syntastic'
-"Plug 'chriskempson/base16-vim'
-"Plug 'mhartington/oceanic-next'
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"source ~/Repositories/dotfiles/vim-dotfiles/plugins/oceanic.vim
-"source ~/Repositories/dotfiles/vim-dotfiles/plugins/gruvbox.vim
 "source ~/Repositories/dotfiles/vim-dotfiles/plugins/neoclide.vim
-
