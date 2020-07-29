@@ -46,23 +46,20 @@ Plug 'vim-airline/vim-airline-themes'
 
 " Themes
 Plug 'arcticicestudio/nord-vim'
+Plug 'morhetz/gruvbox'
 
 " Format
 Plug 'lervag/vimtex'
 Plug 'Chiel92/vim-autoformat'
-Plug 'morhetz/gruvbox'
 
 "Git
 Plug 'airblade/vim-gitgutter'
 
 " Experimental
-Plug 'tpope/vim-dispatch'
-Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'ayu-theme/ayu-vim'
+Plug 'thaerkh/vim-workspace'
 call plug#end()
 
 " source configurations
-source ~/Repositories/dotfiles/vim-dotfiles/plugins/ayu.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/ale.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/fzf.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/nord.vim
@@ -79,7 +76,6 @@ source ~/Repositories/dotfiles/vim-dotfiles/plugins/indentline.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/youcompleteme.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/vimautoformat.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/rainbowparenth.vim
-source ~/Repositories/dotfiles/vim-dotfiles/plugins/cppenhancedhighlight.vim
 " sandbox
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/heist.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/xpaste.vim
