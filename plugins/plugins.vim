@@ -54,9 +54,6 @@ Plug 'Chiel92/vim-autoformat'
 
 "Git
 Plug 'airblade/vim-gitgutter'
-
-" Experimental
-Plug 'thaerkh/vim-workspace'
 call plug#end()
 
 " source configurations
