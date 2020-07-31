@@ -14,8 +14,8 @@ augroup theme-overrides
     autocmd ColorScheme * highlight CursorLine   guibg=#282828
     autocmd ColorScheme * highlight CursorLineNr guibg=#282828 guifg=#282828
     autocmd ColorScheme * highlight IncSearch    guibg=#7c6f64 guifg=#504945
-    autocmd ColorScheme * highlight Search       guibg=#3c3836 guifg=black
-    autocmd ColorScheme * highlight Visual       guibg=#3c3836 guifg=Black
+    autocmd ColorScheme * highlight Search       guibg=NONE guifg=#af3a03
+    autocmd ColorScheme * highlight Visual       guibg=NONE guifg=#af3a03
 augroup END
 
 color gruvbox

@@ -17,21 +17,25 @@ function! ShowBufferVars()
 endfunc
 
 function CheckBufferTypeOnExit()
-    if &modifiable!='1' || &buftype!='' || &ft =='' | execute (bufnr('%') . " bd!") | endif
-    if &modifiable=='1' && &buftype=='' && &ft !=''
-        execute "update"
-    endif
+    execute "update"
+endif
 endfunction
 
 function! PullUpFZF()
-    execute "call CheckBufferTypeOnExit()"
-    execute "FZF $HOME/Repositories"
+    if &modifiable!='1' || &buftype!='' || &ft =='' | execute (bufnr('%') . " bd!") | endif
+    if &modifiable=='1' && &buftype=='' && &ft !=''
+        execute "FZF $HOME/Repositories"
+    endif
 endfunction
 
 function! ExitBuffer()
-    execute "call CheckBufferTypeOnExit()"
-    execute "bd"
-    if &buftype=='' && bufname('%')=='' && &modifiable | execute "q!" | endif
+    if &modifiable!='1' || &buftype!='' || &ft ==''
+        execute (bufnr('%') . " bd!")
+    elseif &modifiable=='1' && &buftype=='' && &ft !=''
+        execute "update"
+        execute "bd"
+    endif
+    if &buftype=='' && bufname('%')=='' && &modifiable=='1' | execute "q!" | endif
 endfunction
 
 function! SwitchBuffer()
