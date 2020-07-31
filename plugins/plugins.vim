@@ -76,7 +76,7 @@ source ~/Repositories/dotfiles/vim-dotfiles/plugins/rainbowparenth.vim
 " sandbox
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/heist.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/xpaste.vim
-source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/cxxmake.vim
+source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/cmake.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/newfile.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/replace.vim
 

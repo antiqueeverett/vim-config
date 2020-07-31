@@ -16,42 +16,31 @@ function! ShowBufferVars()
     echo "5. buffer file type = " . &ft
 endfunc
 
-function! Updatable()
-    if &modifiable=='1' && &buftype=='' && &ft !='' | return 1 | endif
-    if &modifiable!='1' || &buftype!='' || &ft =='' | return 0 | endif
-endfunc
-
-function! SaveOnExit()
-    execute "update"
-endfunction
-
-function! ForceExit()
-    execute "q!"
-endfunction
-
-function! CheckBuffer()
-    if Updatable()  | execute "call SaveOnExit()" | endif
-    if !Updatable()  | execute "call ForceExit()" | endif
+function CheckBufferTypeOnExit()
+    if &modifiable!='1' || &buftype!='' || &ft =='' | execute (bufnr('%') . " bd!") | endif
+    if &modifiable=='1' && &buftype=='' && &ft !=''
+        execute "update"
+    endif
 endfunction
 
 function! PullUpFZF()
-    execute "call CheckBuffer()"
+    execute "call CheckBufferTypeOnExit()"
     execute "FZF $HOME/Repositories"
 endfunction
 
 function! ExitBuffer()
-    execute "call CheckBuffer()"
-    execute "bd!"
+    execute "call CheckBufferTypeOnExit()"
+    execute "bd"
+    if &buftype=='' && bufname('%')=='' && &modifiable | execute "q!" | endif
 endfunction
 
 function! SwitchBuffer()
-    execute "call CheckBuffer()"
+    if &modifiable!='1' || &buftype!='' || &ft =='' | execute (bufnr('%') . " bd!") | endif
+    if &modifiable=='1' && &buftype=='' && &ft !='' | execute "bn" | endif
 endfunction
 
-nnoremap <silent><Leader>q :call ForceExit()<CR>
-nnoremap <silent><Leader>d :call ExitBuffer()<CR>
-
-nnoremap <silent><leader>$ :source $HOME/.vimrc<CR>
+nnoremap <leader>$ :source $HOME/.vimrc<CR>
 nnoremap <silent><Leader>' :call PullUpFZF()<CR>
-
+nnoremap <silent><Leader>q :call ExitBuffer()<CR>
+nnoremap <silent><Leader>d :call ExitBuffer()<CR>
 nnoremap <silent><leader><Tab> :call SwitchBuffer()<CR>

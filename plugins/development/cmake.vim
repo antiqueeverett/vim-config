@@ -1,6 +1,8 @@
 function! CMakeFunction()
-    silent execute 'Dispatch $HOME/Repositories/dotfiles/res/helpers/cmake.sh'
-    bufdo e
+    " silent execute '!$HOME/Repositories/dotfiles/res/helpers/cmake.sh'
+    " silent execute 'redraw!'
+    execute "set termwinsize=0x78"
+    execute "vert term cmake.sh"
 endfunction
 
 " -- linking to command

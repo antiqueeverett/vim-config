@@ -71,3 +71,4 @@ endif
 
 " --  send nothing to the terminal
 "set t_ti= t_te=
+set shell=/usr/bin/zsh
