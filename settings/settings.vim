@@ -29,6 +29,8 @@ filetype plugin on
 " -- lines
 set wrap
 set relativenumber
+set number
+set number relativenumber
 set colorcolumn=80
 
 " -- silence

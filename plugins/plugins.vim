@@ -5,9 +5,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-
 call plug#begin('~/.vim/plugged')
-
 " tpope
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-eunuch'
@@ -37,7 +35,7 @@ Plug 'raimondi/delimitmate'
 Plug 'kien/rainbow_parentheses.vim'
 
 " linting
-"Plug 'dense-analysis/ale'
+Plug 'dense-analysis/ale'
 
 " aesthetics
 Plug 'jmckiern/vim-venter'
@@ -53,12 +51,11 @@ Plug 'lervag/vimtex'
 Plug 'Chiel92/vim-autoformat'
 
 "git
-"Plug 'airblade/vim-gitgutter'
-
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 " source configurations
-"source ~/Repositories/dotfiles/vim-dotfiles/plugins/ale.vim
+source ~/Repositories/dotfiles/vim-dotfiles/plugins/ale.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/fzf.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/nord.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/venter.vim
@@ -69,7 +66,7 @@ source ~/Repositories/dotfiles/vim-dotfiles/plugins/airline.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/fugitive.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/surround.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/nerdtree.vim
-"source ~/Repositories/dotfiles/vim-dotfiles/plugins/gitgutter.vim
+source ~/Repositories/dotfiles/vim-dotfiles/plugins/gitgutter.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/indentline.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/youcompleteme.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/vimautoformat.vim
