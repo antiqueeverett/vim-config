@@ -22,3 +22,19 @@ let g:ale_linters={'c': ['clangtidy'], 'cpp': ['clangtidy']}
 let g:ale_cpp_clangtidy_checks = ['-*', 'readability-*', 'modernize-*', 'clang-analyzer-*', 'performance-*']
 
 nmap <silent><Leader>5 <Plug>(ale_next_wrap)
+
+" fixing
+"let g:ale_fixers = {
+"            \'*': ['remove_trailing_lines', 'trim_whitespace'],
+"            \'cpp':  ['astyle', 'clangtidy', 'clang-format', 'uncrustify'],
+"            \'javascript': ['eslint']}
+
+"let g:ale_fix_on_save=1
+"let g:ale_set_loclist=1
+"let g:ale_set_quickfix=1
+"let g:ale_set_balloons=1
+"let g:ale_set_highlights=1
+
+
+" SHELL -------------------------------------------------------
+"let g:ale_sh_shellcheck_options='-x'

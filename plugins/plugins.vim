@@ -5,59 +5,60 @@ if empty(glob('~/.vim/autoload/plug.vim'))
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+
 call plug#begin('~/.vim/plugged')
-" Tpope
+
+" tpope
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-fireplace'
 
-" Fzf
+" fzf
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
-" CXX
+" cxx
 "Plug 'vhdirk/vim-cmake'
 Plug 'valloric/youcompleteme'
 Plug 'vim-scripts/taglist.vim'
 
-" Clojure
+" clojure
 Plug 'sjl/vitality.vim'
 Plug 'guns/vim-clojure-static'
 Plug 'clojure-emacs/cider-nrepl'
 
-" Utility
+" utility
 Plug 'godlygeek/tabular'
 Plug 'scrooloose/nerdtree'
 Plug 'yggdroot/indentline'
 Plug 'raimondi/delimitmate'
 Plug 'kien/rainbow_parentheses.vim'
 
-" Linting
-Plug 'dense-analysis/ale'
+" linting
+"Plug 'dense-analysis/ale'
 
-" Aesthetics
+" aesthetics
 Plug 'jmckiern/vim-venter'
-
-" Status
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-" Themes
+" theme
 Plug 'arcticicestudio/nord-vim'
 Plug 'morhetz/gruvbox'
 
-" Format
+" format
 Plug 'lervag/vimtex'
 Plug 'Chiel92/vim-autoformat'
 
-"Git
-Plug 'airblade/vim-gitgutter'
+"git
+"Plug 'airblade/vim-gitgutter'
+
 call plug#end()
 
 " source configurations
-source ~/Repositories/dotfiles/vim-dotfiles/plugins/ale.vim
+"source ~/Repositories/dotfiles/vim-dotfiles/plugins/ale.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/fzf.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/nord.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/venter.vim
@@ -68,7 +69,7 @@ source ~/Repositories/dotfiles/vim-dotfiles/plugins/airline.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/fugitive.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/surround.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/nerdtree.vim
-source ~/Repositories/dotfiles/vim-dotfiles/plugins/gitgutter.vim
+"source ~/Repositories/dotfiles/vim-dotfiles/plugins/gitgutter.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/indentline.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/youcompleteme.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/vimautoformat.vim
@@ -79,6 +80,3 @@ source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/xpaste.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/cmake.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/newfile.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/replace.vim
-
-"Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"source ~/Repositories/dotfiles/vim-dotfiles/plugins/neoclide.vim

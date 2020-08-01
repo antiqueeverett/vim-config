@@ -1,5 +1,5 @@
 " -- color
-set t_Co=256
+"set t_Co=256
 set termguicolors
 
 
@@ -7,7 +7,7 @@ set termguicolors
 set laststatus=2
 
 " -- syntax
-"syntax on
+syntax on
 
 " -- search
 set hlsearch
@@ -30,7 +30,6 @@ filetype plugin on
 set wrap
 set relativenumber
 set colorcolumn=80
-"highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 " -- silence
 set visualbell
