@@ -1,7 +1,5 @@
 " -- color
-"set t_Co=256
 set termguicolors
-
 
 " -- status
 set laststatus=2

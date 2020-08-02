@@ -38,7 +38,7 @@ Plug 'kien/rainbow_parentheses.vim'
 Plug 'dense-analysis/ale'
 
 " aesthetics
-Plug 'jmckiern/vim-venter'
+Plug 'junegunn/goyo.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
@@ -58,7 +58,7 @@ call plug#end()
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/ale.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/fzf.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/nord.vim
-source ~/Repositories/dotfiles/vim-dotfiles/plugins/venter.vim
+source ~/Repositories/dotfiles/vim-dotfiles/plugins/goyo.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/repeat.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/gruvbox.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/vimtext.vim

@@ -4,6 +4,8 @@ function! ToggleNumber()
         set number
     else
         set relativenumber
+        set number
+        set number relativenumber
     endif
 endfunc
 nnoremap <silent><Leader>? :call ToggleNumber()<CR>
@@ -22,10 +24,12 @@ endif
 endfunction
 
 function! PullUpFZF()
-    if &modifiable!='1' || &buftype!='' || &ft =='' | execute (bufnr('%') . " bd!") | endif
-    if &modifiable=='1' && &buftype=='' && &ft !=''
-        execute "FZF $HOME/Repositories"
+    if &modifiable!='1' || &buftype!='' || &ft ==''
+        execute (bufnr('%') . " bd!")
+    elseif &modifiable=='1' && &buftype=='' && &ft !=''
+        execute "update"
     endif
+    execute "FZF $HOME/Repositories"
 endfunction
 
 function! ExitBuffer()
@@ -35,12 +39,17 @@ function! ExitBuffer()
         execute "update"
         execute "bd"
     endif
-    if &buftype=='' && bufname('%')=='' && &modifiable=='1' | execute "q!" | endif
+    if &buftype=='' && bufname('%')=='' && &modifiable=='1'
+        execute "q!"
+    endif
 endfunction
 
 function! SwitchBuffer()
-    if &modifiable!='1' || &buftype!='' || &ft =='' | execute (bufnr('%') . " bd!") | endif
-    if &modifiable=='1' && &buftype=='' && &ft !='' | execute "bn" | endif
+    if &modifiable!='1' || &buftype!='' || &ft =='' | execute (bufnr('%') . " bn!") | endif
+    if &modifiable=='1' && &buftype=='' && &ft !=''
+        execute "update"
+        execute "bn"
+    endif
 endfunction
 
 nnoremap <leader>$ :source $HOME/.vimrc<CR>
