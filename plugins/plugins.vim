@@ -52,6 +52,7 @@ Plug 'Chiel92/vim-autoformat'
 
 "git
 Plug 'airblade/vim-gitgutter'
+Plug 'machakann/vim-highlightedyank'
 call plug#end()
 
 " source configurations
@@ -72,6 +73,7 @@ source ~/Repositories/dotfiles/vim-dotfiles/plugins/indentline.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/youcompleteme.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/vimautoformat.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/rainbowparenth.vim
+source ~/Repositories/dotfiles/vim-dotfiles/plugins/highlightedyank.vim
 " sandbox
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/heist.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/xpaste.vim
