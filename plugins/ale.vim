@@ -3,7 +3,6 @@ let g:ale_sign_column_always=0
 let g:ale_set_loclist=1
 let g:ale_set_quickfix=1
 let g:ale_set_balloons=1
-let g:ale_set_highlights=1
 
 let g:ale_sign_info=''
 let g:ale_sign_error=''
@@ -27,4 +26,3 @@ let g:ale_cpp_clangtidy_checks = ['-*', 'readability-*', 'modernize-*', 'clang-a
 let g:ale_sh_shellcheck_options='-x'
 
 nmap <silent><Leader>5 <Plug>(ale_next_wrap)
-
