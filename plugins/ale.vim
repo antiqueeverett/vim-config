@@ -37,7 +37,7 @@ highlight ALESignColumnWithoutErrors guibg=#1d2021 guifg=NONE
 
 highlight ALEWarning                 gui=underline guifg=#d65d0e
 highlight ALEWarningSign             guibg=#1d2021 guifg=#d65d0e
-highlight ALEWarningLine             guibg=#282828 guifg=NONE
+highlight ALEWarningLine             guibg=#121212 guifg=NONE
 highlight ALEWarningSignLineNr       guibg=#1d2021 guifg=#d65d0e
 " highlight ALEStyleWarning        guibg=#b8bb26 guifg=#b8bb26
 
