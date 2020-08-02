@@ -26,3 +26,29 @@ let g:ale_cpp_clangtidy_checks = ['-*', 'readability-*', 'modernize-*', 'clang-a
 let g:ale_sh_shellcheck_options='-x'
 
 nmap <silent><Leader>5 <Plug>(ale_next_wrap)
+
+" HIGHLIGHTS:
+let g:ale_set_signs = 1
+let g:ale_set_highlights = 1
+let g:ale_change_sign_column_color = 1
+
+highlight ALESignColumnWithErrors    guibg=#1d2021 guifg=NONE
+highlight ALESignColumnWithoutErrors guibg=#1d2021 guifg=NONE
+
+highlight ALEWarning                 gui=underline guifg=#d65d0e
+highlight ALEWarningSign             guibg=#1d2021 guifg=#d65d0e
+highlight ALEWarningLine             guibg=#282828 guifg=NONE
+highlight ALEWarningSignLineNr       guibg=#1d2021 guifg=#d65d0e
+" highlight ALEStyleWarning        guibg=#b8bb26 guifg=#b8bb26
+
+highlight ALEError                  gui=underline guifg=#cc241d
+highlight ALEErrorSign              guibg=#1d2021 guifg=#cc241d
+highlight ALEErrorLine              guibg=#282828 guifg=NONE
+highlight ALEErrorSignLineNr        guibg=#1d2021 guifg=#cc241d
+" highlight ALEStyleError         guibg=#b8bb26 guifg=#b8bb26
+
+highlight ALEInfo                   gui=underline guifg=#d79921
+highlight ALEInfoSign               guibg=#1d2021 guifg=#d79921
+highlight ALEInfoLine               guibg=#282828 guifg=NONE
+highlight ALEInfoSignLineNr         guibg=#1d2021 guifg=#d79921
+" highlight ALEStyleWarning       guibg=#b8bb26 guifg=#b8bb26
