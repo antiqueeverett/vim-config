@@ -1,41 +1,45 @@
-" A GAME TO PRACTICE RELATIVE NUMBERS MOVEMENT
+" practicing relative numbers
+"""""""""""""""""""""""""""""
 
-" helper: random number generator
-" https://stackoverflow.com/questions/12737977/native-vim-random-number-script
+" see@ <https://stackoverflow.com/questions/12737977/native-vim-random-number-script>
 function! RandInt(Low, High) abort
     let l:milisec = str2nr(matchstr(reltimestr(reltime()), '\v\.\zs\d+'))
     return l:milisec % (a:High - a:Low + 1) + a:Low
 endfunction
 
-function! AntiqueHeist()
+" + create an new buffer
+" + create 57 empty lines
+
+function! InitGameBuffer()
     vnew
-    let heist_buffer = bufnr('%')
-    for i in range(1,57) | call append(line("."), "") | endfor
+    for i in range(1, 61) | call append(line("."), "") | endfor
+    silent execute "call setbufline(" . bufnr('%') . ", " . RandInt(0, 59) .", 'Helsinki')"
+endfunc
 
-    let g:ln_num = "0"
-    function! CriminalMasterMind() closure
-        if g:ln_num == "0"
-            let g:ln_num = RandInt(0, 55)
-            silent execute "call setbufline(" . heist_buffer . ", " . g:ln_num .", 'Helsinki')"
-        else
-            if getline(g:ln_num) == ""
-                call append(line("."), "")
-                let g:ln_num = RandInt(0, 55)
-                silent execute "call setbufline(" . heist_buffer . ", " . g:ln_num .", 'Helsinki')"
-            endif
-        endif
-    endfunction
+" + lets constantly work with no less that 58 lines
+function! ManageLineNumber()
+    if line('$') != 62 && line('$') < 62
+        " todo : rather get the diff and add the diff
+        call append(line("$"), "")
+    endif
+endfunc
 
-    call CriminalMasterMind()
-    augroup monitor_movement
+" + chase Helsinki
+function! ChaseHelsinki()
+    if getline(".") == 'Helsinki'
+        execute "normal! dd"
+        silent execute "call setbufline(" . bufnr('%') . ", " . RandInt(0, 59) .", 'Helsinki')"
+    endif
+endfunc
+
+function! AntiqueHeist()
+    execute "call InitGameBuffer()"
+    augroup game_auto_cmds
         autocmd! * <buffer>
-        autocmd CursorMoved <buffer> call CriminalMasterMind()
+        autocmd CursorMoved <buffer> call ManageLineNumber()
+        autocmd CursorMoved <buffer> call ChaseHelsinki()
     augroup END
-
 endfunction
 
-" -- linking to command
 command! -nargs=* Heist :call AntiqueHeist(<f-args>)
-
-" -- keybinding
-nnoremap <silent><Leader>9  :Heist <CR>
+nnoremap <silent><C-G> :Heist<CR>
