@@ -23,7 +23,7 @@ augroup theme-overrides
     autocmd ColorScheme * highlight IncSearch    guibg=#7c6f64 guifg=#504945
 
     " index and sign columns
-    autocmd ColorScheme * highlight SignColumn   guibg=#1d2021 guifg=NONE
+    autocmd ColorScheme * highlight SignColumn   guibg=#1d2021 guifg=#1d2021
 
     " line numbers
     autocmd ColorScheme * highlight LineNr       guibg=#1d2021 guifg=Grey
@@ -37,5 +37,4 @@ augroup theme-overrides
     autocmd ColorScheme * highlight TabLineFill      guibg=White guifg=Grey
     autocmd ColorScheme * highlight TabLineSel      guibg=White guifg=Grey
 augroup END
-
 color gruvbox
