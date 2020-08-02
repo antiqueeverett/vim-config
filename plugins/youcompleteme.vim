@@ -24,5 +24,6 @@ let g:ycm_complete_in_strings = 1
 " When using YCM with ALE, issue conflicting diagnostics.
 " YCM diagnostics are therefore disabled here.
 let g:ycm_show_diagnostics_ui = 0
+let g:ycm_echo_current_diagnostic = 0
 let g:ycm_enable_diagnostic_signs = 0
 let g:ycm_enable_diagnostic_highlighting = 0

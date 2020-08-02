@@ -13,4 +13,3 @@ highlight GitGutterAdd    guifg=#b8bb26 ctermfg=2
 highlight GitGutterChange guifg=#076678 ctermfg=3
 highlight GitGutterDelete guifg=#9d0006 ctermfg=1
 highlight GitGutterChangeDelete guifg=#076678 ctermfg=1
-
