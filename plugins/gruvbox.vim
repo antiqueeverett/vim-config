@@ -27,11 +27,11 @@ augroup theme-overrides
 
     " line numbers
     autocmd ColorScheme * highlight LineNr       guibg=#1d2021 guifg=Grey
-    autocmd ColorScheme * highlight CursorLineNr guibg=#282828 guifg=Grey
+    autocmd ColorScheme * highlight CursorLineNr guibg=#1c1c1c guifg=Grey
 
     " cursor line and last column
-    autocmd ColorScheme * highlight CursorLine   guibg=#282828
-    autocmd ColorScheme * highlight ColorColumn  guibg=#282828 guifg=NONE
+    autocmd ColorScheme * highlight CursorLine   guibg=#1c1c1c
+    autocmd ColorScheme * highlight ColorColumn  guibg=#1c1c1c guifg=NONE
 
     autocmd ColorScheme * highlight TabLine      guibg=White guifg=Grey
     autocmd ColorScheme * highlight TabLineFill      guibg=White guifg=Grey
