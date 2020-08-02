@@ -55,12 +55,13 @@ Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 " source configurations
+source ~/Repositories/dotfiles/vim-dotfiles/plugins/nord.vim
+source ~/Repositories/dotfiles/vim-dotfiles/plugins/gruvbox.vim
+
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/ale.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/fzf.vim
-source ~/Repositories/dotfiles/vim-dotfiles/plugins/nord.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/goyo.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/repeat.vim
-source ~/Repositories/dotfiles/vim-dotfiles/plugins/gruvbox.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/vimtext.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/airline.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/fugitive.vim
