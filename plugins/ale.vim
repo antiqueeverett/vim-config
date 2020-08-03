@@ -1,6 +1,3 @@
-set encoding=utf-8
-scriptencoding utf-8
-
 " ref <https://github.com/dense-analysis/ale/blob/master/doc/ale-cpp.txt>
 let g:ale_sign_column_always=0
 let g:ale_set_loclist=1
