@@ -1,6 +1,12 @@
 " leader
 let mapleader = ";"
 
+" repeat last find keymap becomes slow when also using
+" [ ; ] key as leader. This is because vim first any [ ; ]
+" to see if its a leader + [ other key operation ]. One
+" simple fix is to map repeat last find to leader.
+nnoremap <Leader>; ;
+
 " (C)-lear search highlight
 nnoremap <silent><C-C> :let @/=""<CR>
 
@@ -15,7 +21,8 @@ nnoremap <silent><C-S> :setlocal spell!<CR>
 nnoremap <Leader>w :w <CR>
 
 " | spit
-nnoremap <leader><bar> :vnew<CR>
+nnoremap <Leader><bar> :vnew<CR>
+
 
 " (+)(-) split resize
 nnoremap <Leader>= :vertical resize +25<CR>
