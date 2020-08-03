@@ -40,7 +40,8 @@ function! ExitBuffer()
         execute "bd"
     endif
     if &buftype=='' && bufname('%')=='' && &modifiable=='1'
-        execute "q!"
+        silent execute "!clear"
+        silent execute "q!"
     endif
 endfunction
 
