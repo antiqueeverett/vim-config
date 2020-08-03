@@ -2,14 +2,23 @@ let g:gruvbox_contrast_dark='hard'
 let g:gruvbox_italic=0
 set background=dark
 
+
 augroup theme-overrides
     autocmd!
-    "autocmd ColorScheme * highlight StatusLineNC guibg=#665c54 guifg=#3c3836
-    "autocmd ColorScheme * highlight Pmenu        guibg=#665c54 guifg=#3c3836
-    "autocmd ColorScheme * highlight PmenuSel     guibg=#665c54 guifg=#3c3836
-    "autocmd ColorScheme * highlight SpellBad     guibg=#665c54 guifg=#3c3836
-    "autocmd ColorScheme * highlight Folded       guibg=Black guifg=Grey
-    "autocmd ColorScheme * highlight EndOfBuffer  guibg=#1d2021 guifg=NONE
+    " fold highlight
+    autocmd ColorScheme * highlight Fortunately       guibg=Black guifg=Grey
+
+    " spellings
+    autocmd ColorScheme * highlight SpellBad     cterm=underline,bold guifg=#8f3f71
+    autocmd ColorScheme * highlight SpellCap     cterm=underline,bold guifg=#8f3f71
+    autocmd ColorScheme * highlight SpellLocal   cterm=underline,bold guifg=#8f3f71
+    autocmd ColorScheme * highlight SpellRare    cterm=underline,bold guifg=#8f3f71
+
+    " popup menus
+    autocmd ColorScheme * highlight Pmenu        guibg=#1c1c1c guifg=Grey
+    autocmd ColorScheme * highlight PmenuSel     guibg=#076678 guifg=Grey
+    "autocmd ColorScheme * highlight PmenuSbar    guibg=#665c54 guifg=#3c3836
+    "autocmd ColorScheme * highlight PmenuThumb   guibg=#665c54 guifg=#3c3836
 
     " background
     autocmd ColorScheme * highlight Normal       guibg=#1d2021 guifg=Grey
@@ -34,7 +43,7 @@ augroup theme-overrides
     autocmd ColorScheme * highlight ColorColumn  guibg=#1c1c1c guifg=NONE
 
     autocmd ColorScheme * highlight TabLine      guibg=White guifg=Grey
-    autocmd ColorScheme * highlight TabLineFill      guibg=White guifg=Grey
-    autocmd ColorScheme * highlight TabLineSel      guibg=White guifg=Grey
+    autocmd ColorScheme * highlight TabLineFill  guibg=White guifg=Grey
+    autocmd ColorScheme * highlight TabLineSel   guibg=White guifg=Grey
 augroup END
 color gruvbox
