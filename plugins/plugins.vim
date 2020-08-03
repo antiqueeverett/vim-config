@@ -70,9 +70,9 @@ source ~/Repositories/dotfiles/vim-dotfiles/plugins/fugitive.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/surround.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/nerdtree.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/gitgutter.vim
+source ~/Repositories/dotfiles/vim-dotfiles/plugins/autoformat.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/indentline.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/youcompleteme.vim
-source ~/Repositories/dotfiles/vim-dotfiles/plugins/vimautoformat.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/rainbowparenth.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/highlightedyank.vim
 " sandbox
