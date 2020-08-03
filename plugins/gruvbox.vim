@@ -27,7 +27,7 @@ augroup theme-overrides
 
     " line numbers
     autocmd ColorScheme * highlight LineNr       guibg=#1d2021 guifg=Grey
-    autocmd ColorScheme * highlight CursorLineNr guibg=#1c1c1c guifg=Grey
+    autocmd ColorScheme * highlight CursorLineNr guibg=#1c1c1c guifg=#076678
 
     " cursor line and last column
     autocmd ColorScheme * highlight CursorLine   guibg=#1c1c1c
