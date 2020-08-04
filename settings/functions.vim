@@ -106,7 +106,7 @@ nnoremap <silent><C-O> :call OpenTerminal()<CR>
 nnoremap <silent><C-\> :call OpenVSplitFZF()<CR>
 nnoremap <silent><Leader>' :call PullUpFZF()<CR>
 nnoremap <silent><Leader>q :call ExitBuffer()<CR>
-nnoremap <silent><Leader>d :call ExitBuffer()<CR>
+nnoremap <silent><Leader>db :call ExitBuffer()<CR>
 nnoremap <silent><C-N> :call ToggleLineNumbers()<CR>
 nnoremap <silent><Leader>? :call ToggleLineNumbersStyle()<CR>
 nnoremap <silent><leader>` :call UpdateCurrentBuffer()<CR> :bp<CR>

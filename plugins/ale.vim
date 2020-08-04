@@ -36,7 +36,6 @@ let g:ale_cpp_clangtidy_executable='clang-tidy'
 let g:ale_cpp_clangtidy_options='-Wall -std=c++14 -x c++'
 let g:ale_cpp_clangtidy_checks=[
             \'-*',
-            \'modernize-*',
             \'readability-*',
             \'performance-*',
             \'clang-analyzer-*']

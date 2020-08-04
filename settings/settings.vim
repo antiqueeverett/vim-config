@@ -72,6 +72,9 @@ if &term ==# 'xterm-256color' || &term ==# 'screen-256color'
     let &t_EI = "\<Esc>[1 q"
 endif
 
+" open splits on rhs
+set splitright
+
 " source other settings from separate files
 source ~/Repositories/dotfiles/vim-dotfiles/settings/keybinds.vim
 source ~/Repositories/dotfiles/vim-dotfiles/settings/functions.vim
