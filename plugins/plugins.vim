@@ -18,9 +18,10 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 " cxx
-"Plug 'vhdirk/vim-cmake'
 Plug 'valloric/youcompleteme'
 Plug 'vim-scripts/taglist.vim'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 " clojure
 Plug 'sjl/vitality.vim'
@@ -56,7 +57,7 @@ Plug 'machakann/vim-highlightedyank'
 call plug#end()
 
 " source configurations
-source ~/Repositories/dotfiles/vim-dotfiles/plugins/nord.vim
+" source ~/Repositories/dotfiles/vim-dotfiles/plugins/nord.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/gruvbox.vim
 
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/ale.vim
@@ -79,5 +80,4 @@ source ~/Repositories/dotfiles/vim-dotfiles/plugins/highlightedyank.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/heist.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/xpaste.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/cmake.vim
-source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/newfile.vim
 source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/replace.vim
