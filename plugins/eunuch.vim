@@ -1,6 +1,5 @@
-" (M)-move current buffer and file
+" (M)-move current file (and buffer)
 nnoremap <Leader>M :Rename
 
-" (D)-elete current buffer and file
-nnoremap <Leader>D :Delete<CR>
-
+" (D)-elete file (and buffer)
+nnoremap <Leader>df :Delete<CR>
