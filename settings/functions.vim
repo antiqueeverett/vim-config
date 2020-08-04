@@ -65,7 +65,6 @@ endfunction
 
 " open terminal window (size 0x86 cols)
 function! OpenTerminal()
-    execute 'call SetMyShell()'
     execute 'set termwinsize=0x86'
     execute 'vert term'
 endfunction
@@ -76,7 +75,33 @@ function! OpenVSplitFZF()
     execute 'FZF $HOME/Repositories'
 endfunction
 
+" create new file
+function! MkfileFunction(arg)
+    silent execute ':vnew ' . a:arg
+    silent execute ':write'
+endfunc
+command! -nargs=* Mkfile :call MkfileFunction(<f-args>)
+
+" create new directory
+function! MkdirFunction(arg)
+    silent execute '! mkdir -p ' .  a:arg
+    execute 'set termwinsize=0x40'
+    execute 'vert term tree'
+endfunc
+command! -nargs=* Mkdir :call MkdirFunction(<f-args>)
+
+" delete directory
+function! RmdirFunction(arg)
+    silent execute '! rm -rf ' .  a:arg
+    execute 'set termwinsize=0x40'
+    execute 'vert term tree'
+endfunc
+command! -nargs=* Rmdir :call RmdirFunction(<f-args>)
+
 " function key maps
+nnoremap <Leader>nf :Mkfile
+nnoremap <Leader>nd :Mkdir
+nnoremap <Leader>dd :Rmdir
 nnoremap <silent><C-O> :call OpenTerminal()<CR>
 nnoremap <silent><C-\> :call OpenVSplitFZF()<CR>
 nnoremap <silent><Leader>' :call PullUpFZF()<CR>
