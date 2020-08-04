@@ -27,9 +27,9 @@ augroup theme-overrides
     autocmd ColorScheme * highlight StatusLine   guibg=Black guifg=Grey
 
     " search
-    autocmd ColorScheme * highlight Search       guifg=#af3a03 guibg=#1d2021
-    autocmd ColorScheme * highlight Visual       guifg=#af3a03 guibg=#1d2021
-    autocmd ColorScheme * highlight IncSearch    guifg=#7c6f64 guibg=#504945
+    autocmd ColorScheme * highlight Search       cterm=bold guibg=#af3a03 guifg=Grey
+    autocmd ColorScheme * highlight Visual       cterm=bold guibg=#af3a03 guifg=Grey
+    autocmd ColorScheme * highlight IncSearch    cterm=bold guibg=#7c6f64 guifg=Grey
 
     " index and sign columns
     autocmd ColorScheme * highlight SignColumn   guibg=#1d2021 guifg=#1d2021

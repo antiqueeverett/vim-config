@@ -1,3 +1,3 @@
 let g:highlightedyank_highlight_duration = -1
 
-highlight HighlightedyankRegion guibg=#af3a03 guifg=Black
+highlight HighlightedyankRegion cterm=bold guibg=#af3a03 guifg=Grey
