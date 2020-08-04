@@ -1,5 +1,5 @@
 " leader
-let mapleader = ";"
+let mapleader = ';'
 
 " repeat last find keymap becomes slow when also using
 " [ ; ] key as leader. This is because vim first any [ ; ]
