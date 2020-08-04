@@ -7,10 +7,10 @@ function! SetMyShell()
 endfunc
 
 function! CMakeFunction()
-    execute "call SetMyShell()"
-    execute "set termwinsize=0x82"
-    execute "vert term cmake.sh"
+    execute 'call SetMyShell()'
+    execute 'set termwinsize=0x86'
+    execute 'vert term cmake.sh'
 endfunction
 
 command! -nargs=* CXXMake :call CMakeFunction(<f-args>)
-nnoremap <silent><Leader>0  :CXXMake <CR>
+nnoremap <silent><Leader>1  :CXXMake<CR>
