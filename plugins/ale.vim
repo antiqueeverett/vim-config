@@ -77,8 +77,6 @@ let g:ale_vim_vimls_config={
 let g:ale_vim_vint_executable='vint'
 let g:ale_vim_vint_show_style_issues=1
 
-
-
 " HIGHLIGHTS:
 let g:ale_set_signs=1
 let g:ale_set_highlights=1
