@@ -7,6 +7,5 @@ augroup END
 " wrap text
 au BufRead,BufNewFile * setlocal textwidth=80
 
-" change directory to buffer/file directory
+" always set cwd = current buffer-file wd
 autocmd BufEnter * silent! lcd %:p:h
-
