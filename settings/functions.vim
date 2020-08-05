@@ -63,9 +63,31 @@ function! UpdateCurrentBuffer()
     endif
 endfunction
 
+" config vim terminal
+function! ConfigVimTerm()
+    execute 'set termwinsize=0x86'
+    let g:terminal_ansi_colors = [
+                \'#282828',
+                \'#cc241d',
+                \'#98971a',
+                \'#d79921',
+                \'#458588',
+                \'#b16286',
+                \'#689d6a',
+                \'#a89984',
+                \'#928374',
+                \'#fb4934',
+                \'#b8bb26',
+                \'#fabd2f',
+                \'#83a598',
+                \'#d3869b',
+                \'#8ec07c',
+                \'#ebdbb2']
+endfunc
+
 " open terminal window (size 0x86 cols)
 function! OpenTerminal()
-    execute 'set termwinsize=0x86'
+    execute 'call ConfigVimTerm()'
     execute 'vert term'
 endfunction
 
@@ -85,7 +107,7 @@ command! -nargs=* Mkfile :call MkfileFunction(<f-args>)
 " create new directory
 function! MkdirFunction(arg)
     silent execute '! mkdir -p ' .  a:arg
-    execute 'set termwinsize=0x40'
+    execute 'call ConfigVimTerm()'
     execute 'vert term tree'
 endfunc
 command! -nargs=* Mkdir :call MkdirFunction(<f-args>)
@@ -93,7 +115,7 @@ command! -nargs=* Mkdir :call MkdirFunction(<f-args>)
 " delete directory
 function! RmdirFunction(arg)
     silent execute '! rm -rf ' .  a:arg
-    execute 'set termwinsize=0x40'
+    execute 'call ConfigVimTerm()'
     execute 'vert term tree'
 endfunc
 command! -nargs=* Rmdir :call RmdirFunction(<f-args>)
