@@ -1,38 +1,34 @@
-# VIM configuration files
+# VIM config files
 
 ###### show case gallery
 
 <p align="center">
-  <img width="72" src="https://github.com/edisonslightbulbs/antigen-dotfiles/blob/master/res/fig_.png">
+  <img width="720" src="https://github.com/edisonslightbulbs/dotfiles/blob/master/res/image-gallery/fig_1.png">
 </p>
 
 #### Usage
 
 -   clone
 ```
+# clone
 git clone https://github.com/edisonslightbulbs/vim-dotfiles.git
-```
 
--   source
-```
-# after clone
+# cd into the repo
 cd vim-dotfiles
 
-# add source directive to .zshrc dotfile
-echo "source $PWD/config.vim" >> ~/.vimrc
+# append source directive in .vimrc
+echo "source $PWD/source-files.vim" >> ~/.vimrc
 ```
 
--   source `.zshrc`
-```
-source ~/.zshrc
-```
+and thats pretty much it!
+
 * * *
 
 #### Screen cast
 
 `Comming soon!`    👏🍻🍻
 
-Handy? Star and [`follow`](https://github.com/edisonslightbulbs/bootstrap.git)  the repo to keep up with all the updates.
+Handy? [`Follow`](https://github.com/edisonslightbulbs/bootstrap.git)  the repo to keep up with all the updates.
 If there is a better way around something that I may have missed, this project is open to [`contributions`](https://github.com/edisonslightbulbs/antigen-dotfiles.git). Checkout out other living dotfile projects here:
 
 [`antigen-dotfiles`](https://github.com/edisonslightbulbs/antigen-dotfiles)
