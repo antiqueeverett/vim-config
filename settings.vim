@@ -28,54 +28,38 @@ set smartindent
 filetype indent on
 filetype plugin on
 
-" lines and line number rules
+" line wrap
 set wrap
+set colorcolumn=80
+
+" number line style (order matters here)
 set relativenumber
 set number
 set number relativenumber
-set colorcolumn=80
 
 " silence pesky bell
 set visualbell
 set t_vb=
 
-" do not create backup files
+" no backup files
 set nobackup
 set noswapfile
 set nowritebackup
 
-" fold rules
-" set foldmethod=indent
-" set foldnestmax=3
+" split on RHS
+set splitright
 
 " ignore patterns
 set wildmenu
 set wildignore=*.swp,*.bak,*.pyc,*.class
 
-" remove delay on ESC key press
+" remove delay ESC key-press
 set timeoutlen=1000 ttimeoutlen=0
 
 " set spelling dictionaries
 set spelllang=en_us,de_de spell
 set spellfile=~/Dropbox/config/spellings.utf-8.add
 
-" set zsh as vim shell
-if has('macunix')
-    set shell=/bin/zsh
-elseif has('unix')
-    set shell=/usr/bin/zsh
-endif
-
-" blink cursor with line (in insert) and block (in normal)
-if &term ==# 'xterm-256color' || &term ==# 'screen-256color'
-    let &t_SI = "\<Esc>[5 q"
-    let &t_EI = "\<Esc>[1 q"
-endif
-
-" open splits on rhs
-set splitright
-
-" source other settings from separate files
-source ~/Repositories/dotfiles/vim-dotfiles/settings/keybinds.vim
-source ~/Repositories/dotfiles/vim-dotfiles/settings/functions.vim
-source ~/Repositories/dotfiles/vim-dotfiles/settings/autocommands.vim
+" fold rules
+" set foldmethod=indent
+" set foldnestmax=3
