@@ -1,68 +1,55 @@
-# NOTHING BUT PURE VIM GOODNESS!
+# VIM configuration files
+
+###### show case gallery
+
+<p align="center">
+  <img width="72" src="https://github.com/edisonslightbulbs/antigen-dotfiles/blob/master/res/fig_.png">
+</p>
 
 #### Usage
 
-1. In your `.vimrc` simply add:
+-   clone
 ```
-source $HOME/<path-to>/dotfiles/vim-dotfiles/settings/settings.vim
-source $HOME/<path-to>/dotfiles/vim-dotfiles/plugins/plugins.vim
-```
-
-I keep all my dotfiles under `$HOME/Repositories/dotfiles/`.
-If you have a similar repo naming convention, these dotfiles will work out-of-the-box.
-If not, be sure to change the relative paths: ` see steps (2 & 3)`
-
-```
-source ~/Repositories/dotfiles/vim-dotfiles/settings/settings.vim
-source ~/Repositories/dotfiles/vim-dotfiles/plugins/plugins.vim
+git clone https://github.com/edisonslightbulbs/vim-dotfiles.git
 ```
 
-
-2. in [ settings.vim ](https://github.com/edisonslightbulbs/vim-dotfiles/blob/master/settings/settings.vim)
+-   source
 ```
-source $HOME/<path-to>/dotfiles/vim-dotfiles/settings/keybinds.vim
-source $HOME/<path-to>/dotfiles/vim-dotfiles/settings/functions.vim
-source $HOME/<path-to>/dotfiles/vim-dotfiles/settings/autocommands.vim
-```
+# after clone
+cd vim-dotfiles
 
-3. in [ plugins/plugins.vim ](https://github.com/edisonslightbulbs/vim-dotfiles/blob/master/plugins/plugins.vim)
-```
-" -- Plugin settings organized in exclusive files
-source $HOME/<path-to>/dotfiles/vim-dotfiles/plugins/fzf.vim
-source $HOME/<path-to>/dotfiles/vim-dotfiles/plugins/nord.vim
-source $HOME/<path-to>/dotfiles/vim-dotfiles/plugins/repeat.vim
-source $HOME/<path-to>/dotfiles/vim-dotfiles/plugins/airline.vim
-source $HOME/<path-to>/dotfiles/vim-dotfiles/plugins/vimtext.vim
-source $HOME/<path-to>/dotfiles/vim-dotfiles/plugins/gruvbox.vim
-source $HOME/<path-to>/dotfiles/vim-dotfiles/plugins/neoclide.vim
-source $HOME/<path-to>/dotfiles/vim-dotfiles/plugins/nerdtree.vim
-source $HOME/<path-to>/dotfiles/vim-dotfiles/plugins/indentline.vim
-source $HOME/<path-to>/dotfiles/vim-dotfiles/plugins/youcompleteme.vim
-source $HOME/<path-to>/dotfiles/vim-dotfiles/plugins/vimautoformat.vim
-source $HOME/<path-to>/dotfiles/vim-dotfiles/plugins/rainbowparenth.vim
-
-source $HOME/<path-to>/dotfiles/vim-dotfiles/plugins/development/heist.vim
-source $HOME/<path-to>/dotfiles/vim-dotfiles/plugins/development/refactor.vim
+# add source directive to .zshrc dotfile
+echo "source $PWD/config.vim" >> ~/.vimrc
 ```
 
-Why keep plugin configs in endless separate files? Vim goodness is all about growth, constant growth. Sometimes it can get hard to keep up with changes explicitly for specific plugins. With this dotfile-template, it becomes easier, much easier to keep up with ever-growing settings. If you can stomach multiple sources, you can enjoy basking in readable vim goodness.
-
+-   source `.zshrc`
+```
+source ~/.zshrc
+```
 * * *
 
 #### Screen cast
 
-`Comming soon!`
+`Comming soon!`    👏🍻🍻
 
+Handy? Star and [`follow`](https://github.com/edisonslightbulbs/bootstrap.git)  the repo to keep up with all the updates.
+If there is a better way around something that I may have missed, this project is open to [`contributions`](https://github.com/edisonslightbulbs/antigen-dotfiles.git). Checkout out other living dotfile projects here:
 
-Handy? Star and [ follow ](https://github.com/edisonslightbulbs/vim-dotfiles/subscription)  the repo to keep up with all the updates.
-If there is a better way around something, or, if I'm just plain wrong about something, please create an issue and [ contribute ](https://github.com/edisonslightbulbs/vim-dotfiles/fork) to the repo
-   👏🍻🍻
+[`antigen-dotfiles`](https://github.com/edisonslightbulbs/antigen-dotfiles)
 
-#### Promotion
+[`zsh-dot-files`](https://github.com/edisonslightbulbs/zsh-dotfiles)
 
-Worth a second look? Lets fill all these nooks and crannies together.
-If you are interested in chatting about day-to-day tools like git and vim,
-let's get into it on [ twitter ](https://twitter.com/antiqueeverett) and [ youtube](https://www.youtube.com/channel/UCKkeK-xQiIWc3jzBbUel9ww?view_as=subscriber).
+[`mutt-dotfiles`](https://github.com/edisonslightbulbs/mutt)
 
-###### Utility provided in this repository is purely academic and subject to change.
+[`tmux-dotfiles`](https://github.com/edisonslightbulbs/tmux).
 
+You can also check out all the dotfile projects under one roof here:
+
+[`dotfiles`](https://github.com/edisonslightbulbs/dotfiles).
+
+#### Invitation to connect
+
+Open to discuss about how to configure, optimize, and tweak day-to-day use of tools like **vim** and **git**?
+let's get into it on [`twitter`](https://twitter.com/antiqueeverett) and on [`youtube`](https://www.youtube.com/channel/UCKkeK-xQiIWc3jzBbUel9ww?view_as=subscriber).
+
+###### Caveat: This project has a life of its own, as such, jigs shared here are subject to tweaking.
