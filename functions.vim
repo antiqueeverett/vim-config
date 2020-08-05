@@ -65,6 +65,11 @@ endfunction
 
 " config vim terminal
 function! ConfigVimTerm()
+    if has('macunix')
+        set shell=/bin/zsh
+    elseif has('unix')
+        set shell=/usr/bin/zsh
+    endif
     execute 'set termwinsize=0x86'
     let g:terminal_ansi_colors = [
                 \'#282828',
@@ -127,7 +132,6 @@ nnoremap <Leader>nf :Mkfile
 nnoremap <silent><C-O> :call OpenTerminal()<CR>
 nnoremap <silent><C-\> :call OpenVSplitFZF()<CR>
 nnoremap <silent><Leader>q :call ExitBuffer()<CR>
-nnoremap <silent><Leader>db :call ExitBuffer()<CR>
 nnoremap <silent><Leader>' :call FuzzySearch()<CR>
 nnoremap <silent><C-N> :call ToggleLineNumbers()<CR>
 nnoremap <silent><Leader>? :call ToggleLineNumbersStyle()<CR>
