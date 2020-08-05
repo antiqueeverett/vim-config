@@ -2,6 +2,7 @@
 let g:vim_config_files=[
             \'settings.vim',
             \'keybinds.vim',
+            \'arbitrary.vim',
             \'functions.vim',
             \'autocommands.vim',
             \'plugins.vim']
