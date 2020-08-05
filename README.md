@@ -14,6 +14,9 @@ git clone https://github.com/edisonslightbulbs/vim-dotfiles.git
 # cd into the repo
 cd vim-dotfiles
 
+# export path pointing to vim-dotfiles
+echo "export VIM_DOTFILES_PATH=$PWD" >> ~/.zshrc
+
 # append source directive in .vimrc
 echo "source $PWD/source-files.vim" >> ~/.vimrc
 ```
