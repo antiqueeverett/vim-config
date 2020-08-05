@@ -2,9 +2,7 @@
 
 ###### show case gallery
 
-<p align="center">
-  <img width="720" src="https://github.com/edisonslightbulbs/dotfiles/blob/master/res/image-gallery/fig_1.png">
-</p>
+![alt text](https://github.com/edisonslightbulbs/dotfiles/blob/master/res/image-gallery/fig_1.png)
 
 #### Usage
 
