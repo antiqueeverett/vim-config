@@ -1,4 +1,4 @@
-" toggle number and relative number
+" toggle number line style
 function! ToggleLineNumbersStyle()
     if(&relativenumber == 1)
         set norelativenumber
@@ -10,7 +10,7 @@ function! ToggleLineNumbersStyle()
     endif
 endfunc
 
-" toggle line numbers
+" toggle line numbers on/off
 function! ToggleLineNumbers()
     if &relativenumber == 1 || &number == 1
         set norelativenumber
@@ -32,7 +32,7 @@ function! ShowBufferVars()
 endfunc
 
 " pull-up fzf
-function! PullUpFZF()
+function! FuzzySearch()
     if &modifiable!=#'1' || &buftype!=#'' || &filetype ==#''
         execute (bufnr('%') . 'bd!')
     elseif &modifiable==#'1' && &buftype==#'' && &filetype !=#''
@@ -55,7 +55,7 @@ function! ExitBuffer()
     endif
 endfunction
 
-" help update on buffer switch
+" update on buffer switch
 function! UpdateCurrentBuffer()
     if &modifiable!=#'1' || &buftype!=#'' || &filetype ==#'' | execute (bufnr('%') . 'bn!') | endif
     if &modifiable==#'1' && &buftype==#'' && &filetype !=#''
@@ -85,13 +85,13 @@ function! ConfigVimTerm()
                 \'#ebdbb2']
 endfunc
 
-" open terminal window (size 0x86 cols)
+" open vim terminal
 function! OpenTerminal()
     execute 'call ConfigVimTerm()'
     execute 'vert term'
 endfunction
 
-" pull-up fzf in new vertical split
+" vsplit into fuzzy search
 function! OpenVSplitFZF()
     vnew
     execute 'FZF $HOME/Repositories'
@@ -120,15 +120,15 @@ function! RmdirFunction(arg)
 endfunc
 command! -nargs=* Rmdir :call RmdirFunction(<f-args>)
 
-" function key maps
-nnoremap <Leader>nf :Mkfile
+" map keys
 nnoremap <Leader>nd :Mkdir
 nnoremap <Leader>dd :Rmdir
+nnoremap <Leader>nf :Mkfile
 nnoremap <silent><C-O> :call OpenTerminal()<CR>
 nnoremap <silent><C-\> :call OpenVSplitFZF()<CR>
-nnoremap <silent><Leader>' :call PullUpFZF()<CR>
 nnoremap <silent><Leader>q :call ExitBuffer()<CR>
 nnoremap <silent><Leader>db :call ExitBuffer()<CR>
+nnoremap <silent><Leader>' :call FuzzySearch()<CR>
 nnoremap <silent><C-N> :call ToggleLineNumbers()<CR>
 nnoremap <silent><Leader>? :call ToggleLineNumbersStyle()<CR>
 nnoremap <silent><leader>` :call UpdateCurrentBuffer()<CR> :bp<CR>
