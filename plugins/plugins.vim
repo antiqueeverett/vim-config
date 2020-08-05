@@ -56,29 +56,40 @@ Plug 'airblade/vim-gitgutter'
 Plug 'machakann/vim-highlightedyank'
 call plug#end()
 
-" source configurations
-" source ~/Repositories/dotfiles/vim-dotfiles/plugins/nord.vim
-source ~/Repositories/dotfiles/vim-dotfiles/plugins/gruvbox.vim
+" list of current plugin config files
+let g:plugin_config_files=[
+            \'gruvbox.vim',
+            \'ale.vim',
+            \'fzf.vim',
+            \'goyo.vim',
+            \'eunuch.vim',
+            \'repeat.vim',
+            \'vimtext.vim',
+            \'airline.vim',
+            \'fugitive.vim',
+            \'surround.vim',
+            \'nerdtree.vim',
+            \'utilsnips.vim',
+            \'gitgutter.vim',
+            \'autoformat.vim',
+            \'indentline.vim',
+            \'youcompleteme.vim',
+            \'rainbowparenth.vim',
+            \'highlightedyank.vim']
 
-source ~/Repositories/dotfiles/vim-dotfiles/plugins/utilsnips.vim
-source ~/Repositories/dotfiles/vim-dotfiles/plugins/ale.vim
-source ~/Repositories/dotfiles/vim-dotfiles/plugins/fzf.vim
-source ~/Repositories/dotfiles/vim-dotfiles/plugins/goyo.vim
-source ~/Repositories/dotfiles/vim-dotfiles/plugins/eunuch.vim
-source ~/Repositories/dotfiles/vim-dotfiles/plugins/repeat.vim
-source ~/Repositories/dotfiles/vim-dotfiles/plugins/vimtext.vim
-source ~/Repositories/dotfiles/vim-dotfiles/plugins/airline.vim
-source ~/Repositories/dotfiles/vim-dotfiles/plugins/fugitive.vim
-source ~/Repositories/dotfiles/vim-dotfiles/plugins/surround.vim
-source ~/Repositories/dotfiles/vim-dotfiles/plugins/nerdtree.vim
-source ~/Repositories/dotfiles/vim-dotfiles/plugins/gitgutter.vim
-source ~/Repositories/dotfiles/vim-dotfiles/plugins/autoformat.vim
-source ~/Repositories/dotfiles/vim-dotfiles/plugins/indentline.vim
-source ~/Repositories/dotfiles/vim-dotfiles/plugins/youcompleteme.vim
-source ~/Repositories/dotfiles/vim-dotfiles/plugins/rainbowparenth.vim
-source ~/Repositories/dotfiles/vim-dotfiles/plugins/highlightedyank.vim
-" sandbox
-source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/heist.vim
-source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/xpaste.vim
-source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/cmake.vim
-source ~/Repositories/dotfiles/vim-dotfiles/plugins/development/replace.vim
+" source plugin configuration from dedicated source file list
+for file in g:plugin_config_files
+    execute "source $VIM_DOTFILES_PATH/plugins/" . file
+endfor
+
+" list of personal trench plugin config files
+let g:my_plugin_sandbox_files=[
+            \'cmake.vim',
+            \'heist.vim',
+            \'xpaste.vim',
+            \'replace.vim']
+
+" source plugin configuration from dedicated source file list
+for file in g:my_plugin_sandbox_files
+    execute "source $VIM_DOTFILES_PATH/plugins/development/" . file
+endfor
