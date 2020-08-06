@@ -130,10 +130,10 @@ nnoremap <Leader>nd :Mkdir
 nnoremap <Leader>dd :Rmdir
 nnoremap <Leader>nf :Mkfile
 nnoremap <silent><C-O> :call OpenTerminal()<CR>
-nnoremap <silent><C-\> :call OpenVSplitFZF()<CR>
-nnoremap <silent><Leader>q :call ExitBuffer()<CR>
+nnoremap <silent><Leader>db :call ExitBuffer()<CR>
 nnoremap <silent><Leader>' :call FuzzySearch()<CR>
 nnoremap <silent><C-N> :call ToggleLineNumbers()<CR>
+nnoremap <silent><Leader>\ :call OpenVSplitFZF()<CR>
 nnoremap <silent><Leader>? :call ToggleLineNumbersStyle()<CR>
 nnoremap <silent><leader>` :call UpdateCurrentBuffer()<CR> :bp<CR>
 nnoremap <silent><leader><Tab> :call UpdateCurrentBuffer()<CR> :bn<CR>

@@ -69,7 +69,7 @@ let g:plugin_config_files=[
             \'fugitive.vim',
             \'surround.vim',
             \'nerdtree.vim',
-            \'utilsnips.vim',
+            \'ultisnips.vim',
             \'gitgutter.vim',
             \'autoformat.vim',
             \'indentline.vim',
