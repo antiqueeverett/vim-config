@@ -19,9 +19,6 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 " cxx
 Plug 'valloric/youcompleteme'
-Plug 'vim-scripts/taglist.vim'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
 
 " clojure
 Plug 'sjl/vitality.vim'
@@ -29,11 +26,18 @@ Plug 'guns/vim-clojure-static'
 Plug 'clojure-emacs/cider-nrepl'
 
 " utility
+Plug 'ervandew/supertab'
+
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 Plug 'godlygeek/tabular'
 Plug 'scrooloose/nerdtree'
 Plug 'yggdroot/indentline'
 Plug 'raimondi/delimitmate'
+Plug 'Chiel92/vim-autoformat'
+Plug 'vim-scripts/taglist.vim'
 Plug 'kien/rainbow_parentheses.vim'
+Plug 'machakann/vim-highlightedyank'
 
 " linting
 Plug 'dense-analysis/ale'
@@ -44,16 +48,14 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 " theme
-Plug 'arcticicestudio/nord-vim'
 Plug 'morhetz/gruvbox'
+Plug 'arcticicestudio/nord-vim'
 
-" format
+" vim
 Plug 'lervag/vimtex'
-Plug 'Chiel92/vim-autoformat'
 
 "git
 Plug 'airblade/vim-gitgutter'
-Plug 'machakann/vim-highlightedyank'
 call plug#end()
 
 " list of current plugin config files
@@ -69,6 +71,7 @@ let g:plugin_config_files=[
             \'fugitive.vim',
             \'surround.vim',
             \'nerdtree.vim',
+            \'supertab.vim',
             \'ultisnips.vim',
             \'gitgutter.vim',
             \'autoformat.vim',

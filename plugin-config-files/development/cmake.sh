@@ -37,7 +37,11 @@ function build-generate() {
 	if ! cmake .. ; then
 		echo "-- Something went wrong"
 	else
-		make
+		if ! make ; then
+		  echo "-- Failed to run make"
+		  else
+		    if ! ./bin/main
+		    echo "-- Failed to run main"
 	fi
 }
 

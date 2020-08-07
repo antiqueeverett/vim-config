@@ -1,14 +1,49 @@
-snippet todo "add todo" w
-/*
- * todo: $1
+# todo
+snippet todo " + todo" w
+/*! todo: ${1}
  * date: `!v strftime("%Y-%m-%d %H:%M")`
  */
 endsnippet
 
-snippet ref "add ref" w
-/*
- * see:
- * <$1>
+# cite source
+snippet ref " + ref" w
+/*! see:
+ * <${1}>
  * date: `!v strftime("%Y-%m-%d %H:%M")`
  */
+endsnippet
+
+# include google logger
+snippet glog " + google logger" w
+#include <glog/logging.h>
+endsnippet
+
+# include google logger
+snippet iglog " + init glog" w
+google::InitGoogleLogging(argv[0]);
+endsnippet
+
+# log info with glog
+snippet info " + log info" w
+LOG(INFO) << "${1}" << ${2} << " ${2}";
+endsnippet
+
+# add class
+snippet class " + class" w
+/*! \class $1
+ *  \brief ${3:Brief class description}
+ *
+ *  ${4:Detailed description}
+ */
+class ${1:`vim_snippets#Filename('$1', 'name')`}
+{
+	private:
+
+	public:
+		$1(${2});
+		virtual ~$1();
+
+	protected:
+		m_${5}; /*!< ${6:Member description} */
+};
 endsnippet

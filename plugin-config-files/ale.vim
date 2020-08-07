@@ -12,6 +12,7 @@ let g:ale_sign_style_warning=''
 let g:ale_echo_msg_error_str='Error'
 let g:ale_echo_msg_warning_str='Warning'
 let g:ale_echo_msg_format='[%severity%] [%linter%] %s'
+let g:ycm_autoclose_preview_window_after_completion = 1
 
 " LINTERS:
 let g:ale_linters={
