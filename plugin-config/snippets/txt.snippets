@@ -1,0 +1,64 @@
+snippet cmake "+ entire CMakeLists.txt spec"
+# cmake spec
+cmake_minimum_required(VERSION ${1:ver})
+
+# project revision spec
+project(${2:project-name})
+set(MAJOR 0)
+set(MINOR 1)
+set(PROJECT_VERSION ${MINOR}.${MAJOR}) # never used?
+
+# CXX spec
+set(CMAKE_CXX_STANDARD ${3:CXX-ver})
+
+# clang-tidy spec
+set(CMAKE_CLANG_TIDY
+    clang-tidy
+    -checks=-*,readability-*,clang-analyzer-*,performance-*)
+
+# export compile flags
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+# cmake modules path spec
+list(APPEND CMAKE_MODULE_PATH "$ENV{CMAKE_MODULE_PATH}")
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
+
+# bin output path spec
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
+
+# project paths spec
+set(PROJECT_DIR ${CMAKE_CURRENT_LIST_DIR})
+set(INCLUDE_DIR ${PROJECT_DIR}/inc)
+set(LIB_DIR ${PROJECT_DIR}/lib)
+set(EXT_DIR ${PROJECT_DIR}/ext)
+set(SRC_DIR ${PROJECT_DIR}/src)
+
+# find lib dependencies
+find_package()
+
+# collect *all sources under ${SOURCES} var
+set(SOURCES ${4:list-of-sources})
+
+
+# define project target
+add_executable(main
+    ${SRC_DIR}/main.cpp
+    ${SOURCES})
+
+# include *all header paths
+target_include_directories(main PRIVATE
+    ${INCLUDE_DIR}
+    ${EXT_DIR})
+
+# link *all symbols (function definitions)
+# target_link_libraries(main
+#     glog
+#     gflags)
+
+# visually inspect project path vars
+message(STATUS ${EXT_DIR})
+message(STATUS ${SRC_DIR})
+message(STATUS ${INCLUDE_DIR})
+message(STATUS ${CMAKE_RUNTIME_OUTPUT_DIRECTORY})
+endsnippet

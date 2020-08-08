@@ -1,16 +1,14 @@
-snippet todo "add todo" w
+snippet todo "+ todo" w
 % todo: $1
 % date: `!v strftime("%Y-%m-%d %H:%M")`
 endsnippet
 
-snippet ref "add ref" w
+snippet ref "+ ref" w
 % see:
 % <$1>
-% date: `!v strftime("%Y-%m-%d %H:%M")`
+% accessed: `!v strftime("%Y-%m-%d %H:%M")`
 endsnippet
 
-snippet comm "add comment" w
-% see:
-% <$1>
-% date: `!v strftime("%Y-%m-%d %H:%M")`
+snippet comm "+ comment" w
+% +
 endsnippet

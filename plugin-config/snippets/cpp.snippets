@@ -1,12 +1,12 @@
 # todo
-snippet todo " + todo" w
+snippet todo "+ todo" w
 /*! todo: ${1}
  * date: `!v strftime("%Y-%m-%d %H:%M")`
  */
 endsnippet
 
 # cite source
-snippet ref " + ref" w
+snippet ref "+ ref" w
 /*! see:
  * <${1}>
  * date: `!v strftime("%Y-%m-%d %H:%M")`
@@ -14,22 +14,22 @@ snippet ref " + ref" w
 endsnippet
 
 # include google logger
-snippet glog " + google logger" w
+snippet glog "+ google logger" w
 #include <glog/logging.h>
 endsnippet
 
 # include google logger
-snippet iglog " + init glog" w
+snippet iglog "+ init glog" w
 google::InitGoogleLogging(argv[0]);
 endsnippet
 
 # log info with glog
-snippet info " + log info" w
+snippet info "+ log info" w
 LOG(INFO) << "${1}" << ${2} << " ${2}";
 endsnippet
 
 # add class
-snippet class " + class" w
+snippet class "+ class" w
 /*! \class $1
  *  \brief ${3:Brief class description}
  *

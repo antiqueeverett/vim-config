@@ -1,0 +1,16 @@
+snippet todo "+ todo" w
+" todo: $1
+" date: `!v strftime("%Y-%m-%d %H:%M")`
+endsnippet
+
+snippet ref "+ ref" w
+" see:
+" <$1>
+" accessed: `!v strftime("%Y-%m-%d %H:%M")`
+endsnippet
+
+snippet func "+ function" w
+function! ${1:func} ()
+    ${2:body}
+endfunction
+endsnippet

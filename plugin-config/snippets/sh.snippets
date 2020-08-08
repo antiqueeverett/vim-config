@@ -1,0 +1,21 @@
+snippet bang "#!/usr/bin/env bash" b
+#!/usr/bin/env zsh
+$0
+endsnippet
+
+snippet todo "+ todo" w
+# todo: $1
+# date: `!v strftime("%Y-%m-%d %H:%M")`
+endsnippet
+
+snippet ref "+ ref" w
+# see:
+# <$1>
+# accessed: `!v strftime("%Y-%m-%d %H:%M")`
+endsnippet
+
+snippet func "+ function" w
+function ${1:name}() {
+    ${2:body}
+}
+endsnippet
