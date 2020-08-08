@@ -5,6 +5,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+
 call plug#begin('~/.vim/plugged')
 " tpope
 Plug 'tpope/vim-repeat'
@@ -64,7 +65,6 @@ let g:plugin_config_files=[
             \'ale.vim',
             \'fzf.vim',
             \'goyo.vim',
-            \'eunuch.vim',
             \'repeat.vim',
             \'vimtext.vim',
             \'airline.vim',

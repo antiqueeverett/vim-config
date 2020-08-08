@@ -30,8 +30,8 @@ nnoremap <silent><Leader>? :call ToggleLineNumbersStyle()<CR>
 let g:workflow_functions=[
             \'dir-ops.vim',
             \'file-ops.vim',
-            \'vi-term-ops.vim',
-            \'buff-nav-ops.vim']
+            \'vim-terminal.vim',
+            \'buffer-navigation.vim']
 
 " source files
 for file in g:workflow_functions
