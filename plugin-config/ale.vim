@@ -14,6 +14,8 @@ let g:ale_echo_msg_warning_str='Warning'
 let g:ale_echo_msg_format='[%severity%] [%linter%] %s'
 let g:ycm_autoclose_preview_window_after_completion = 1
 
+autocmd FileType zsh let g:ale_sh_shell_default_shell='zsh'
+
 " LINTERS:
 let g:ale_linters={
             \'c': ['clangtidy'],
@@ -42,11 +44,14 @@ let g:ale_cpp_clangtidy_checks=[
             \'clang-analyzer-*']
 
 " SHELL:
+let g:ale_sh_bashate_executable = ''
+let g:ale_sh_bashate_options = ''
+let g:ale_sh_language_server_executable = ''
 let g:ale_sh_shellcheck_executable='shellcheck'
-let g:ale_sh_shellcheck_options='-a -x -C=always '
+"let g:ale_sh_shellcheck_options='-a -x -C=always -enable=all –shell=shell –severity=style'
+let g:ale_sh_shellcheck_options='-a -x'
 let g:ale_sh_shellcheck_change_directory=1
 let g:ale_sh_shellcheck_dialect='auto'
-"let b:ale_sh_shellcheck_exclusions = 'SC2034,SC2154,SC2164'
 
 " VIM:
 " -- vim-language-server
