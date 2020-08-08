@@ -1,5 +1,5 @@
 " list of vim config files
-let g:vim_config_files=[
+let g:config_files=[
             \'settings.vim',
             \'keybinds.vim',
             \'arbitrary.vim',
@@ -7,7 +7,7 @@ let g:vim_config_files=[
             \'autocommands.vim',
             \'plugins.vim']
 
-" source vim configuration files
-for file in g:vim_config_files
+" source files
+for file in g:config_files
     execute "source $VIM_DOTFILES_PATH/" . file
 endfor

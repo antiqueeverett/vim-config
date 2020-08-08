@@ -82,7 +82,7 @@ let g:plugin_config_files=[
 
 " source plugin configuration from dedicated source file list
 for file in g:plugin_config_files
-    execute 'source $VIM_DOTFILES_PATH/plugin-config-files/' . file
+    execute 'source $VIM_DOTFILES_PATH/plugin-config/' . file
 endfor
 
 " list of personal trench plugin config files
@@ -94,5 +94,5 @@ let g:my_plugin_sandbox_files=[
 
 " source plugin configuration from dedicated source file list
 for file in g:my_plugin_sandbox_files
-    execute 'source $VIM_DOTFILES_PATH/plugin-config-files/development/' . file
+    execute 'source $VIM_DOTFILES_PATH/plugin-config/development/' . file
 endfor

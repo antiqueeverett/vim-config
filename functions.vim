@@ -26,14 +26,14 @@ endfunction
 nnoremap <silent><C-N> :call ToggleLineNumbers()<CR>
 nnoremap <silent><Leader>? :call ToggleLineNumbersStyle()<CR>
 
-" list of files with other functions for seamless operations
-let g:seamless_ops_files=[
+" list of files with functions to improve workflow
+let g:workflow_functions=[
             \'dir-ops.vim',
             \'file-ops.vim',
             \'vi-term-ops.vim',
             \'buff-nav-ops.vim']
 
 " source plugin configuration from dedicated source file list
-for file in g:seamless_ops_files
-    execute 'source $VIM_DOTFILES_PATH/seamless-ops/' . file
+for file in g:workflow_functions
+    execute 'source $VIM_DOTFILES_PATH/workflow/' . file
 endfor
