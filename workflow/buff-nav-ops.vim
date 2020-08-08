@@ -8,7 +8,7 @@ function! ShowBufferVars()
 endfunction
 
 " check if current buffer is scratch buffer
-function! IsCurrentBufferScratch()
+function! IsScratch()
     if &modifiable!=#'1' || &buftype!=#'' || &filetype ==#''
         return v:true
     elseif &modifiable==#'1' && &buftype==#'' && &filetype !=#''
@@ -16,8 +16,8 @@ function! IsCurrentBufferScratch()
     endif
 endfunction
 
-" check if current buffer is No Name buffer
-function! IsNewlyLoadedBufferNoName()
+" check if loaded buffer is No Name buffer
+function! IsNoName()
     if &buftype==#'' && bufname('%')==#'' && &modifiable==#'1'
         return v:true
     else
@@ -26,8 +26,8 @@ function! IsNewlyLoadedBufferNoName()
 endfunction
 
 " Iff !Scratch, update current buffer
-function! UpdateCurrentBuffer()
-    if IsCurrentBufferScratch()
+function! UpdateBuffer()
+    if IsScratch()
         execute (bufnr('%') . 'bd!')
     else
         execute 'update'
@@ -36,31 +36,31 @@ endfunction
 
 " fuzzy find from any buffer
 function! FuzzyFind()
-    execute 'call UpdateCurrentBuffer()'
+    execute 'call UpdateBuffer()'
     execute 'FZF $HOME/Repositories'
 endfunction
 
 " vsplit into fuzzy search
-function! OpenVSplitFZF()
+function! VSplit()
     vnew
     execute 'FZF $HOME/Repositories'
 endfunction
 
 " go to next buffer
 function! NextBuffer()
-    execute 'call UpdateCurrentBuffer()'
+    execute 'call UpdateBuffer()'
     execute 'bn'
 endfunction
 
 " go to previous buffer
 function! PreviousBuffer()
-    execute 'call UpdateCurrentBuffer()'
+    execute 'call UpdateBuffer()'
     execute 'bN'
 endfunction
 
 " after buffer delete, quit if no name buffer is loaded
 function! QuitVim()
-    if IsNewlyLoadedBufferNoName()
+    if IsNoName()
         silent execute '!clear'
         silent execute 'q!'
     endif
@@ -68,7 +68,7 @@ endfunction
 
 " exit current buffer and quit vim appropriately
 function! ExitBuffer()
-    if IsCurrentBufferScratch()
+    if IsScratch()
         execute (bufnr('%') . 'bd!')
         execute 'call QuitVim()'
     else
@@ -78,8 +78,8 @@ function! ExitBuffer()
     endif
 endfunction
 
+nnoremap <silent><Leader>\ :call VSplit()<CR>
 nnoremap <silent><Leader>' :call FuzzyFind()<CR>
 nnoremap <silent><Leader>db :call ExitBuffer()<CR>
-nnoremap <silent><Leader>\ :call OpenVSplitFZF()<CR>
 nnoremap <silent><leader>` :call PreviousBuffer()<CR>
 nnoremap <silent><leader><Tab> :call NextBuffer()<CR>
