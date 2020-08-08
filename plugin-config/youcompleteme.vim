@@ -8,9 +8,9 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/youcompleteme/.ycm_extra_conf.py'
 
 nnoremap <silent><Leader>2 :YcmCompleter GoToDeclaration<CR>
 nnoremap <silent><Leader>3 :YcmCompleter GoToDefinition<CR>
-nnoremap <silent><Leader>4 :YcmCompleter GoToReferences<CR>
-nnoremap <silent><Leader>5 :YcmCompleter GoToImplementation<CR>
-nnoremap <silent><Leader>6 :YcmCompleter GoToInclude<CR>
+nnoremap <silent><Leader>4 :YcmCompleter GoToImplementation<CR>
+"nnoremap <silent><Leader>4 :YcmCompleter GoToReferences<CR>
+"nnoremap <silent><Leader>6 :YcmCompleter GoToInclude<CR>
 
 let g:ycm_filetype_blacklist = {
       \ 'markdown': 1,
