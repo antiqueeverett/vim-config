@@ -9,7 +9,6 @@ pass='\e[032m\033[1m%-80s\e[0m\n'
 fail='\e[031m\033[1m%-80s\e[0m\n'
 info='\e[033m\033[1m%-80s\e[0m\n'
 
-
 function executeTarget() {
     # todo: make dynamic
     # date: 2020-08-08 10:49
@@ -19,7 +18,7 @@ function executeTarget() {
     else
         printf $pass "-- Make execution successful"
         printf $info "-- Running project binary"
-        if ! ./bin/main > /dev/null; then
+        if ! ./bin/main ; then
             print $fail "-- Failed to run project binary"
         fi
     fi
