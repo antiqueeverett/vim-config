@@ -32,7 +32,8 @@ filetype plugin on
 set wrap
 set colorcolumn=80
 
-" number line style (order matters here)
+" number line style
+" -- order matters here --
 set relativenumber
 set number
 set number relativenumber
