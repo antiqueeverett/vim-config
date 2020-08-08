@@ -1,6 +1,10 @@
-snippet bang "#!/usr/bin/env zsh" b
+snippet bang " + #!/usr/bin/env zsh" b
 #!/usr/bin/env zsh
-$0
+#
+# ${1:`vim_snippets#Filename('$1', 'name')`} : ${2:brief}
+# author: Everett
+# Github: https://github.com/antiqueeverett/
+endsnippet
 endsnippet
 
 snippet todo "+ todo" w
@@ -14,7 +18,7 @@ snippet ref "+ ref" w
 # accessed: `!v strftime("%Y-%m-%d %H:%M")`
 endsnippet
 
-snippet func "+ function"
+snippet fnc "+ function"
 function ${1:name}() {
     ${2:body}
 }
