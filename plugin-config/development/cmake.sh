@@ -1,87 +1,80 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
-# run.sh
-# Conveniently cmake from any project sub-directory
-# Everett <https://github.com/antiqueeverett/>
-# Version: 0.1
-#
-#    NAIVE SEARCH STRATEGY:
-# 1. Find top level CMakeLists.txt
-#    for each CMakeLists.txt file encountered, grep the 'project' and 'cmake_minimum_required'
-#    string patterns. Iff both patterns exist, assume current directory is project root directory.
-# 2. Clean build files (default behaviour)
-# 3. Run cmake
+# cmake.sh: Run (build and execute) cmake project
+#           from and project sub-directory.
+# author: Everett
+# Github: https://github.com/antiqueeverett/
 
-function eval-cmakelists-file() {
-    if grep -E -w 'project' "$1" && grep -E -w 'cmake_minimum_required' "$1"; then
-        true
+pass='\e[032m\033[1m%-80s\e[0m\n'
+fail='\e[031m\033[1m%-80s\e[0m\n'
+info='\e[033m\033[1m%-80s\e[0m\n'
+
+
+function executeTarget() {
+    # todo: make dynamic
+    # date: 2020-08-08 10:49
+    printf $info "-- executing Make"
+    if ! make; then
+        print $fail "-- Failed to execute Make"
     else
-        false
+        printf $pass "-- Make execution successful"
+        printf $info "-- Running project binary"
+        if ! ./bin/main > /dev/null; then
+            print $fail "-- Failed to run project binary"
+        fi
     fi
 }
 
-function build-clean() {
+function generateBuild() {
+    printf $info "-- Generating project build"
+    mkdir "build" && cd "build" || return
+    if ! cmake .. > /dev/null ; then
+        print $fail "-- cmake failed"
+    else
+        printf $pass "-- Build successfully generated"
+        executeTarget
+    fi
+}
+
+function cleanBuild() {
     if [ -d "build" ]; then
-        echo "-- Cleaning previous build files"
         rm -Rf "build"
     fi
 }
 
-function build-generate() {
-    mkdir "build" && cd "build" || return
-    # if ! cmake .. -GNinja; then
-    # 	echo "-- Something went wrong"
-    # else
-    # 	ninja
-    # fi
-    if ! cmake ..; then
-        echo "-- Something went wrong"
+function runProject() {
+    printf $info "-- Cleaning build path"
+    if ! cleanBuild; then
+        print $fail "-- Failed to clean build path!"
     else
-        if ! make; then
-            echo "-- Failed to run make"
-        else
-            if ! ./bin/main; then
-                echo "-- Failed to run main"
-            fi
-        fi
+        printf $pass "-- Build path cleaned successfully"
+        generateBuild
     fi
 }
 
-function build-run() {
-    if [ -d "bin" ]; then
-        cd "bin" || return
-        ls -la
-    else
-        ls -la
-    fi
-    echo "-- TODO"
-}
-
-function build() {
-    if ! build-clean; then
-        echo " -- Unable to clean previous build files"
-    else
-        if ! build-generate; then
-            echo "-- Unable to cmake project"
-        fi
+function isCMakeLists() {
+    if grep -E -w 'project' "$1" && grep -E -w 'cmake_minimum_required' "$1"; then
+        true
     fi
 }
 
-function walk() {
+function main() {
     file="CMakeLists.txt"
     topmost=5
 
+    printf $info "-- Finding project CMakeLists.txt"
+    # walk up parent directories in search for CMakeLists.txt
     for ((maxwalk = topmost; maxwalk > 0; --maxwalk)); do
         if [ -e "$PWD/$file" ]; then
-            if eval-cmakelists-file "$PWD/$file" &>/dev/null; then
-                echo "-- Using $PWD/$file to build CXX project"
-                build
+            if isCMakeLists "$PWD/$file" &>/dev/null; then
+                printf $pass "-- Found $PWD/$file"
+                runProject
                 return
             fi
         fi
         cd "../"
     done
-    echo "-- Unable to find project CMakeLists.txt file"
+    printf $fail "-- Unable to find project CMakeLists.txt file"
 }
 
-walk
+main
