@@ -33,18 +33,21 @@ function! EndGame()
     execute 'normal! dd'
 
     for i in range(1, 61) | call append(line('.'), '') | endfor
-    silent execute 'call setbufline(' . bufnr('%') . ', ' . 25 .', "Game Over")'
 
-    echo b:relative_number_motion_count . ' relative number motions in  ' .
+    let b:game_stats=b:relative_number_motion_count . ' relative number motions in  ' .
                 \ b:duration . ' seconds'
 
-    autocmd! game_auto_cmds CursorMoved *
+    silent execute 'call setbufline(' . bufnr('%') . ', ' . 25 .', "              Game Over!")'
+    silent execute 'call setbufline(' . bufnr('%') . ', ' . 27 .','. string(b:game_stats) . ')'
+    silent execute 'call setbufline(' . bufnr('%') . ', ' . 29 .', "  Close and re-open buffer try again")'
+
+    autocmd! game_auto_cmds
 endfunction
 
 function! UpdateGameBuffer()
     let b:current=str2nr(reltimestr(reltime()))
     let b:duration=b:current - b:start
-    if (b:duration >= 60)
+    if (b:duration >= 6)
         call EndGame()
     else
         call Play()
