@@ -4,13 +4,13 @@ snippet todo "+ todo" w
 endsnippet
 
 snippet ref "+ ref" w
-" see:
-" <$1>
+" ${1:name of function} ref:
+" <${2:web ref}>
 " accessed: `!v strftime("%Y-%m-%d %H:%M")`
 endsnippet
 
 snippet func "+ function" w
-function! ${1:func} ()
+function! ${1:func}()
     ${2:body}
 endfunction
 endsnippet
