@@ -39,7 +39,7 @@ function! EndGame()
 
     silent execute 'call setbufline(' . bufnr('%') . ', ' . 25 .', "              Game Over!")'
     silent execute 'call setbufline(' . bufnr('%') . ', ' . 27 .','. string(b:game_stats) . ')'
-    silent execute 'call setbufline(' . bufnr('%') . ', ' . 29 .', "  Close and re-open buffer try again")'
+    silent execute 'call setbufline(' . bufnr('%') . ', ' . 29 .', "   Close and re-open buffer try again")'
 
     autocmd! game_auto_cmds
 endfunction
@@ -47,7 +47,7 @@ endfunction
 function! UpdateGameBuffer()
     let b:current=str2nr(reltimestr(reltime()))
     let b:duration=b:current - b:start
-    if (b:duration >= 6)
+    if (b:duration >= 60)
         call EndGame()
     else
         call Play()
