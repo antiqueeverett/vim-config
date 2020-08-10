@@ -3,12 +3,18 @@ snippet todo "+ todo" w
 % date: `!v strftime("%Y-%m-%d %H:%M")`
 endsnippet
 
-snippet ref "+ ref" w
-% see:
-% <$1>
-% accessed: `!v strftime("%Y-%m-%d %H:%M")`
-endsnippet
-
 snippet comm "+ comment" w
 % +
+endsnippet
+
+snippet hl "+ highlight" w
+\hl{$1:highlighted-text}
+endsnippet
+
+snippet cite "+ citation" w
+~\cite{$1:citation}
+endsnippet
+
+snippet authors "+ citation" w
+\citeA{$1:citation}
 endsnippet
