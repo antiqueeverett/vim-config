@@ -13,8 +13,6 @@ nnoremap <silent><Leader>4 :YcmCompleter GoToImplementation<CR>
 "nnoremap <silent><Leader>6 :YcmCompleter GoToInclude<CR>
 
 let g:ycm_filetype_blacklist = {
-      \ 'markdown': 1,
-      \ 'text': 1,
       \ 'mail': 1
       \}
 
