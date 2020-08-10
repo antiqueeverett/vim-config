@@ -5,34 +5,38 @@
 # author: Everett
 # Github: https://github.com/antiqueeverett/
 
-function executeTarget() {
-    # todo: make dynamic
-    # date: 2020-08-08 10:49
-    printf '\e[033m\033[1m%-80s\e[0m\n' "-- executing Make"
-    if ! make; then
-        print '\e[031m\033[1m%-80s\e[0m\n' "-- Failed to execute Make"
-    else
-        printf '\e[032m\033[1m%-80s\e[0m\n' "-- Make execution successful"
-        printf '\e[033m\033[1m%-80s\e[0m\n' "-- Running project binary"
+# todo: make dynamic
+# date: 2020-08-10 15:55
+TRAGET=./bin/main
+OPTIONS=--logtostderr=1
 
-        if [ -e "./bin/main" ]; then
-            if ! ./bin/main; then
-                print '\e[031m\033[1m%-80s\e[0m\n' "-- Failed to run project binary"
-            fi
-        else
-            print '\e[031m\033[1m%-80s\e[0m\n' "-- Binary not found "
-        fi
+INFO='\e[033m\033[1m%-80s\e[0m\n'
+PASS='\e[032m\033[1m%-80s\e[0m\n'
+FAIL='\e[031m\033[1m%-80s\e[0m\n'
+
+function runBinaryTarget() {
+    $TRAGET $OPTIONS
+}
+
+function makeBinaryTarget() {
+    printf $INFO "-- executing Make"
+    if ! make; then
+        print $FAIL "-- Failed to execute Make"
+    else
+        printf $PASS "-- Make successful"
+        printf $INFO "-- Attempting to run target binary"
+        runBinaryTarget
     fi
 }
 
 function generateBuild() {
-    printf '\e[033m\033[1m%-80s\e[0m\n' "-- Generating project build"
+    printf $INFO "-- Generating project build"
     mkdir "build" && cd "build" || return
     if ! cmake .. >/dev/null; then
-        print '\e[031m\033[1m%-80s\e[0m\n' "-- cmake failed"
+        print $FAIL "-- cmake failed"
     else
-        printf '\e[032m\033[1m%-80s\e[0m\n' "-- Build successfully generated"
-        executeTarget
+        printf $PASS "-- Build successfully generated"
+        makeBinaryTarget
     fi
 }
 
@@ -43,11 +47,11 @@ function cleanBuild() {
 }
 
 function runProject() {
-    printf '\e[033m\033[1m%-80s\e[0m\n' "-- Cleaning build path"
+    printf $INFO "-- Cleaning build path"
     if ! cleanBuild; then
-        print '\e[031m\033[1m%-80s\e[0m\n' "-- Failed to clean build path!"
+        print $FAIL "-- Failed to clean build path!"
     else
-        printf '\e[032m\033[1m%-80s\e[0m\n' "-- Build path cleaned successfully"
+        printf $PASS "-- Build path cleaned successfully"
         generateBuild
     fi
 }
@@ -62,19 +66,19 @@ function main() {
     file="CMakeLists.txt"
     topmost=5
 
-    printf '\e[033m\033[1m%-80s\e[0m\n' "-- Finding project CMakeLists.txt"
+    printf $INFO "-- Finding project CMakeLists.txt"
     # walk up parent directories in search for CMakeLists.txt
     for ((maxwalk = topmost; maxwalk > 0; --maxwalk)); do
         if [ -e "$PWD/$file" ]; then
             if isCMakeLists "$PWD/$file" &>/dev/null; then
-                printf '\e[032m\033[1m%-80s\e[0m\n' "-- Found $PWD/$file"
+                printf $PASS "-- Found $PWD/$file"
                 runProject
                 return
             fi
         fi
         cd "../"
     done
-    printf '\e[031m\033[1m%-80s\e[0m\n' "-- Unable to find project CMakeLists.txt file"
+    printf $FAIL "-- Unable to find project CMakeLists.txt file"
 }
 
 main
