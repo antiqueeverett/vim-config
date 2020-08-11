@@ -43,7 +43,7 @@ endfunction
 function! UpdateGameBuffer()
     let b:current=str2nr(reltimestr(reltime()))
     let b:duration=b:current - b:start
-    if (b:duration >= 5)
+    if (b:duration >= 60)
         call EndGame()
     else
         call Play()
