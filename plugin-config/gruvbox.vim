@@ -8,6 +8,9 @@ augroup theme-overrides
     " fold highlight
     autocmd ColorScheme * highlight Fortunately       guibg=Black guifg=Grey
 
+    " parenthesis
+    autocmd ColorScheme * highlight MatchParen    cterm=underline,bold guifg=Black guibg=#fabd2f
+
     " spellings
     autocmd ColorScheme * highlight SpellBad     cterm=underline,bold guifg=#8f3f71
     autocmd ColorScheme * highlight SpellCap     cterm=underline,bold guifg=#8f3f71
