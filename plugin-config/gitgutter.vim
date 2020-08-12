@@ -1,5 +1,3 @@
-nnoremap <silent><Leader>gg :GitGutterBufferToggle<CR>
-
 let g:gitgutter_sign_added = 'ﰠ'
 let g:gitgutter_sign_modified = '狀'
 let g:gitgutter_sign_removed = 'ﰡ'
@@ -13,3 +11,5 @@ highlight GitGutterAdd    guifg=#b8bb26 ctermfg=2
 highlight GitGutterChange guifg=#076678 ctermfg=3
 highlight GitGutterDelete guifg=#9d0006 ctermfg=1
 highlight GitGutterChangeDelete guifg=#076678 ctermfg=1
+
+nnoremap <silent><Leader>gg :GitGutterBufferToggle<CR>
