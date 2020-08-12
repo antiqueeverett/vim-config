@@ -78,6 +78,7 @@ function! ExitBuffer()
     endif
 endfunction
 
+nnoremap <silent><Leader>dB :qa!<CR>
 nnoremap <silent><Leader>\ :call VSplit()<CR>
 nnoremap <silent><Leader>' :call FuzzyFind()<CR>
 nnoremap <silent><Leader>db :call ExitBuffer()<CR>
