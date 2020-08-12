@@ -2,7 +2,7 @@
 
 ###### show case gallery
 
-![alt text](https://github.com/edisonslightbulbs/dotfiles/blob/master/res/image-gallery/fig_1.png)
+`Comming soon!`    👏🍻🍻
 
 #### Usage
 
