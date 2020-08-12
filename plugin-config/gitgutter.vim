@@ -12,4 +12,4 @@ highlight GitGutterChange guifg=#076678 ctermfg=3
 highlight GitGutterDelete guifg=#9d0006 ctermfg=1
 highlight GitGutterChangeDelete guifg=#076678 ctermfg=1
 
-nnoremap <silent><Leader>gg :GitGutterBufferToggle<CR>
+nnoremap <silent><Leader>gg :GitGutterSignsEnable<CR>
