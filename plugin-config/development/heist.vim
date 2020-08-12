@@ -27,11 +27,7 @@ function! Play()
 endfunction
 
 function! EndGame()
-    execute 'normal! gg'
-    execute 'normal! V'
-    execute 'normal! G'
-    execute 'normal! dd'
-
+    1,$d
     for i in range(1, 61) | call append(line('.'), '') | endfor
 
     let b:game_stats=b:relative_number_motion_count . ' relative number motions in  ' .
@@ -39,7 +35,7 @@ function! EndGame()
 
     silent execute 'call setbufline(' . bufnr('%') . ', ' . 25 .', "              Game Over!")'
     silent execute 'call setbufline(' . bufnr('%') . ', ' . 27 .','. string(b:game_stats) . ')'
-    silent execute 'call setbufline(' . bufnr('%') . ', ' . 29 .', "   Close and re-open buffer try again")'
+    silent execute 'call setbufline(' . bufnr('%') . ', ' . 29 .', "      Pres CTRL + R to try again")'
 
     autocmd! game_auto_cmds
 endfunction
@@ -54,7 +50,6 @@ function! UpdateGameBuffer()
     endif
 endfunc
 
-" keep num of lines >= 62
 function! SetLineNumbers()
     if line('$') != 62 && line('$') < 62
         call append(line('$'), '')
@@ -62,22 +57,25 @@ function! SetLineNumbers()
 endfunc
 
 function! InitGameBuffer()
-    vnew
+    1,$d
     for i in range(1, 61) | call append(line('.'), '') | endfor
     execute 'call SetText()'
-    " start time in seconds
     let b:start=str2nr(reltimestr(reltime()))
     let b:relative_number_motion_count=0
-endfunc
-
-function! PlayHeist()
-    execute 'call InitGameBuffer()'
     augroup game_auto_cmds
         autocmd! * <buffer>
         autocmd CursorMoved <buffer> call SetLineNumbers()
         autocmd CursorMoved <buffer> call UpdateGameBuffer()
     augroup END
+endfunc
+
+function! PlayHeist()
+    vnew
+    execute 'call InitGameBuffer()'
 endfunction
 
 command! -nargs=* Heist :call PlayHeist(<f-args>)
 nnoremap <silent><C-G> :Heist<CR>
+
+command! -nargs=* Restart :call InitGameBuffer(<f-args>)
+nnoremap <silent><C-R> :Restart<CR>
