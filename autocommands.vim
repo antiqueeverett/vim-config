@@ -13,7 +13,7 @@ augroup cwd_on_BufEnter
     autocmd BufEnter * silent! lcd %:p:h
 augroup END
 
-augroup manageplugins_on_BufRead
-    autocmd!
-    autocmd BufRead * silent execute 'GitGutterBufferToggle'
-augroup END
+" augroup manageplugins_on_BufRead
+"     autocmd!
+"     autocmd BufRead * silent execute 'GitGutterBufferToggle'
+" augroup END
