@@ -9,7 +9,7 @@ augroup theme-overrides
     autocmd ColorScheme * highlight Fortunately       guibg=Black guifg=Grey
 
     " parenthesis
-    autocmd ColorScheme * highlight MatchParen    cterm=underline,bold guifg=Black guibg=#fabd2f
+    autocmd ColorScheme * highlight MatchParen   guibg=Black guifg=White
 
     " spellings
     autocmd ColorScheme * highlight SpellBad     cterm=underline,bold guifg=#8f3f71
