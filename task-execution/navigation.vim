@@ -1,86 +1,66 @@
-" show current buffer vars : quick inspection of current buffer
-function! ShowBufferVars()
-    echo '1. buffer number = ' . bufnr('%')
-    echo '2. buffer buftype = ' . &buftype
-    echo '3. buffer nume = ' . bufname('%')
-    echo '4. buffer modifiable = ' . &modifiable
-    echo '5. buffer file type = ' . &filetype
-endfunction
+" navigation.vim : Functions to help with buffer navigation.
+" author: Everett
+" created: 2020-08-13 10:45
+" Github: https://github.com/antiqueeverett/
 
-" check if current buffer is scratch buffer
-function! IsScratch()
-    if &modifiable!=#'1' || &buftype!=#'' || &filetype ==#''
-        return v:true
-    elseif &modifiable==#'1' && &buftype==#'' && &filetype !=#''
-        return v:false
-    endif
-endfunction
 
-" check if loaded buffer is No Name buffer
-function! IsNoName()
-    if &buftype==#'' && bufname('%')==#'' && &modifiable==#'1'
-        return v:true
-    else
-        return v:false
-    endif
-endfunction
-
-" Iff !Scratch, update current buffer
-function! UpdateBuffer()
-    if IsScratch()
-        execute (bufnr('%') . 'bd!')
-    else
-        execute 'update'
-    endif
-endfunction
-
-" fuzzy find from any buffer
+""
+" Fuzzy Find: Helps update a buffer before pulling up fzf.
+"             Convenient in cases where fzf is pulled up
+"             before saving.
 function! FuzzyFind()
-    execute 'call UpdateBuffer()'
+    execute 'call Save()'
     execute 'FZF $HOME/Repositories'
 endfunction
 
-" vsplit into fuzzy search
+
+""
+" VSplit: Opens up a new vertical-split buffer and pulls up.
+"         fzf.
 function! VSplit()
+    execute 'call Save()'
     vnew
     execute 'FZF $HOME/Repositories'
 endfunction
 
-" go to next buffer
+
+""
+" NextBuffer: Forward navigation on all currently-open buffers.
 function! NextBuffer()
-    execute 'call UpdateBuffer()'
+    execute 'call Save()'
     execute 'bn'
 endfunction
 
-" go to previous buffer
+
+""
+" PreviousBuffer: Reverse navigation on all currently-open
+"                 buffers.
 function! PreviousBuffer()
-    execute 'call UpdateBuffer()'
+    execute 'call Save()'
     execute 'bN'
 endfunction
 
-" after buffer delete, quit if no name buffer is loaded
-function! QuitVim()
+
+""
+" CloseBuffer: Exit current buffer (and vim where appropriate)
+"              more intuitively.
+function! CloseBuffer()
+    if IsWorkingBuffer()
+        execute 'call Save()'
+        execute 'bd'
+    else
+        execute 'bd!'
+    endif
+
     if IsNoName()
-        silent execute '!clear'
-        silent execute 'q!'
+        execute 'call ExitVim()'
     endif
 endfunction
 
-" exit current buffer and quit vim appropriately
-function! ExitBuffer()
-    if IsScratch()
-        execute (bufnr('%') . 'bd!')
-        execute 'call QuitVim()'
-    else
-        execute 'update'
-        execute 'bd'
-        execute 'call QuitVim()'
-    endif
-endfunction
 
 nnoremap <silent><Leader>dB :qa!<CR>
 nnoremap <silent><Leader>\ :call VSplit()<CR>
 nnoremap <silent><Leader>' :call FuzzyFind()<CR>
-nnoremap <silent><Leader>db :call ExitBuffer()<CR>
+nnoremap <silent><Leader>db :call CloseBuffer()<CR>
 nnoremap <silent><leader>` :call PreviousBuffer()<CR>
 nnoremap <silent><leader><Tab> :call NextBuffer()<CR>
