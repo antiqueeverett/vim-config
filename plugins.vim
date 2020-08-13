@@ -7,6 +7,10 @@ endif
 
 
 call plug#begin('~/.vim/plugged')
+" theme
+Plug 'morhetz/gruvbox'
+"Plug 'arcticicestudio/nord-vim'
+
 " tpope
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-eunuch'
@@ -48,20 +52,18 @@ Plug 'junegunn/goyo.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-" theme
-Plug 'morhetz/gruvbox'
-Plug 'arcticicestudio/nord-vim'
-
 " vim
 Plug 'lervag/vimtex'
 
 "git
 Plug 'airblade/vim-gitgutter'
+
 call plug#end()
 
 " list of current plugin config files
 let g:plugin_config_files=[
             \'gruvbox.vim',
+            \'gitgutter.vim',
             \'ale.vim',
             \'fzf.vim',
             \'goyo.vim',
@@ -73,7 +75,6 @@ let g:plugin_config_files=[
             \'nerdtree.vim',
             \'supertab.vim',
             \'ultisnips.vim',
-            \'gitgutter.vim',
             \'autoformat.vim',
             \'indentline.vim',
             \'youcompleteme.vim',
