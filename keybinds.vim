@@ -43,7 +43,5 @@ tnoremap <C-H> <C-W><C-H>
 vnoremap <C-H> <C-W><C-H>
 inoremap <C-H> <C-W><C-H>
 
-" switch between windows using the space-bar
-
 " [$]ource
 nnoremap <leader>$ :update<CR> :source ~/.vimrc<CR>
