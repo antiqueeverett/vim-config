@@ -28,12 +28,13 @@ nnoremap <silent><Leader>? :call ToggleLineNumbersStyle()<CR>
 
 " list of files with workflow functions
 let g:workflow_functions=[
-            \'dir-ops.vim',
-            \'file-ops.vim',
-            \'vim-terminal.vim',
-            \'buffer-navigation.vim']
+            \'helpers.vim',
+            \'files.vim',
+            \'terminal.vim',
+            \'navigation.vim',
+            \'directories.vim']
 
 " source files
 for file in g:workflow_functions
-    execute 'source $VIM_DOTFILES_PATH/workflow/' . file
+    execute 'source $VIM_DOTFILES_PATH/task-execution/' . file
 endfor

@@ -1,6 +1,5 @@
-" ref <https://github.com/dense-analysis/ale/blob/master/doc/ale-cpp.txt>
 let g:ale_sign_column_always=0
-let g:ale_set_loclist=1
+let g:ale_set_loclist=0
 let g:ale_set_quickfix=1
 let g:ale_set_balloons=1
 
@@ -12,6 +11,8 @@ let g:ale_sign_style_warning=''
 let g:ale_echo_msg_error_str='Error'
 let g:ale_echo_msg_warning_str='Warning'
 let g:ale_echo_msg_format='[%severity%] [%linter%] %s'
+
+let g:ycm_add_preview_to_completeopt = 0
 let g:ycm_autoclose_preview_window_after_completion = 1
 
 autocmd FileType zsh let g:ale_sh_shell_default_shell='zsh'
@@ -23,8 +24,9 @@ let g:ale_linters={
 
 " FIXERS:
 let g:ale_fixers={
-            \'cpp':  [ 'clangtidy'],
+            \'cpp': ['clangtidy'],
             \'*': ['remove_trailing_lines', 'trim_whitespace']}
+let g:ale_cpp_clangtidy_fix_errors=1
 
 " CMAKE:
 let g:ale_cmake_cmakelint_executable='cmakelint'
@@ -39,16 +41,24 @@ let g:ale_cpp_clangtidy_executable='clang-tidy'
 let g:ale_cpp_clangtidy_options='-Wall -std=c++14 -x c++'
 let g:ale_cpp_clangtidy_checks=[
             \'-*',
+            \'mpi-*',
+            \'misc-*',
+            \'hicpp-*',
+            \'abseil-*',
+            \'google-*',
+            \'bugprone-*',
+            \'modernize-*',
             \'readability-*',
             \'performance-*',
             \'clang-analyzer-*']
+
 
 " SHELL:
 let g:ale_sh_bashate_executable = ''
 let g:ale_sh_bashate_options = ''
 let g:ale_sh_language_server_executable = ''
 let g:ale_sh_shellcheck_executable='shellcheck'
-"let g:ale_sh_shellcheck_options='-a -x -C=always -enable=all –shell=shell –severity=style'
+"let g:ale_sh_shellcheck_options='-a -x -C=always -enable=all –shell=shell –severity=style' <--- buggy
 let g:ale_sh_shellcheck_options='-a -x'
 let g:ale_sh_shellcheck_change_directory=1
 let g:ale_sh_shellcheck_dialect='auto'
