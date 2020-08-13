@@ -1,3 +1,10 @@
+snippet author " + author" b
+" ${1:file-nme} : ${2:brief}
+" author: Everett
+" created: `!v strftime("%Y-%m-%d %H:%M")`
+" Github: https://github.com/antiqueeverett/
+endsnippet
+
 snippet todo "+ todo" w
 " todo: $1
 " date: `!v strftime("%Y-%m-%d %H:%M")`
@@ -13,4 +20,9 @@ snippet func "+ function" w
 function! ${1:func}()
     ${2:body}
 endfunction
+endsnippet
+
+snippet fcomm "+ func comment" w
+""
+" ${1:function-name}
 endsnippet
