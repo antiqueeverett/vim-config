@@ -18,7 +18,12 @@ endfunction
 " VSplit: Opens up a new vertical-split buffer and pulls up.
 "         fzf.
 function! VSplit()
-    execute 'call Save()'
+    if !IsNoName() || !IsWorkingBuffer()
+        u0
+    elseif IsWorkingBuffer()
+        execute 'call Save()'
+    endif
+
     vnew
     execute 'FZF $HOME/Repositories'
 endfunction
