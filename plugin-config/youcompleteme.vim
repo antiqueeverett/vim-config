@@ -13,8 +13,8 @@ nnoremap <silent><Leader>4 :YcmCompleter GoToImplementation<CR>
 "nnoremap <silent><Leader>6 :YcmCompleter GoToInclude<CR>
 
 let g:ycm_filetype_blacklist = {
-      \ 'mail': 1
-      \}
+            \ 'mail': 1
+            \}
 
 " completion menu when inside strings | true
 let g:ycm_complete_in_strings = 1
