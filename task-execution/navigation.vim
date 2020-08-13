@@ -9,7 +9,11 @@
 "             Convenient in cases where fzf is pulled up
 "             before saving.
 function! FuzzyFind()
-    execute 'call Save()'
+    if !IsNoName() || !IsWorkingBuffer()
+        u0
+    elseif IsWorkingBuffer()
+        execute 'call Save()'
+    endif
     execute 'FZF $HOME/Repositories'
 endfunction
 
