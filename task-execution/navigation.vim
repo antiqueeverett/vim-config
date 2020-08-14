@@ -5,15 +5,23 @@
 
 
 ""
-" Fuzzy Find: Helps update a buffer before pulling up fzf.
-"             Convenient in cases where fzf is pulled up
-"             before saving.
-function! FuzzyFind()
-    if !IsNoName() || !IsWorkingBuffer()
+" BufferPreFuzzyFind: Iff current buffer is workable save work. Otherwise,
+"                     iff the current buffer is scratch, undo all changes
+"                     that may have snuck in (fzf trigger fails otherwise)
+function! BufferPreFuzzyFind()
+    if IsNoName() || !IsWorkingBuffer()
         u0
     elseif IsWorkingBuffer()
         execute 'call Save()'
     endif
+endfunction
+
+""
+" Fuzzy Find: Helps update a buffer before pulling up fzf.
+"             Convenient in cases where fzf is pulled up
+"             before saving.
+function! FuzzyFind()
+    execute 'call BufferPreFuzzyFind()'
     execute 'FZF $HOME/Repositories'
 endfunction
 
@@ -22,12 +30,7 @@ endfunction
 " VSplit: Opens up a new vertical-split buffer and pulls up.
 "         fzf.
 function! VSplit()
-    if !IsNoName() || !IsWorkingBuffer()
-        u0
-    elseif IsWorkingBuffer()
-        execute 'call Save()'
-    endif
-
+    execute 'call BufferPreFuzzyFind()'
     vnew
     execute 'FZF $HOME/Repositories'
 endfunction
