@@ -44,4 +44,4 @@ vnoremap <C-H> <C-W><C-H>
 inoremap <C-H> <C-W><C-H>
 
 " [$]ource
-nnoremap <leader>$ :call SaveCursorPos()<CR> :write<CR> :source ~/.vimrc<CR> :call ResetCursorPos()<CR>
+nnoremap <silent><leader>$ :call SaveCursorPos()<CR> :write<CR> :source ~/.vimrc<CR> :call ResetCursorPos()<CR>
