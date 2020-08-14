@@ -98,22 +98,22 @@ let g:ale_set_signs=1
 let g:ale_set_highlights=1
 let g:ale_change_sign_column_color=1
 
-highlight ALESignColumnWithErrors    guibg=#1d2021 guifg=NONE
-highlight ALESignColumnWithoutErrors guibg=#1d2021 guifg=NONE
+highlight ALESignColumnWithErrors    term=bold cterm=bold ctermbg=NONE ctermfg=NONE gui=bold guibg=#1d2021 guifg=NONE
+highlight ALESignColumnWithoutErrors term=bold cterm=bold ctermbg=NONE ctermfg=NONE gui=bold guibg=#1d2021 guifg=NONE
 
-highlight ALEWarning                 gui=underline guifg=#d65d0e
-highlight ALEWarningSign             guibg=#1d2021 guifg=#d65d0e
-highlight ALEWarningLine             guibg=#121212 guifg=NONE
-highlight ALEWarningSignLineNr       guibg=#d65d0d guifg=#d65d0e
+highlight ALEWarning                 term=bold cterm=bold ctermbg=NONE ctermfg=NONE gui=bold guifg=#d65d0e
+highlight ALEWarningSign             term=bold cterm=bold ctermbg=NONE ctermfg=NONE gui=bold guibg=#1d2021 guifg=#d65d0e
+highlight ALEWarningLine             term=bold cterm=bold ctermbg=NONE ctermfg=NONE gui=bold guibg=#21262c guifg=NONE
+highlight ALEWarningSignLineNr       term=bold cterm=bold ctermbg=NONE ctermfg=NONE gui=bold guibg=#d65d0d guifg=#d65d0e
 
-highlight ALEError                   gui=underline guifg=#cc241d
-highlight ALEErrorSign               guibg=#1d2021 guifg=#cc241d
-highlight ALEErrorLine               guibg=#282828 guifg=NONE
-highlight ALEErrorSignLineNr         guibg=#cc241d guifg=#cc241d
+highlight ALEError                   term=bold cterm=bold ctermbg=NONE ctermfg=NONE gui=bold guifg=#cc241d
+highlight ALEErrorSign               term=bold cterm=bold ctermbg=NONE ctermfg=NONE gui=bold guibg=#1d2021 guifg=#cc241d
+highlight ALEErrorLine               term=bold cterm=bold ctermbg=NONE ctermfg=NONE gui=bold guibg=#21262c guifg=NONE
+highlight ALEErrorSignLineNr         term=bold cterm=bold ctermbg=NONE ctermfg=NONE gui=bold guibg=#cc241d guifg=#cc241d
 
-highlight ALEInfo                    gui=underline guifg=#d79921
-highlight ALEInfoSign                guibg=#1d2021 guifg=#d79921
-highlight ALEInfoLine                guibg=#282828 guifg=NONE
-highlight ALEInfoSignLineNr          guibg=#d79921 guifg=#d79921
+highlight ALEInfo                    term=bold cterm=bold ctermbg=NONE ctermfg=NONE gui=bold guifg=#d79921
+highlight ALEInfoSign                term=bold cterm=bold ctermbg=NONE ctermfg=NONE gui=bold guibg=#1d2021 guifg=#d79921
+highlight ALEInfoLine                term=bold cterm=bold ctermbg=NONE ctermfg=NONE gui=bold guibg=#21262c guifg=NONE
+highlight ALEInfoSignLineNr          term=bold cterm=bold ctermbg=NONE ctermfg=NONE gui=bold guibg=#d79921 guifg=#d79921
 
 nmap <silent><Leader>5 <Plug>(ale_next_wrap)
