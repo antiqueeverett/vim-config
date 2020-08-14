@@ -1,7 +1,7 @@
 " lets configure vim
 let g:config_files=[
             \'settings.vim',
-            \'keybinds.vim',
+            \'keymaps.vim',
             \'arbitrary.vim',
             \'functions.vim',
             \'autocommands.vim',
