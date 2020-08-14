@@ -21,10 +21,10 @@ augroup on_ColorScheme
 
     " Cursor line
     autocmd ColorScheme * highlight CursorLine   term=NONE cterm=NONE ctermbg=NONE ctermfg=NONE gui=NONE guibg=NONE guifg=NONE
-    autocmd ColorScheme * highlight CursorLineNr term=NONE cterm=NONE ctermbg=NONE ctermfg=NONE gui=NONE guibg=#1d2021 guifg=#fb4934
+    autocmd ColorScheme * highlight CursorLineNr term=NONE cterm=NONE ctermbg=NONE ctermfg=NONE gui=NONE guibg=#1d2021 guifg=White
 
     " Number line
-    autocmd ColorScheme * highlight LineNr       term=NONE cterm=NONE ctermbg=NONE ctermfg=NONE gui=NONE guibg=#1d2021 guifg=Grey
+    autocmd ColorScheme * highlight LineNr       term=NONE cterm=NONE ctermbg=NONE ctermfg=NONE gui=NONE guibg=#1d2021 guifg=#808b96
 
     " Popup menu
     autocmd ColorScheme * highlight Menu         term=bold cterm=bold ctermbg=NONE ctermfg=NONE gui=bold guibg=#1c2833 guifg=#eaecee
@@ -37,13 +37,22 @@ augroup on_ColorScheme
     autocmd ColorScheme * highlight SignColumn   term=NONE cterm=NONE ctermbg=NONE ctermfg=NONE gui=NONE guibg=#21262c guifg=NONE
 
     " Wrapping column
-    autocmd ColorScheme * highlight ColorColumn   term=NONE cterm=NONE ctermbg=NONE ctermfg=NONE gui=NONE guibg=#21262c guifg=NONE
+    autocmd ColorScheme * highlight ColorColumn  term=NONE cterm=NONE ctermbg=NONE ctermfg=NONE gui=NONE guibg=#21262c guifg=NONE
 
     " Spellings
-    autocmd ColorScheme * highlight SpellBad     term=bold cterm=underline,bold ctermbg=NONE ctermfg=NONE gui=bold guibg=#1c2833 guifg=#8f3f71
-    autocmd ColorScheme * highlight SpellCap     term=bold cterm=underline,bold ctermbg=NONE ctermfg=NONE gui=bold guibg=#1c2833 guifg=#8f3f71
-    autocmd ColorScheme * highlight SpellLocal   term=bold cterm=underline,bold ctermbg=NONE ctermfg=NONE gui=bold guibg=#1c2833 guifg=#8f3f71
-    autocmd ColorScheme * highlight SpellRare    term=bold cterm=underline,bold ctermbg=NONE ctermfg=NONE gui=bold guibg=#1c2833 guifg=#8f3f71
+    autocmd ColorScheme * highlight SpellBad     term=bold cterm=underline,bold ctermbg=NONE ctermfg=NONE gui=bold guibg=#1d2021 guifg=#8f3f71
+    autocmd ColorScheme * highlight SpellCap     term=bold cterm=underline,bold ctermbg=NONE ctermfg=NONE gui=bold guibg=#1d2021 guifg=#8f3f71
+    autocmd ColorScheme * highlight SpellLocal   term=bold cterm=underline,bold ctermbg=NONE ctermfg=NONE gui=bold guibg=#1d2021 guifg=#8f3f71
+    autocmd ColorScheme * highlight SpellRare    term=bold cterm=underline,bold ctermbg=NONE ctermfg=NONE gui=bold guibg=#1d2021 guifg=#8f3f71
+
+    " Search
+    autocmd ColorScheme * highlight Search       term=bold cterm=bold ctermbg=NONE ctermfg=NONE gui=bold guibg=Black guifg=#eaecee
+    autocmd ColorScheme * highlight Visual       term=bold cterm=bold ctermbg=NONE ctermfg=NONE gui=bold guibg=Black guifg=#eaecee
+    autocmd ColorScheme * highlight IncSearch    term=bold cterm=bold ctermbg=NONE ctermfg=NONE gui=bold guibg=#1c2833 guifg=#1c2833
+
+    " Vertical split
+    autocmd ColorScheme * highlight VertSplit    term=bold cterm=bold ctermbg=NONE ctermfg=NONE gui=bold guibg=#21262c guifg=#1d2021
+
 
     " todo: incremental improvements from this
     "       point downwards
@@ -55,11 +64,6 @@ augroup on_ColorScheme
 
     " status line
     autocmd ColorScheme * highlight StatusLine   guibg=Black guifg=Grey
-
-    " search
-    autocmd ColorScheme * highlight Search       cterm=bold guibg=#af3a03 guifg=Grey
-    autocmd ColorScheme * highlight Visual       cterm=bold guibg=#af3a03 guifg=Grey
-    autocmd ColorScheme * highlight IncSearch    cterm=bold guibg=#7c6f64 guifg=Grey
 
     " tabline
     autocmd ColorScheme * highlight TabLine      guibg=White guifg=Grey
