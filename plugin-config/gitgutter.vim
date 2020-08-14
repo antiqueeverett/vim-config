@@ -7,9 +7,9 @@ let g:gitgutter_sign_modified_removed = '識'
 let g:gitgutter_map_keys = 0
 let g:gitgutter_override_sign_column_highlight = 0
 
-highlight GitGutterAdd    guifg=#b8bb26 ctermfg=2
-highlight GitGutterChange guifg=#076678 ctermfg=3
-highlight GitGutterDelete guifg=#9d0006 ctermfg=1
-highlight GitGutterChangeDelete guifg=#076678 ctermfg=1
+highlight GitGutterAdd           term=NONE cterm=NONE ctermbg=NONE ctermfg=NONE gui=NONE guibg=#1d2021 guifg=Grey
+highlight GitGutterChange        term=NONE cterm=NONE ctermbg=NONE ctermfg=NONE gui=NONE guibg=#1d2021 guifg=#076678
+highlight GitGutterDelete        term=NONE cterm=NONE ctermbg=NONE ctermfg=NONE gui=NONE guibg=#1d2021 guifg=#fb4934
+highlight GitGutterChangeDelete  term=NONE cterm=NONE ctermbg=NONE ctermfg=NONE gui=NONE guibg=#1d2021 guifg=#427b58
 
 nnoremap <silent><Leader>gg :GitGutterSignsToggle<CR>
