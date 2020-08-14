@@ -51,7 +51,7 @@ augroup on_ColorScheme
     autocmd ColorScheme * highlight IncSearch    term=bold cterm=bold ctermbg=NONE ctermfg=NONE gui=bold guibg=#1c2833 guifg=#1c2833
 
     " Vertical split
-    autocmd ColorScheme * highlight VertSplit    term=bold cterm=bold ctermbg=NONE ctermfg=NONE gui=bold guibg=#21262c guifg=#1d2021
+    autocmd ColorScheme * highlight VertSplit    term=bold cterm=bold ctermbg=NONE ctermfg=NONE gui=bold guibg=#21262c guifg=#5a5c5d
 
 
     " todo: incremental improvements from this
