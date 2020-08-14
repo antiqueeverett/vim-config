@@ -15,7 +15,10 @@ let g:ale_echo_msg_format='[%severity%] [%linter%] %s'
 let g:ycm_add_preview_to_completeopt = 0
 let g:ycm_autoclose_preview_window_after_completion = 1
 
-autocmd FileType zsh let g:ale_sh_shell_default_shell='zsh'
+augroup for_zsh_File
+    autocmd!
+    autocmd FileType zsh let g:ale_sh_shell_default_shell='zsh'
+augroup END
 
 " LINTERS:
 let g:ale_linters={
