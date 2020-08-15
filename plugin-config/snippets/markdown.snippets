@@ -2,15 +2,15 @@ snippet link "+ linked text"
 [${1:text}](${2:link})
 endsnippet
 
-snippet bold "+ bold"
+snippet b "+ bold"
 __${1:bold-text}__
 endsnippet
 
-snippet italize "+ italize"
+snippet i "+ italize"
 *${1:italized-text}*
 endsnippet
 
-snippet code "+ code snippet"
+snippet snip "+ code snippet"
 * ${1:code-snippet-title}
 \`\`\`${2:syntax}
 ${3:code-snippet}
@@ -19,4 +19,29 @@ endsnippet
 
 snippet comm " + comment"
 []: # '${1:comment}'
+endsnippet
+
+snippet issue " + issue"
+title: ${1:brief}
+
+label: ${2:brief}
+
+###### description
+
+${3:brief}
+
+###### steps to reproduce
+
+1. ${4:brief}:
+2. ${5:brief}:
+
+* * *
+
+###### desired behaviour
+
+${6:brief}
+
+###### aditional remarks
+
+${7:brief}
 endsnippet
