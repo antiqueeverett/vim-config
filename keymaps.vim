@@ -15,9 +15,6 @@ nnoremap <Leader>z zi
 " [s]pell
 nnoremap <silent><C-S> :setlocal spell!<CR>
 
-" [w]rite file
-nnoremap <Leader>w :w <CR>
-
 " [+][-] split resize
 nnoremap <Leader>= :vertical resize +25<CR>
 nnoremap <Leader>- :vertical resize -25<CR>
