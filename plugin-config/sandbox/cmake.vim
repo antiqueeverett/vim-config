@@ -1,6 +1,7 @@
 function! CMakeFunction()
-    execute 'set termwinsize=0x86'
-    execute 'vert term cmake.sh'
+    call Save()
+    set termwinsize=0x86
+    vert term cmake.sh
 endfunction
 
 command! -nargs=* CXXMake :call CMakeFunction(<f-args>)
