@@ -1,4 +1,13 @@
-" using gruvbox color scheme
+" use zsh
+function! TermShell()
+    if has('macunix')
+        set shell=/bin/zsh
+    elseif has('unix')
+        set shell=/usr/bin/zsh
+    endif
+endfunction
+
+" use gruvbox color palette
 function! TermColors()
     let g:terminal_ansi_colors = [
                 \'#282828',
@@ -19,24 +28,47 @@ function! TermColors()
                 \'#ebdbb2']
 endfunc
 
-" set shell
-function! TermShell()
-    if has('macunix')
-        set shell=/bin/zsh
-    elseif has('unix')
-        set shell=/usr/bin/zsh
-    endif
-endfunction
 
-" open vim terminal
-function! OpenTerminal()
+" config term
+function! Configure()
+    call Save()
     call TermShell()
     call TermColors()
+endfunction
+
+" open term
+function! OpenTerminal()
+    call Configure()
     if has('nvim')
-        FloatermNew --height=0.8 --width=0.8 --wintype=floating --name=cmakewin
+        FloatermNew --height=0.8 --width=0.8 --wintype=floating --name=terminalwin
     else
         execute 'vert term'
     endif
 endfunction
 
+" open term and check email
+function! Mail()
+    call Configure()
+    if has('nvim')
+        FloatermNew --height=0.8 --width=0.8 --wintype=floating --name=emailwin neomutt
+    else
+        set termwinsize=0x86
+        vert term neomutt
+    endif
+endfunction
+
+" open term and run cmake
+function! CMakeFunction()
+    call Configure()
+    if has('nvim')
+        FloatermNew --height=0.8 --width=0.8 --wintype=floating --name=cmakewin cmake.sh
+    else
+        set termwinsize=0x86
+        vert term cmake.sh
+    endif
+endfunction
+command! -nargs=* RunCMake :call CMakeFunction(<f-args>)
+
 nnoremap <silent><C-O> :call OpenTerminal()<CR>
+nnoremap <silent><Leader>1 :RunCMake<CR>
+nnoremap <C-M> :call Mail()<CR>
