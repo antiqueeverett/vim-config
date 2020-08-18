@@ -1,11 +1,5 @@
-" config vim terminal
-function! ConfigVimTerm()
-    if has('macunix')
-        set shell=/bin/zsh
-    elseif has('unix')
-        set shell=/usr/bin/zsh
-    endif
-    execute 'set termwinsize=0x86'
+" using gruvbox color scheme
+function! TermColors()
     let g:terminal_ansi_colors = [
                 \'#282828',
                 \'#cc241d',
@@ -25,10 +19,24 @@ function! ConfigVimTerm()
                 \'#ebdbb2']
 endfunc
 
+" set shell
+function! TermShell()
+    if has('macunix')
+        set shell=/bin/zsh
+    elseif has('unix')
+        set shell=/usr/bin/zsh
+    endif
+endfunction
+
 " open vim terminal
 function! OpenTerminal()
-    execute 'call ConfigVimTerm()'
-    execute 'vert term'
+    call TermShell()
+    call TermColors()
+    if has('nvim')
+        FloatermNew --height=0.8 --width=0.8 --wintype=floating --name=cmakewin
+    else
+        execute 'vert term'
+    endif
 endfunction
 
 nnoremap <silent><C-O> :call OpenTerminal()<CR>

@@ -61,7 +61,7 @@ set timeoutlen=1000 ttimeoutlen=0
 set spelllang=en_us,de_de spell
 set spellfile=~/Dropbox/config/spellings.utf-8.add
 
+
 " fold rules
 " set foldmethod=indent
 " set foldnestmax=3
-" set clipboard=unnamedplus
