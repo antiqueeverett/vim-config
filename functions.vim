@@ -28,6 +28,7 @@ nnoremap <silent><Leader>? :call ToggleLineNumbersStyle()<CR>
 
 " list of files with workflow functions
 let g:workflow_functions=[
+            \'mail.vim',
             \'helpers.vim',
             \'files.vim',
             \'terminal.vim',
