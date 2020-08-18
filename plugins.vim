@@ -92,7 +92,6 @@ endfor
 
 " list of personal trench plugin config files
 let g:my_plugin_sandbox_files=[
-            \'cmake.vim',
             \'heist.vim',
             \'xpaste.vim',
             \'replace.vim']
