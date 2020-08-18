@@ -78,4 +78,4 @@ command! -nargs=* Heist :call PlayHeist(<f-args>)
 nnoremap <silent><C-G> :Heist<CR>
 
 command! -nargs=* Restart :call InitGameBuffer(<f-args>)
-nnoremap <silent><C-R> :Restart<CR>
+nnoremap <silent><C-G><C-R> :Restart<CR>

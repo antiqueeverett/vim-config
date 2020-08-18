@@ -32,6 +32,8 @@ Plug 'clojure-emacs/cider-nrepl'
 
 " utility
 Plug 'ervandew/supertab'
+Plug 'voldikss/vim-floaterm'
+
 
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'

@@ -80,7 +80,7 @@ function! Save()
     if IsWorkingBuffer()
         execute 'write'
     else
-        execute 'call Discard'
+        execute 'call Discard()'
         " todo: could there be a more
         " gracious approach?
         " date: 2020-08-13 12:21

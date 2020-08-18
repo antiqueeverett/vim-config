@@ -9,10 +9,12 @@
 "                     iff the current buffer is scratch, undo all changes
 "                     that may have snuck in (fzf trigger fails otherwise)
 function! BufferPreFuzzyFind()
-    if IsNoName() || !IsWorkingBuffer()
-        u0
-    elseif IsWorkingBuffer()
-        execute 'call Save()'
+    if &modifiable == 1
+        if IsNoName() || !IsWorkingBuffer()
+            u0
+        elseif IsWorkingBuffer()
+            execute 'call Save()'
+        endif
     endif
 endfunction
 

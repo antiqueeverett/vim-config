@@ -1,0 +1,19 @@
+Error Log: for current vim config
+=================================
+
+Error detected while processing function NextBuffer[1]..Save:
+line    4:
+E107: Missing parentheses: Discard
+-[x] Fix applied 
+	added missing parentheses to Discard function
+
+Error detected while processing function FuzzyFind[1]..BufferPreFuzzyFind:                                                           
+line    2:W10: Warning: Changing a readonly file
+-[x] Fix applied 
+	if &modifiable check before calling Save
+
+E149: Sorry, no help for termwinsize
+-[x] Fix applied 
+	if has(neovim)
+		use floating window
+

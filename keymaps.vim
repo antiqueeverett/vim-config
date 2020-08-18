@@ -21,14 +21,14 @@ nnoremap <Leader>- :vertical resize -25<CR>
 
 " navigate splits across all modes
 nnoremap <C-J> <C-W><C-J>
-tnoremap <C-J> <C-W><C-J>
-vnoremap <C-J> <C-W><C-J>
-inoremap <C-J> <C-W><C-J>
+" tnoremap <C-J> <C-W><C-J>
+" vnoremap <C-J> <C-W><C-J>
+" inoremap <C-J> <C-W><C-J>
 
 nnoremap <C-K> <C-W><C-K>
-tnoremap <C-K> <C-W><C-K>
-vnoremap <C-K> <C-W><C-K>
-inoremap <C-K> <C-W><C-K>
+" tnoremap <C-K> <C-W><C-K>
+" vnoremap <C-K> <C-W><C-K>
+" inoremap <C-K> <C-W><C-K>
 
 nnoremap <C-L> <C-W><C-L>
 tnoremap <C-L> <C-W><C-L>
@@ -42,7 +42,7 @@ inoremap <C-H> <C-W><C-H>
 
 function! PreSrc()
     silent call SaveCursorPos()
-    silent write
+    write
 endfunction
 
 function! PostSrc()
@@ -52,3 +52,11 @@ endfunction
 
 " [$]ource
 nnoremap <silent><leader>$ :call PreSrc()<CR> :source ~/.vimrc<CR> :call PostSrc()<CR>
+
+" yank into clipboard
+vmap <Leader>yy "+yy
+
+" paste from clipboard
+nnoremap <Leader>yp "+p
+
+nnoremap <Leader><ENTER> :w<CR>
