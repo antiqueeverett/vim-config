@@ -8,6 +8,24 @@
 " created: 2020-08-13 11:22
 " Github: https://github.com/antiqueeverett/
 
+
+""
+" GetPos:
+"   Gets the current position of the cursor.
+function! GetPos()
+    let b:cursor_save_pos = getpos('.')
+endfunction
+
+
+""
+" SetPos:
+"   Sets the position of the cursor
+"   to the last saved cursor position.
+function! SetPos()
+    call setpos('.', b:cursor_save_pos)
+endfunction
+
+
 ""
 " BufferPeek: Echos feedback on all buffer variables.
 function! BufferPeek()
