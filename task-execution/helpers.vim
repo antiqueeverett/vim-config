@@ -8,14 +8,12 @@
 " created: 2020-08-13 11:22
 " Github: https://github.com/antiqueeverett/
 
-
 ""
 " GetPos:
 "   Gets the current position of the cursor.
 function! GetPos()
     let b:cursor_save_pos = getpos('.')
 endfunction
-
 
 ""
 " SetPos:
@@ -25,9 +23,9 @@ function! SetPos()
     call setpos('.', b:cursor_save_pos)
 endfunction
 
-
 ""
-" BufferPeek: Echos feedback on all buffer variables.
+" BufferPeek:
+"   Feedback on all buffer variables.
 function! BufferPeek()
     echo '1. buffer number = ' . bufnr('%')
     echo '2. buffer buftype = ' . &buftype
@@ -36,9 +34,9 @@ function! BufferPeek()
     echo '5. buffer file type = ' . &filetype
 endfunction
 
-
 ""
-" IsScratch: Checks if current buffer is a scratch buffer.
+" IsScratch:
+"   Checks if current buffer is a scratch buffer.
 function! IsScratch()
     if &modifiable!=#'1' || &buftype!=#'' || &filetype ==#''
         return v:true
@@ -47,9 +45,9 @@ function! IsScratch()
     endif
 endfunction
 
-
 ""
-" IsNoName: Checks if current buffer is a no name buffer.
+" IsNoName:
+"   Checks if current buffer is a no name buffer.
 function! IsNoName()
     if &buftype==#'' && bufname('%')==#'' && &modifiable==#'1'
         return v:true
@@ -58,9 +56,9 @@ function! IsNoName()
     endif
 endfunction
 
-
 ""
-" IsWorkingBuffer: Checks if current buffer is a working buffer.
+" IsWorkingBuffer:
+"   Checks if current buffer is a working buffer.
 function! IsWorkingBuffer()
     if !IsScratch() && !IsNoName()
         return v:true
@@ -69,16 +67,16 @@ function! IsWorkingBuffer()
     endif
 endfunction
 
-
 ""
-" Discard: Close current buffer
+" Discard:
+"   Closes current buffer
 function! Discard()
     execute (bufnr('%') . 'bd!')
 endfunction
 
-
 ""
-" Save: Save current buffer
+" Save:
+"   Saves current buffer
 function! Save()
     if IsWorkingBuffer()
         execute 'write'
@@ -92,6 +90,8 @@ endfunction
 
 ""
 " IsLastWindow:
+"   Checks if current window
+"   is the last window
 function! IsLastWindow()
     if winnr() == winnr('$')
         return v:true
@@ -100,10 +100,9 @@ function! IsLastWindow()
     endif
 endfunction
 
-
-
 ""
-" IsLastBuffer: Verifies current buffer is last buffer
+" IsLastBuffer:
+"   Verifies current buffer is last buffer
 function! IsLastBuffer()
     let l:buffer_count = 0
     for i in range(0, bufnr('$'))
@@ -119,10 +118,10 @@ function! IsLastBuffer()
     endif
 endfunction
 
-
 ""
-" ExitVim: Exits vim iff current buffer is last buffer and
-"          not a working buffer.
+" ExitVim:
+"   Exits vim iff current buffer is
+"   last buffer and not a working buffer.
 " todo: test!!!
 " date: 2020-08-13 11:56
 function! ExitVim()
@@ -135,3 +134,4 @@ function! ExitVim()
         endif
     endif
 endfunction
+
