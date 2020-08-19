@@ -19,7 +19,7 @@ augroup on_ColorScheme
     " Background and font
     autocmd ColorScheme * highlight Normal
                 \ term=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-                \ gui=NONE guibg=#1d2021 guifg=#85929e
+                \ gui=NONE guibg=#1d2021 guifg=#abb2b9
 
     " Cursor line
     autocmd ColorScheme * highlight CursorLine
@@ -88,13 +88,14 @@ augroup on_ColorScheme
                 \ term=bold cterm=bold ctermbg=NONE ctermfg=NONE
                 \ gui=bold guibg=#1c2833 guifg=#eaecee
 
-    autocmd ColorScheme * highlight Visual
-                \ term=bold cterm=bold ctermbg=NONE ctermfg=NONE
-                \ gui=bold guibg=#eaecee guifg=#1c2833
-
     autocmd ColorScheme * highlight IncSearch
                 \ term=bold cterm=bold ctermbg=NONE ctermfg=NONE
                 \ gui=bold guibg=#eaecee guifg=#1c2833
+
+    " Visual
+    autocmd ColorScheme * highlight Visual
+                \ term=bold cterm=bold ctermbg=NONE ctermfg=NONE
+                \ gui=bold guibg=#f8f5d7 guifg=#1c2833
 
     " Vertical split
     autocmd ColorScheme * highlight VertSplit
