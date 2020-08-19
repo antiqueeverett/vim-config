@@ -71,4 +71,4 @@ command! -nargs=* RunCMake :call CMakeFunction(<f-args>)
 
 nnoremap <silent><C-O> :call OpenTerminal()<CR>
 nnoremap <silent><Leader>1 :RunCMake<CR>
-nnoremap <C-M> :call Mail()<CR>
+nnoremap ` :call Mail()<CR>
