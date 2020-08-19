@@ -17,7 +17,7 @@ augroup END
 augroup on_ColorScheme
     autocmd!
     " Background and font
-    autocmd ColorScheme * highlight Normal       term=NONE cterm=NONE ctermbg=NONE ctermfg=NONE gui=NONE guibg=#1d2021 guifg=Grey
+    autocmd ColorScheme * highlight Normal       term=NONE cterm=NONE ctermbg=NONE ctermfg=NONE gui=NONE guibg=#1d2021 guifg=#d6dbdf
 
     " Cursor line
     autocmd ColorScheme * highlight CursorLine   term=NONE cterm=NONE ctermbg=NONE ctermfg=NONE gui=NONE guibg=NONE guifg=NONE
@@ -46,9 +46,9 @@ augroup on_ColorScheme
     autocmd ColorScheme * highlight SpellRare    term=bold cterm=underline,bold ctermbg=NONE ctermfg=NONE gui=bold guibg=#1d2021 guifg=#8f3f71
 
     " Search
-    autocmd ColorScheme * highlight Search       term=bold cterm=bold ctermbg=NONE ctermfg=NONE gui=bold guibg=Black guifg=#eaecee
-    autocmd ColorScheme * highlight Visual       term=bold cterm=bold ctermbg=NONE ctermfg=NONE gui=bold guibg=Black guifg=#eaecee
-    autocmd ColorScheme * highlight IncSearch    term=bold cterm=bold ctermbg=NONE ctermfg=NONE gui=bold guibg=#1c2833 guifg=#1c2833
+    autocmd ColorScheme * highlight Search        term=bold cterm=bold ctermbg=NONE ctermfg=NONE gui=bold guibg=#1c2833 guifg=#eaecee
+    autocmd ColorScheme * highlight Visual        term=bold cterm=bold ctermbg=NONE ctermfg=NONE gui=bold guibg=#1c2833 guifg=#eaecee
+    autocmd ColorScheme * highlight IncSearch     term=bold cterm=bold ctermbg=NONE ctermfg=NONE gui=bold guibg=#eaecee guifg=#1c2833
 
     " Vertical split
     autocmd ColorScheme * highlight VertSplit    term=bold cterm=bold ctermbg=NONE ctermfg=NONE gui=bold guibg=#21262c guifg=#5a5c5d
