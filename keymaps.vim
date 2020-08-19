@@ -40,18 +40,12 @@ tnoremap <C-H> <C-W><C-H>
 vnoremap <C-H> <C-W><C-H>
 inoremap <C-H> <C-W><C-H>
 
-function! PreSrc()
-    silent call SaveCursorPos()
-    write
-endfunction
-
-function! PostSrc()
-    silent call ResetCursorPos()
-    echo 'done!'
-endfunction
-
 " [$]ource
-nnoremap <silent><leader>$ :call PreSrc()<CR> :source ~/.vimrc<CR> :call PostSrc()<CR>
+nnoremap <silent><leader>$
+            \:call GetPos()<CR>
+            \:source ~/.vimrc<CR>
+            \:call SetPos()<CR>
+            \:echo "done!"
 
 " yank into clipboard
 vmap <Leader>yy "+yy
