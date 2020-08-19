@@ -9,21 +9,6 @@
 " Github: https://github.com/antiqueeverett/
 
 ""
-" SaveCursorPos: Saves the current position of the cursor.
-function! SaveCursorPos()
-    let b:cursor_save_pos = getpos('.')
-endfunction
-
-
-""
-" ResetCursorPos: Resets the position of the cursor to the last saved
-"                 cursor position.
-function! ResetCursorPos()
-    call setpos('.', b:cursor_save_pos)
-endfunction
-
-
-""
 " BufferPeek: Echos feedback on all buffer variables.
 function! BufferPeek()
     echo '1. buffer number = ' . bufnr('%')
