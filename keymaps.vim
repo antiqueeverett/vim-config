@@ -21,14 +21,8 @@ nnoremap <Leader>- :vertical resize -25<CR>
 
 " navigate splits across all modes
 nnoremap <C-J> <C-W><C-J>
-" tnoremap <C-J> <C-W><C-J>
-" vnoremap <C-J> <C-W><C-J>
-" inoremap <C-J> <C-W><C-J>
 
 nnoremap <C-K> <C-W><C-K>
-" tnoremap <C-K> <C-W><C-K>
-" vnoremap <C-K> <C-W><C-K>
-" inoremap <C-K> <C-W><C-K>
 
 nnoremap <C-L> <C-W><C-L>
 tnoremap <C-L> <C-W><C-L>
@@ -40,17 +34,21 @@ tnoremap <C-H> <C-W><C-H>
 vnoremap <C-H> <C-W><C-H>
 inoremap <C-H> <C-W><C-H>
 
-" [$]ource
-nnoremap <silent><leader>$
-            \:call GetPos()<CR>
-            \:source ~/.vimrc<CR>
-            \:call SetPos()<CR>
-            \:echo "done!"
-
 " yank into clipboard
 vmap <Leader>yy "+yy
 
 " paste from clipboard
 nnoremap <Leader>yp "+p
 
+" write buffer
 nnoremap <Leader><ENTER> :w<CR>
+
+" source .vimrc
+nnoremap <Leader>$ :call ReSource()<CR>
+
+nnoremap <silent><Leader>$ :
+            \call GetPos()<Bar>
+            \silent write<Bar>
+            \silent source $MYVIMRC<Bar>
+            \call SetPos()<Bar>
+            \echo 'done!'<CR>
