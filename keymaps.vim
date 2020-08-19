@@ -44,11 +44,9 @@ nnoremap <Leader>yp "+p
 nnoremap <Leader><ENTER> :w<CR>
 
 " source .vimrc
-nnoremap <Leader>$ :call ReSource()<CR>
-
 nnoremap <silent><Leader>$ :
             \call GetPos()<Bar>
             \silent write<Bar>
-            \silent source $MYVIMRC<Bar>
+            \silent source ~/.vimrc<Bar>
             \call SetPos()<Bar>
             \echo 'done!'<CR>
