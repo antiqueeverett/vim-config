@@ -17,3 +17,8 @@ E149: Sorry, no help for termwinsize
 	if has(neovim)
 		use floating window
 
+Error detected while processing function FuzzyFind[2]..<SNR>58_cmd[15]..fzf#run[58]..<SNR>58_execute_term[3]..<SNR>58_split:
+line   12:
+E605: Exception not caught: Nvim 0.4+ or Vim 8.2.191+ with popupwin feature is required for pop-up window
+Press ENTER or type command to continue
+
