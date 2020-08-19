@@ -26,6 +26,7 @@ augroup on_ColorScheme
                 \ term=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
                 \ gui=NONE guibg=NONE guifg=NONE
 
+    " Cursor line number
     autocmd ColorScheme * highlight CursorLineNr
                 \ term=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
                 \ gui=NONE guibg=#1d2021 guifg=White
@@ -116,4 +117,5 @@ augroup on_ColorScheme
     autocmd ColorScheme * highlight TabLineFill  guibg=White guifg=Grey
     autocmd ColorScheme * highlight TabLineSel   guibg=White guifg=Grey
 augroup END
+
 
