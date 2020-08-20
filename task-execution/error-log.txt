@@ -4,16 +4,16 @@ Error Log: for current vim config
 Error detected while processing function NextBuffer[1]..Save:
 line    4:
 E107: Missing parentheses: Discard
--[x] Fix applied 
+-[x] Fix applied
 	added missing parentheses to Discard function
 
-Error detected while processing function FuzzyFind[1]..BufferPreFuzzyFind:                                                           
+Error detected while processing function FuzzyFind[1]..BufferPreFuzzyFind:
 line    2:W10: Warning: Changing a readonly file
--[x] Fix applied 
+-[x] Fix applied
 	if &modifiable check before calling Save
 
 E149: Sorry, no help for termwinsize
--[x] Fix applied 
+-[x] Fix applied
 	if has(neovim)
 		use floating window
 
@@ -21,4 +21,9 @@ Error detected while processing function FuzzyFind[2]..<SNR>58_cmd[15]..fzf#run[
 line   12:
 E605: Exception not caught: Nvim 0.4+ or Vim 8.2.191+ with popupwin feature is required for pop-up window
 Press ENTER or type command to continue
+-[ ] Fix applied
 
+Error detected while processing function 204[2]..205[11]..215:
+line   27:
+E444: Cannot close last window
+-[ ] Fix applied

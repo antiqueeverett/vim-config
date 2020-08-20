@@ -36,6 +36,7 @@ function! Configure()
     call TermColors()
 endfunction
 
+
 " open term
 function! OpenTerminal()
     call Configure()
@@ -45,6 +46,7 @@ function! OpenTerminal()
         execute 'vert term'
     endif
 endfunction
+
 
 " open term and check email
 function! Mail()
@@ -57,8 +59,9 @@ function! Mail()
     endif
 endfunction
 
+
 " open term and run cmake
-function! CMakeFunction()
+function! CMakeProject()
     call Configure()
     if has('nvim')
         FloatermNew --height=0.8 --width=0.8 --wintype=floating --name=cmakewin cmake.sh
@@ -67,8 +70,20 @@ function! CMakeFunction()
         vert term cmake.sh
     endif
 endfunction
-command! -nargs=* RunCMake :call CMakeFunction(<f-args>)
 
+
+" open term and run cmake
+function! CMakeTarget()
+    call Configure()
+    if has('nvim')
+        FloatermNew --height=0.8 --width=0.8 --wintype=floating --name=cmakewin buildtarget.sh
+    else
+        set termwinsize=0x86
+        vert term buildtarget.sh
+    endif
+endfunction
+
+"nnoremap ` :call Mail()<CR>
 nnoremap <silent><C-O> :call OpenTerminal()<CR>
-nnoremap <silent><Leader>1 :RunCMake<CR>
-nnoremap ` :call Mail()<CR>
+nnoremap <silent><Leader>1 :call CMakeProject()<CR>
+nnoremap <silent><Leader>B :call CMakeTarget()<CR>
