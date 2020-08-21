@@ -22,8 +22,8 @@ endsnippet
 
 # cite source
 snippet ref "+ ref" w
-/* ${1:symbol} ref:
- * <${2}>
+/* ${1:brief} see:
+ * $2
  * date: `!v strftime("%Y-%m-%d %H:%M")`
  */
 endsnippet
@@ -69,17 +69,56 @@ endsnippet
 ## symbol definition ---------------------------------------------------------
 # add class
 snippet class " + .h class" b
-#ifndef ${2:`!v substitute(vim_snippets#Filename('$1_H','ClassName'),'.*','\U&\E','')`}
-#define $2
-
 class ${1:`!v substitute(substitute(vim_snippets#Filename('$1','ClassName'),'^.','\u&',''), '_\(\w\)', '\u\1', 'g')`}
 {
-private:
-	$3
-public:
-	$1();
-	~$1();
+	private:
+		$3
+	public:
+			$1();
+			~$1();
 };
+endsnippet
 
-#endif /* $2 */
+snippet printvec "→ print vec" b
+std::cout << "[ ";
+for (auto i = ${1:vec}.begin(); i != $1.end(); ++i)
+std::cout << *i << " ";
+std::cout << "]" << std::endl;
+endsnippet
+
+snippet ss "→ std::string" w
+std::string
+endsnippet
+
+snippet sv "→ std::vector" w
+std::vector<$1>
+endsnippet
+
+snippet sa "→ std::array" w
+std::array<$1>
+endsnippet
+
+snippet fo "→ for loop" b
+for (int ${1:i} = 0; $1 < ${2:count}; ++$1) {
+}
+endsnippet
+
+snippet efo "→ for loop" b
+for (auto ${1:i}: ${2:container}) {
+}
+endsnippet
+
+snippet "read num" "→ std::cin int" w
+// stdin int
+//
+int num;
+std::cin >> num;
+std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+endsnippet
+
+snippet "read str" "→ std::cin string" w
+// stdin string
+//
+std::string temp_str;
+getline(std::cin, temp_str);
 endsnippet
