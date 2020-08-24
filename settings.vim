@@ -2,10 +2,10 @@
 set encoding=utf-8
 scriptencoding utf-8
 
-" default to gui colors
+" use gui colors
 set termguicolors
 
-" enforce 256 terminal colors
+" use 256 terminal colors
 set t_Co=256
 
 " always show status
@@ -17,6 +17,8 @@ syntax on
 " enable search highlight
 set hlsearch
 set incsearch
+
+" enable cursor line
 set cursorline
 
 " indent rules
@@ -35,13 +37,12 @@ filetype plugin on
 set wrap
 set colorcolumn=80
 
-" number line style
-" -- order matters here --
+" number line style (keep order!)
 set relativenumber
 set number
 set number relativenumber
 
-" silence pesky bell
+" silence
 set visualbell
 set t_vb=
 
@@ -63,7 +64,3 @@ set timeoutlen=1000 ttimeoutlen=0
 " set spelling dictionaries
 set spelllang=en_us,de_de spell
 set spellfile=~/Dropbox/config/spellings.utf-8.add
-
-" fold rules
-" set foldmethod=indent
-" set foldnestmax=3
