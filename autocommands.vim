@@ -1,16 +1,25 @@
-augroup on_BufWritePre
+augroup strip_ws
     autocmd!
     autocmd BufWritePre * %s/\s\+$//e
 augroup END
 
-augroup on_BufEnter
+augroup set_cursor
+    autocmd!
+    autocmd BufEnter * silent! normal! g`"
+augroup END
+
+augroup clear_srch_hi
     autocmd!
     autocmd BufEnter * silent! lcd %:p:h
 augroup END
 
-augroup on_BufRead
+augroup init_config
     autocmd!
     autocmd BufRead * silent execute 'GitGutterSignsDisable'
+augroup END
+
+augroup wrap_ln
+    autocmd!
     autocmd BufRead,BufNewFile * setlocal textwidth=80
 augroup END
 
@@ -87,11 +96,12 @@ augroup on_ColorScheme
     " Search
     autocmd ColorScheme * highlight Search
                 \ term=bold cterm=bold ctermbg=NONE ctermfg=NONE
-                \ gui=bold guibg=#1c2833 guifg=#eaecee
+                \ gui=bold guibg=#f8f5d7 guifg=#1c2833
 
+    " Incremental search
     autocmd ColorScheme * highlight IncSearch
                 \ term=bold cterm=bold ctermbg=NONE ctermfg=NONE
-                \ gui=bold guibg=#eaecee guifg=#1c2833
+                \ gui=bold guibg=#f8f5d7 guifg=#1c2833
 
     " Visual
     autocmd ColorScheme * highlight Visual
