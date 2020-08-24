@@ -1,4 +1,4 @@
-" lets configure vim
+" configure vim
 let g:config_files=[
             \'settings.vim',
             \'keymaps.vim',
