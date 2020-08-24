@@ -27,11 +27,8 @@ endfunc
 command! -nargs=* RmFile :call RmFileFunction()
 
 nnoremap <Leader>nf :MkFile
-nnoremap <Leader>dd :RmFile
+"nnoremap <Leader>fd :RmFile
 "nnoremap <Leader>dd :MvFile
 
-" [M]ove current file on disk and rename buffer
 nnoremap <Leader>M :Rename
-
-" [D]elete current buffer and file on disk
-nnoremap <Leader>df :Delete<CR>
+nnoremap <Leader>fd :Delete<CR>

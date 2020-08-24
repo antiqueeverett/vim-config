@@ -15,5 +15,5 @@ endfunc
 command! -nargs=* RmDir :call RmDirFunction(<f-args>)
 
 nnoremap <Leader>nd :MkDir
-nnoremap <Leader>dd :RmDir
+"nnoremap <Leader>dd :RmDir
 "nnoremap <Leader>nd :MvDir

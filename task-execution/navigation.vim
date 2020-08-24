@@ -72,9 +72,9 @@ function! CloseBuffer()
 endfunction
 
 
-nnoremap <silent><Leader>dB :qa!<CR>
+nnoremap <silent><Leader>q :q!<CR>
 nnoremap <silent><Leader>\ :call VSplit()<CR>
 nnoremap <silent><Leader>' :call FuzzyFind()<CR>
-nnoremap <silent><Leader>db :call CloseBuffer()<CR>
+nnoremap <silent><Leader>d :call CloseBuffer()<CR>
 nnoremap <silent><S-Tab> :call PreviousBuffer()<CR>
 nnoremap <silent><leader><Tab> :call NextBuffer()<CR>

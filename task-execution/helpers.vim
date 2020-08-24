@@ -1,12 +1,36 @@
-" helpers.vim: Helper functions for;
-"              * files.vim
-"              * terminal.vim
-"              * navigation.vim
-"              * directories.vim
-"
 " author: Everett
 " created: 2020-08-13 11:22
 " Github: https://github.com/antiqueeverett/
+" toggle number line style
+
+
+function! ToggleNumLineStyle()
+    if(&relativenumber == 1)
+        set norelativenumber
+        set number
+    else
+        set relativenumber
+        set number
+        set number relativenumber
+    endif
+endfunction
+
+" toggle line numbers on/off
+function! ToggleNumLine()
+    if &relativenumber == 1 || &number == 1
+        set norelativenumber
+        set nonumber
+    else
+        set relativenumber
+        set number
+        set number relativenumber
+    endif
+endfunction
+
+" key maps
+nnoremap <silent><C-N> :call ToggleNumLine()<CR>
+nnoremap <silent><Leader>? :call ToggleNumLineStyle()<CR>
+
 
 ""
 " GetPos:
