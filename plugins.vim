@@ -33,8 +33,7 @@ Plug 'clojure-emacs/cider-nrepl'
 " utility
 Plug 'ervandew/supertab'
 Plug 'voldikss/vim-floaterm'
-
-
+Plug 'thaerkh/vim-workspace'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'godlygeek/tabular'
@@ -79,6 +78,7 @@ let g:plugin_config_files=[
             \'floaterm.vim',
             \'supertab.vim',
             \'ultisnips.vim',
+            \'workspace.vim',
             \'autoformat.vim',
             \'indentline.vim',
             \'youcompleteme.vim',
