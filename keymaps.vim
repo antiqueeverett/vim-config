@@ -1,16 +1,11 @@
 " leader
 let mapleader = ';'
 
-" ; (repeat-last-find) has a delay when also using ; as leader.
-" One simple workaround is to map ; (repeat-last-find) to leader.
-nnoremap <Leader>; ;
+" repeat find-in-line
+nnoremap <Leader>; .
 
 " [c]lear search highlight
 nnoremap <silent><C-C> :let @/=""<CR>
-
-" [f]old
-nnoremap <Leader>f za
-nnoremap <Leader>z zi
 
 " [s]pell
 nnoremap <silent><C-S> :setlocal spell!<CR>
