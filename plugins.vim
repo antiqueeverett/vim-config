@@ -98,5 +98,5 @@ let g:my_plugin_sandbox_files=[
 
 " source plugin configuration from dedicated source file list
 for file in g:my_plugin_sandbox_files
-    execute 'source $VIM_DOTFILES_PATH/plugin-config/sandbox/' . file
+    execute 'source $VIM_DOTFILES_PATH/plugconf/sandbox/' . file
 endfor
