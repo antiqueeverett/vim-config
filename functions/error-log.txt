@@ -27,3 +27,11 @@ Error detected while processing function 204[2]..205[11]..215:
 line   27:
 E444: Cannot close last window
 -[ ] Fix applied
+
+
+unresolved ====================================================================
+
+ON BUFFER DELETE [;d]
+→ ValueError: No semantic completer exists for filetypes: ['vim']
+
+resolved ======================================================================
