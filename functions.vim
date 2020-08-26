@@ -3,7 +3,7 @@ let g:my_functions=[
             \'helpers.vim',
             \'files.vim',
             \'terminal.vim',
-            \'navigation.vim',
+            \'transitions.vim',
             \'directories.vim']
 
 for file in g:my_functions
