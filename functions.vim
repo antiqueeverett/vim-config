@@ -7,5 +7,5 @@ let g:my_functions=[
             \'directories.vim']
 
 for file in g:my_functions
-    execute 'source $VIM_DOTFILES_PATH/task-execution/' . file
+    execute 'source $VIM_DOTFILES_PATH/functions/' . file
 endfor
