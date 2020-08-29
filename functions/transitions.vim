@@ -79,9 +79,9 @@ endfunction
 " nnoremap <silent><S-Tab> :call PreviousBuffer()<CR>
 " nnoremap <silent><leader><Tab> :call NextBuffer()<CR>
 
-nnoremap <Leader>q :q!<CR>
-nnoremap <Leader>\ :vnew<Bar>FZF $HOME/Repositories<CR>
-nnoremap <Leader>' :FZF $HOME/Repositories<CR>
+nnoremap <Leader>q :write<Bar>q!<CR>
+nnoremap <Leader>\ :write<Bar>vnew<Bar>FZF $HOME/Repositories<CR>
+nnoremap <Leader>' :write<Bar>FZF $HOME/Repositories<CR>
 nnoremap <Leader>d :write<Bar>bd<CR>
 nnoremap <S-Tab> :write<Bar>bN<CR>
 nnoremap <leader><Tab> :write<Bar>bn<CR>

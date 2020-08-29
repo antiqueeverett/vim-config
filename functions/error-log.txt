@@ -28,10 +28,29 @@ line   27:
 E444: Cannot close last window
 -[ ] Fix applied
 
+===============================================================================
 
-unresolved ====================================================================
+ISSUE: on fzf call
+    Error detected while processing function 435[30]..<SNR>56_callback:
+    E37: No write since last change (add ! to override)
+    Press ENTER or type command to continue
+FIX:
+    Calling write before  calling fzf
 
-ON BUFFER DELETE [;d]
-→ ValueError: No semantic completer exists for filetypes: ['vim']
+===============================================================================
 
-resolved ======================================================================
+ISSUE: random pop-up
+    UnboundLocalError: local variable 'final_flags' referenced before assignment
+
+===============================================================================
+
+ISSUE: on buffer delete, buffer next, and fzf call from NERDTree
+    E382: Cannot write, 'buftype' option is set
+
+===============================================================================
+
+ISSUE: on buffer delete from No name buffer
+    E32: No file name
+
+===============================================================================
+

@@ -1,29 +1,29 @@
-augroup strip_ws
+augroup strip_white_spaces
     autocmd!
     autocmd BufWritePre * %s/\s\+$//e
 augroup END
 
-augroup set_cursor
-    autocmd!
-    autocmd BufEnter * silent! normal! g`"
-augroup END
+" augroup set_cursor
+"     autocmd!
+"     autocmd BufEnter * silent! normal! g`"
+" augroup END
 
-augroup clear_srch_hi
+augroup clear_search_highlight
     autocmd!
     autocmd BufEnter * silent! lcd %:p:h
 augroup END
 
-augroup init_config
+augroup hide_gitgutter
     autocmd!
     autocmd BufRead * silent execute 'GitGutterSignsDisable'
 augroup END
 
-augroup wrap_ln
+augroup wrap_lines
     autocmd!
     autocmd BufRead,BufNewFile * setlocal textwidth=80
 augroup END
 
-augroup on_ColorScheme
+augroup set_colors
     autocmd!
     " Background and font
     autocmd ColorScheme * highlight Normal
