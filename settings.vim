@@ -105,9 +105,7 @@ let g:vim_plugin_sandbox=[
 " list custom functions
 let g:vim_functions=[
             \'helpers.vim',
-            \'files.vim',
-            \'terminal.vim',
-            \'directories.vim']
+            \'terminal.vim']
 
 " source configuration files
 for file in g:vim_conf
