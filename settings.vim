@@ -68,7 +68,6 @@ set spellfile=~/Dropbox/config/spellings.utf-8.add
 " list of configuration files
 let g:vim_conf=[
             \'keymaps.vim',
-            \'functions.vim',
             \'autocommands.vim',
             \'plugins.vim']
 
