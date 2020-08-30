@@ -99,7 +99,16 @@ let g:vim_plugin_conf=[
 let g:vim_plugin_sandbox=[
             \'heist.vim',
             \'xpaste.vim',
-            \'replace.vim']
+            \'replace.vim',
+            \'autosave.vim',
+            \'retain-cursor-pos.vim']
+
+" list custom functions
+let g:vim_functions=[
+            \'helpers.vim',
+            \'files.vim',
+            \'terminal.vim',
+            \'directories.vim']
 
 " source configuration files
 for file in g:vim_conf
@@ -116,3 +125,7 @@ for file in g:vim_plugin_sandbox
     execute 'source $VIM_DOTFILES_PATH/sandbox/' . file
 endfor
 
+" source custom vim functions
+for file in g:vim_functions
+    execute 'source $VIM_DOTFILES_PATH/functions/' . file
+endfor

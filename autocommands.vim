@@ -1,28 +1,22 @@
+" TRIM WHITE SPACES:
 augroup strip_white_spaces
     autocmd!
     autocmd BufWritePre * %s/\s\+$//e
 augroup END
 
-" augroup set_cursor
-"     autocmd!
-"     autocmd BufEnter * silent! normal! g`"
-" augroup END
-
-augroup clear_search_highlight
-    autocmd!
-    autocmd BufEnter * silent! lcd %:p:h
-augroup END
-
-augroup hide_gitgutter
+" INITIALLY HIDE GIT-GUTTER SIGNS:
+augroup hide_signs
     autocmd!
     autocmd BufRead * silent execute 'GitGutterSignsDisable'
 augroup END
 
+" LINE WRAPPING:
 augroup wrap_lines
     autocmd!
     autocmd BufRead,BufNewFile * setlocal textwidth=80
 augroup END
 
+" THEME OVERRIDES:
 augroup set_colors
     autocmd!
     " Background and font

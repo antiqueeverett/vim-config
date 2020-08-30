@@ -10,5 +10,3 @@ command! -nargs=* RepWORD :call ReplaceWORDFunction(<f-args>)
 
 nnoremap <Leader>r  :Repword
 nnoremap <Leader>R  :RepWORD
-
-

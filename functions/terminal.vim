@@ -31,7 +31,6 @@ endfunc
 
 " config term
 function! Configure()
-    call Save()
     call TermShell()
     call TermColors()
 endfunction
