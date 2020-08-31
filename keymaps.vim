@@ -39,7 +39,7 @@ nnoremap <Leader><ENTER> :w<CR>
 nnoremap <silent><Leader>d :bd<CR>
 
 " exit vim
-nnoremap <silent><Leader>q :wq!<CR>
+nnoremap <silent><Leader>q :q!<CR>
 
 " cycle to previous buffer
 nnoremap <silent><S-Tab> :bN<CR>
