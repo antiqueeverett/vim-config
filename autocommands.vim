@@ -1,3 +1,9 @@
+" ALWAYS CD TO CURRENT DIRECTORY:
+augroup to_buff_dir
+    autocmd!
+    autocmd BufEnter * silent! lcd %:p:h
+augroup END
+
 " TRIM WHITE SPACES:
 augroup strip_white_spaces
     autocmd!
