@@ -63,11 +63,15 @@ endfunction
 function! Autosave()
     if IsWorkingBuffer()
         execute 'write'
-        echo 'changes saved!'
     endif
 endfunction
 
 augroup auto_save
     autocmd!
-    autocmd InsertLeave,BufLeave,VimLeavePre  * silent execute 'call Autosave()'
+    autocmd InsertLeave,
+                \VimLeavePre,
+                \BufWinLeave,BufLeave,
+                \FocusGained,FocusLost,
+                \CursorHold,CursorMoved
+                \ * silent execute 'call Autosave()'
 augroup END

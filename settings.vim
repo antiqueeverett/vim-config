@@ -96,6 +96,7 @@ let g:vim_plugin_conf=[
 
 " list of plugins under development
 let g:vim_plugin_sandbox=[
+            \'undo.vim',
             \'heist.vim',
             \'xpaste.vim',
             \'replace.vim',
