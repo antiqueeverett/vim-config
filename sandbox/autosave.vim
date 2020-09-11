@@ -48,8 +48,10 @@ endfunction
 " IsWorkingBuffer:
 "   Checks if current buffer is a working buffer.
 function! IsWorkingBuffer()
-    if IsModifiable() && !IsNoName() && !IsNERDTree()
-        return v:true
+    if IsModifiable() && !IsNERDTree()
+        if !IsNoName()
+            return v:true
+        endif
     else
         return v:false
     endif
@@ -69,9 +71,9 @@ endfunction
 augroup auto_save
     autocmd!
     autocmd InsertLeave,
-                \VimLeavePre,
-                \BufWinLeave,BufLeave,
+                \CursorHold,CursorMoved,
                 \FocusGained,FocusLost,
-                \CursorHold,CursorMoved
+                \BufWinLeave,BufLeave,
+                \VimLeavePre
                 \ * silent execute 'call Autosave()'
 augroup END

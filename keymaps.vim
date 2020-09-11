@@ -26,11 +26,6 @@ tnoremap <C-H> <C-W><C-H>
 vnoremap <C-H> <C-W><C-H>
 inoremap <C-H> <C-W><C-H>
 
-" yank into clipboard
-vmap <Leader>yy "+yy
-
-" paste from clipboard
-nnoremap <Leader>yp "+p
 
 " write buffer
 nnoremap <Leader><ENTER> :w<CR>
@@ -48,4 +43,4 @@ nnoremap <silent><S-Tab> :bN<CR>
 nnoremap <silent><leader><Tab> :bn<CR>
 
 " source .vimrc
-nnoremap <silent><Leader>$ :source ~/.vimrc<Bar> echo 'done!'<CR>
+nnoremap <silent><Leader>$ :source ~/.vimrc<Bar>echo 'done!'<CR>

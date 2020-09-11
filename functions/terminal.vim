@@ -37,7 +37,7 @@ endfunction
 
 
 " open term
-function! OpenTerminal()
+function! OpenTermWindow()
     call Configure()
     if has('nvim')
         FloatermNew --height=0.8 --width=0.8 --wintype=floating --name=terminalwin
@@ -48,7 +48,7 @@ endfunction
 
 
 " open term and check email
-function! Mail()
+function! OpenMail()
     call Configure()
     if has('nvim')
         FloatermNew --height=0.8 --width=0.8 --wintype=floating --name=emailwin neomutt
@@ -60,7 +60,7 @@ endfunction
 
 
 " open term and run cmake
-function! CMakeProject()
+function! RunCMake()
     call Configure()
     if has('nvim')
         FloatermNew --height=0.8 --width=0.8 --wintype=floating --name=cmakewin cmake.sh
@@ -70,6 +70,6 @@ function! CMakeProject()
     endif
 endfunction
 
-"nnoremap ` :call Mail()<CR>
-nnoremap <silent><C-O> :call OpenTerminal()<CR>
-nnoremap <silent><Leader>1 :call CMakeProject()<CR>
+nnoremap <silent><Leader>M :call OpenMail()<CR>
+nnoremap <silent><C-O> :call OpenTermWindow()<CR>
+nnoremap <silent><Leader>1 :call RunCMake()<CR>

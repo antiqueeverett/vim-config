@@ -42,6 +42,18 @@ set relativenumber
 set number
 set number relativenumber
 
+" use clipboard for all yanking
+" set clipboard=unnamedplus
+
+" cmd message row (1 = default)
+set cmdheight=1
+
+" abbreviate, and truncate message when necessary
+set shortmess=at
+
+" repeat yanking with [.]
+set cpoptions+=y
+
 " silence
 set visualbell
 set t_vb=
@@ -78,30 +90,29 @@ let g:vim_plugin_conf=[
             \'ale.vim',
             \'fzf.vim',
             \'goyo.vim',
-            \'floaterm.vim',
             \'repeat.vim',
             \'vimtext.vim',
             \'airline.vim',
+            \'bufonly.vim',
             \'fugitive.vim',
             \'surround.vim',
             \'nerdtree.vim',
+            \'floaterm.vim',
             \'floaterm.vim',
             \'supertab.vim',
             \'ultisnips.vim',
             \'autoformat.vim',
             \'indentline.vim',
             \'youcompleteme.vim',
-            \'rainbowparenth.vim',
-            \'highlightedyank.vim']
+            \'rainbowparenth.vim']
 
 " list of plugins under development
 let g:vim_plugin_sandbox=[
             \'undo.vim',
-            \'heist.vim',
-            \'xpaste.vim',
-            \'replace.vim',
+            \'cursor.vim',
             \'autosave.vim',
-            \'retain-cursor-pos.vim']
+            \'clipboard.vim',
+            \'vim-practice.vim']
 
 " list custom functions
 let g:vim_functions=[
