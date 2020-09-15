@@ -18,7 +18,7 @@ cd vim-dotfiles
 echo "export VIM_DOTFILES_PATH=$PWD" >> ~/.zshrc
 
 # append source directive in .vimrc
-echo "source $PWD/source-files.vim" >> ~/.vimrc
+echo "source $PWD/settings.vim" >> ~/.vimrc
 ```
 
 and thats pretty much it!
@@ -37,8 +37,6 @@ If there is a better way around something that I may have missed, this project i
 [`zsh-dot-files`](https://github.com/edisonslightbulbs/zsh-dotfiles)
 
 [`mutt-dotfiles`](https://github.com/edisonslightbulbs/mutt)
-
-[`tmux-dotfiles`](https://github.com/edisonslightbulbs/tmux).
 
 You can also check out all the dotfile projects under one roof here:
 
