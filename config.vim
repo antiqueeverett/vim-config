@@ -93,7 +93,7 @@ endfor
 
 " list of plugin configuration files
 let g:plugin_config=[
-            \'plugins.vim', " -- list of plugins
+            \'plugins.vim',
             \'undo.vim',
             \'ale.vim',
             \'fzf.vim',
