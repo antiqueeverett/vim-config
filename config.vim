@@ -81,19 +81,19 @@ set spellfile=~/Dropbox/config/spellings.utf-8.add
 
 
 " list of configuration files
-let g:vim_conf=[
+let g:other_config=[
             \'keymaps.vim',
-            \'augroups.vim',
-            \'plugins.vim']
+            \'augroups.vim']
 
 " source config files
-for file in g:vim_conf
+for file in g:other_config
     execute 'source $VIM_DOTFILES_PATH/' . file
 endfor
 
 
 " list of plugin configuration files
-let g:vim_plugin_conf=[
+let g:plugin_config=[
+            \'plugins.vim', " -- list of plugins
             \'undo.vim',
             \'ale.vim',
             \'fzf.vim',
@@ -119,18 +119,18 @@ let g:vim_plugin_conf=[
             \'youcompleteme.vim',
             \'rainbowparenth.vim']
 
-" source plugin-config files
-for file in g:vim_plugin_conf
+" source and configure plugins
+for file in g:plugin_config
     execute 'source $VIM_DOTFILES_PATH/plugin-config/' . file
 endfor
 
 
 " list custom functions
-let g:vim_functions=[
+let g:functions=[
             \'helpers.vim',
             \'terminal.vim']
 
 " source custom functions
-for file in g:vim_functions
+for file in g:functions
     execute 'source $VIM_DOTFILES_PATH/functions/' . file
 endfor
