@@ -18,7 +18,7 @@ cd vim-dotfiles
 echo "export VIM_DOTFILES_PATH=$PWD" >> ~/.zshrc
 
 # append source directive in .vimrc
-echo "source $PWD/settings.vim" >> ~/.vimrc
+echo "source $PWD/config.vim" >> ~/.vimrc
 ```
 
 and thats pretty much it!
