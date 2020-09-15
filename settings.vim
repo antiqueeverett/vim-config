@@ -79,11 +79,18 @@ set timeoutlen=1000 ttimeoutlen=0
 set spelllang=en_us,de_de spell
 set spellfile=~/Dropbox/config/spellings.utf-8.add
 
+
 " list of configuration files
 let g:vim_conf=[
             \'keymaps.vim',
             \'autocommands.vim',
             \'plugins.vim']
+
+" source config files
+for file in g:vim_conf
+    execute 'source $VIM_DOTFILES_PATH/' . file
+endfor
+
 
 " list of plugin configuration files
 let g:vim_plugin_conf=[
@@ -102,7 +109,6 @@ let g:vim_plugin_conf=[
             \'surround.vim',
             \'nerdtree.vim',
             \'floaterm.vim',
-            \'floaterm.vim',
             \'supertab.vim',
             \'clipboard.vim',
             \'gitgutter.vim',
@@ -113,23 +119,18 @@ let g:vim_plugin_conf=[
             \'youcompleteme.vim',
             \'rainbowparenth.vim']
 
-" " list custom functions
-let g:vim_functions=[
-            \'helpers.vim',
-            \'terminal.vim']
-
-" source configuration files
-for file in g:vim_conf
-    execute 'source $VIM_DOTFILES_PATH/' . file
-endfor
-
-" source plugin configuration files
+" source plugin-config files
 for file in g:vim_plugin_conf
     execute 'source $VIM_DOTFILES_PATH/plugconf/' . file
 endfor
 
 
-" source custom vim functions
+" list custom functions
+let g:vim_functions=[
+            \'helpers.vim',
+            \'terminal.vim']
+
+" source custom functions
 for file in g:vim_functions
     execute 'source $VIM_DOTFILES_PATH/functions/' . file
 endfor
