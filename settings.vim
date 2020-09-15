@@ -87,12 +87,14 @@ let g:vim_conf=[
 
 " list of plugin configuration files
 let g:vim_plugin_conf=[
-            \'gruvbox.vim',
-            \'gitgutter.vim',
+            \'undo.vim',
             \'ale.vim',
             \'fzf.vim',
             \'goyo.vim',
+            \'cmake.vim',
+            \'cursor.vim',
             \'repeat.vim',
+            \'gruvbox.vim',
             \'vimtext.vim',
             \'airline.vim',
             \'bufonly.vim',
@@ -102,23 +104,14 @@ let g:vim_plugin_conf=[
             \'floaterm.vim',
             \'floaterm.vim',
             \'supertab.vim',
+            \'clipboard.vim',
+            \'gitgutter.vim',
             \'ultisnips.vim',
             \'autoformat.vim',
             \'indentline.vim',
+            \'motion-tutor.vim',
             \'youcompleteme.vim',
             \'rainbowparenth.vim']
-
-" list of plugins under development
-" let g:vim_plugin_sandbox=[
-"             \'undo.vim',
-"             \'cursor.vim',
-"             \'clipboard.vim',
-"             \'vim-practice.vim']
-"
-" source plugin development sandbox
-" for file in g:vim_plugin_sandbox
-"     execute 'source $VIM_DOTFILES_PATH/sandbox/' . file
-" endfor
 
 " " list custom functions
 let g:vim_functions=[
