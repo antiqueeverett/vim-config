@@ -1,3 +1,5 @@
+autocmd!
+
 " encoding
 set encoding=utf-8
 scriptencoding utf-8
@@ -107,13 +109,18 @@ let g:vim_plugin_conf=[
             \'rainbowparenth.vim']
 
 " list of plugins under development
-let g:vim_plugin_sandbox=[
-            \'undo.vim',
-            \'cursor.vim',
-            \'clipboard.vim',
-            \'vim-practice.vim']
+" let g:vim_plugin_sandbox=[
+"             \'undo.vim',
+"             \'cursor.vim',
+"             \'clipboard.vim',
+"             \'vim-practice.vim']
+"
+" source plugin development sandbox
+" for file in g:vim_plugin_sandbox
+"     execute 'source $VIM_DOTFILES_PATH/sandbox/' . file
+" endfor
 
-" list custom functions
+" " list custom functions
 let g:vim_functions=[
             \'helpers.vim',
             \'terminal.vim']
@@ -128,10 +135,6 @@ for file in g:vim_plugin_conf
     execute 'source $VIM_DOTFILES_PATH/plugconf/' . file
 endfor
 
-" source plugin development sandbox
-for file in g:vim_plugin_sandbox
-    execute 'source $VIM_DOTFILES_PATH/sandbox/' . file
-endfor
 
 " source custom vim functions
 for file in g:vim_functions
