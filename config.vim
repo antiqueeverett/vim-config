@@ -83,7 +83,7 @@ set spellfile=~/Dropbox/config/spellings.utf-8.add
 " list of configuration files
 let g:vim_conf=[
             \'keymaps.vim',
-            \'autocommands.vim',
+            \'augroups.vim',
             \'plugins.vim']
 
 " source config files
@@ -121,7 +121,7 @@ let g:vim_plugin_conf=[
 
 " source plugin-config files
 for file in g:vim_plugin_conf
-    execute 'source $VIM_DOTFILES_PATH/plugconf/' . file
+    execute 'source $VIM_DOTFILES_PATH/plugin-config/' . file
 endfor
 
 
