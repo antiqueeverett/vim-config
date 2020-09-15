@@ -35,4 +35,5 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'lervag/vimtex'
 Plug 'airblade/vim-gitgutter'
+Plug 'antiqueeverett/vim-autosave'
 call plug#end()
