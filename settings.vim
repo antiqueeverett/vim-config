@@ -110,7 +110,6 @@ let g:vim_plugin_conf=[
 let g:vim_plugin_sandbox=[
             \'undo.vim',
             \'cursor.vim',
-            \'autosave.vim',
             \'clipboard.vim',
             \'vim-practice.vim']
 
