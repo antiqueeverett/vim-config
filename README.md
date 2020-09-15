@@ -25,6 +25,18 @@ and thats pretty much it!
 
 * * *
 
+#### Recommendation
+
+Each plugin may have dependencies which you may not have. I recommend disabling
+the plugins entirely, and re-enabling them one at a time; that is to say
+
+[comment out plugin
+source](https://github.com/edisonslightbulbs/vim-dotfiles/blob/c2364263bfc56e8143a721c4ec2e74e75f645592/config.vim#L124)
+```vim
+" execute 'source $VIM_DOTFILES_PATH/plugin-config/' . file
+```
+* * *
+
 #### Screen cast
 
 `Comming soon!`    👏🍻🍻
