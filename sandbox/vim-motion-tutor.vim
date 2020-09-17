@@ -1,6 +1,11 @@
 if exists('g:loaded_motion_tutor') | finish | endif
 let g:loaded_motion_tutor = 1
 
+let g:vmt_buffer_winheight=winheight(0)
+let g:vmt_duration=60
+let g:vmt_txt="Helsinki"
+
+
 " RandInt:
 "   @param max
 "       upper bound integer value
@@ -21,16 +26,19 @@ endfunction
 " GenerateLineText:
 "   Generates text at a random line
 function! SetText()
-    silent execute 'call setbufline(' . bufnr('%') . ', ' . RandInt(1, 59) .', "Helsinki")'
+    silent execute 'call setbufline(' .
+                \ bufnr('%') . ', ' .
+                \ RandInt(1, g:vmt_buffer_winheight) .
+                \ ', "Helsinki")'
 endfunction
 
 function! Play()
     if getline('.') ==# 'Helsinki'
         execute 'normal! dd'
         execute 'call SetText()'
-        let b:relative_number_motion_count=b:relative_number_motion_count + 1
+        let b:motions=b:motions + 1
         echo 'current relative number motions = ' .
-                    \ b:relative_number_motion_count . ' | elapsed seconds = ' .
+                    \ b:motions . ' | elapsed seconds = ' .
                     \ b:duration
     endif
 endfunction
@@ -40,9 +48,9 @@ endfunction
 "   Ends Game and shows stats.
 function! EndGame()
     1,$d
-    for i in range(1, 61) | call append(line('.'), '') | endfor
+    for i in range(1, g:vmt_buffer_winheight) | call append(line('.'), '') | endfor
 
-    let b:game_stats=b:relative_number_motion_count . ' relative number motions in  ' .
+    let b:game_stats=b:motions . ' relative number motions in  ' .
                 \ b:duration . ' seconds'
 
     silent execute 'call setbufline(' . bufnr('%') . ', ' . 25 .', "              Game Over!")'
@@ -60,7 +68,7 @@ endfunction
 function! UpdateGameBuffer()
     let b:current=str2nr(reltimestr(reltime()))
     let b:duration=b:current - b:start
-    if (b:duration >= 60)
+    if (b:duration >= g:vmt_duration)
         call EndGame()
     else
         call Play()
@@ -71,22 +79,21 @@ endfunc
 " SetUpGameEnv:
 "   Creates relative line numbers for the game.
 function! SetLineNumbers()
-    if line('$') != 62 && line('$') < 62
+    if line('$') < g:vmt_buffer_winheight
         call append(line('$'), '')
     endif
 endfunc
 
 ""
-" RelativeNumberMotion:
-"   Sets current buffer up with environment
+" RelativeNumberMotion: Sets current buffer up with environment
 "   for practicing relative number motion.
 function! RelativeNumberMotion()
     1,$d
 
-    for i in range(1, 61) | call append(line('.'), '') | endfor
+    for i in range(1, g:vmt_buffer_winheight) | call append(line('.'), '') | endfor
     execute 'call SetText()'
     let b:start=str2nr(reltimestr(reltime()))
-    let b:relative_number_motion_count=0
+    let b:motions=0
 
     augroup game_auto_cmds
         autocmd! * <buffer>
