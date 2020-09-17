@@ -123,7 +123,7 @@ for file in g:plugin_config
 endfor
 
 
-" temp: list and source arbitrary vim scripts
+" TEMP: list and source arbitrary vim scripts
 let g:functions=[
             \'helpers.vim',
             \'terminal.vim']
@@ -131,3 +131,6 @@ let g:functions=[
 for file in g:functions
     execute 'source $VIM_DOTFILES_PATH/functions/' . file
 endfor
+
+" TEMP: current plugin under development
+source $VIM_DOTFILES_PATH/sandbox/vim-motion-tutor.vim
