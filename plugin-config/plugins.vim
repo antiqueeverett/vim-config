@@ -40,5 +40,5 @@ Plug 'antiqueeverett/vim-cmake'
 Plug 'antiqueeverett/vim-cursor'
 Plug 'antiqueeverett/vim-autosave'
 Plug 'antiqueeverett/vim-clipboard'
-Plug 'antiqueeverett/vim-motion-tutor'
+"Plug 'antiqueeverett/vim-motion-tutor'
 call plug#end()
