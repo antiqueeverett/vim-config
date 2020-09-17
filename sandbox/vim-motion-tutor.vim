@@ -49,6 +49,8 @@ function! EndGame()
     silent execute 'call setbufline(' . bufnr('%') . ', ' . 27 .','. string(b:game_stats) . ')'
     silent execute 'call setbufline(' . bufnr('%') . ', ' . 29 .', "      Pres CTRL + R to try again")'
 
+    " honor previous vim config and
+    " clean up no longer needed au groups
     autocmd! game_auto_cmds
 endfunction
 
@@ -96,24 +98,22 @@ endfunc
 
 ""
 " LaunchTutor:
-"  Creates a new term window and launches
-"  VIM-MOTION-TUTOR.
+"  Creates a new term window and launches VIM-MOTION-TUTOR.
+"  n.b. Honors the current state vim, i.e., does on not
+"  modify any augroups that might affect active buffers
 function! LaunchTutor()
-    " start the game
-    ""vnew
     if has('nvim')
         FloatermNew
                     \ --height=0.8
                     \ --width=0.8
                     \ --wintype=floating
                     \ --name=vim_motion_tutor
-                    \ nvim
+                    \ nvim -c ':call RelativeNumberMotion()'
     else
         set termwinsize=0x86
-        vert term nvim
+        vert term vim -c ':call RelativeNumberMotion()'
     endif
 
-    execute 'call RelativeNumberMotion()'
 endfunction
 
 " plugins commands
