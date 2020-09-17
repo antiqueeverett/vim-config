@@ -93,6 +93,7 @@ endfor
 " list and source plugin configurations
 let g:plugin_config=[
             \'plugins.vim',
+            \'gruvbox.vim',
             \'undo.vim',
             \'ale.vim',
             \'fzf.vim',
@@ -100,7 +101,6 @@ let g:plugin_config=[
             \'cmake.vim',
             \'cursor.vim',
             \'repeat.vim',
-            \'gruvbox.vim',
             \'vimtext.vim',
             \'airline.vim',
             \'bufonly.vim',
