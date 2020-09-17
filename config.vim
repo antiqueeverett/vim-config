@@ -80,18 +80,17 @@ set spelllang=en_us,de_de spell
 set spellfile=~/Dropbox/config/spellings.utf-8.add
 
 
-" list of configuration files
+" list and source keymap and augroup configurations
 let g:other_config=[
             \'keymaps.vim',
             \'augroups.vim']
 
-" source config files
 for file in g:other_config
     execute 'source $VIM_DOTFILES_PATH/' . file
 endfor
 
 
-" list of plugin configuration files
+" list and source plugin configurations
 let g:plugin_config=[
             \'plugins.vim',
             \'undo.vim',
@@ -119,18 +118,16 @@ let g:plugin_config=[
             \'youcompleteme.vim',
             \'rainbowparenth.vim']
 
-" source and configure plugins
 for file in g:plugin_config
     execute 'source $VIM_DOTFILES_PATH/plugin-config/' . file
 endfor
 
 
-" list custom functions
+" temp: list and source arbitrary vim scripts
 let g:functions=[
             \'helpers.vim',
             \'terminal.vim']
 
-" source custom functions
 for file in g:functions
     execute 'source $VIM_DOTFILES_PATH/functions/' . file
 endfor
