@@ -133,4 +133,4 @@ for file in g:functions
 endfor
 
 " TEMP: current plugin under development
-"source $VIM_DOTFILES_PATH/sandbox/vim-clipboard.vim
+source $VIM_DOTFILES_PATH/sandbox/vim-clipboard.vim
