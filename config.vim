@@ -48,7 +48,7 @@ set number relativenumber
 " set clipboard=unnamedplus
 
 " cmd message row (1 = default)
-set cmdheight=1
+set cmdheight=2
 
 " abbreviate, and truncate message when necessary
 set shortmess=at
@@ -132,5 +132,5 @@ for file in g:functions
     execute 'source $VIM_DOTFILES_PATH/functions/' . file
 endfor
 
-" TEMP: current plugin under development
-source $VIM_DOTFILES_PATH/sandbox/vim-clipboard.vim
+" sandbox for plugin development
+source $VIM_DOTFILES_PATH/sandbox/sandbox.vim

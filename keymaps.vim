@@ -5,7 +5,7 @@ let mapleader = ';'
 nnoremap <Leader>. ;
 
 " [c]lear search highlight
-nnoremap <silent><C-C> :let @/=""<CR>
+nnoremap <silent><Leader>c :let @/=""<CR>
 
 " [s]pell
 nnoremap <silent><C-S> :setlocal spell!<CR>

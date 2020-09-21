@@ -1,3 +1,123 @@
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-autosave.vim
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"option: uses command heightt of 2 (for convenience) vs silence
+" autoevent is triggered allong with toher events .....and event messgs ....
+
+if exists('g:loaded_autosave') | finish | endif
+let g:loaded_autosave = 1
+
+""
+" Writable:
+"     Checks if current buffer is writable.
+function! Writable()
+    if &modifiable==#'1' && &buftype==#'' && &filetype !=#''
+        return v:true
+    elseif &modifiable!=#'1' || &buftype!=#'' || &filetype ==#''
+        return v:false
+    endif
+endfunction
+
+""
+" IsNERDTree:
+"     Checks if current buffer is a NERDTREE buffer.
+function! IsNERDTree()
+    if  &filetype ==#'nerdtree'
+        return v:true
+    else
+        return v:false
+    endif
+endfunction
+
+""
+" IsNoName:
+"   Checks if current buffer is a No Name buffer.
+function! IsNoName()
+    if &buftype==#'' && bufname('%')==#'' && &modifiable==#'1'
+        return v:true
+    else
+        return v:false
+    endif
+endfunction
+
+""
+" Savable:
+"   Checks if current buffer is a working buffer.
+function! Savable()
+    if Writable() && !IsNERDTree()
+        if !IsNoName()
+            return v:true
+        endif
+    else
+        return v:false
+    endif
+endfunction
+
+""
+" AutoSave:
+"   Persist :write
+function! AutoSave()
+    if Savable()
+        execute 'write'
+    endif
+endfunction
+
+" VIM_AUTOSAVE CASES:
+"   case 1: after text is changed in normal mode [ TextChanged ]
+"   case 2: when leaving insert mode [ InsertLeave ]
+"   case 3: before leaving a buffer [ BufLeave ]
+"   case 4: before exiting vim [ VimLeavePre ]
+augroup vim_autosave_au
+    autocmd!
+    autocmd TextChanged,InsertLeave,BufLeave,VimLeavePre * :call AutoSave()
+augroup END
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-undo.vim
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+if exists('g:loaded_undo') | finish | endif
+let g:loaded_undo = 1
+
+
+" check for the 'persistent_undo' feature
+if has('persistent_undo')
+    " define undo dir
+    let undo_dir = expand('~/.config/vim-persisted-undo/')
+
+    " create undo dir iff it does not exist
+    if !isdirectory(undo_dir)
+        call system('mkdir -p ' . undo_dir)
+    endif
+
+    " let Vim know about the directory
+    let &undodir = undo_dir
+
+    "enable undo persistence.
+    set undofile
+endif
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-motion-tutor.vim
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-autosave.vim
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-cursor.vim
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-cmake.vim
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-clipboard.vim
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 if exists('g:loaded_clipboard') | finish | endif
 let g:loaded_clipboard = 1
 
@@ -33,13 +153,28 @@ function! PASTEFunction()
 endfunction
 command! -nargs=* PASTE :call PASTEFunction(<f-args>)
 
+
 nnoremap <Leader>x  :Cut<CR>
 nnoremap <Leader>X  :CUT<CR>
-nnoremap <Leader>c  :Copy<CR>
-nnoremap <Leader>C  :COPY<CR>
+nnoremap <Leader>y  :Copy<CR>
+nnoremap <Leader>Y  :COPY<CR>
 nnoremap <Leader>p  :Paste<CR>
 nnoremap <Leader>P  :PASTE<CR>
 
+" clipboard: copy
+vmap <C-C> "+yy
+
+" clipboard: paste after word [p]
+vnoremap <C-V> "+p
+nnoremap <C-V> "+p
+
+" clipboard: paste before word [P]
+" vnoremap <C-V> "+P
+" nnoremap <C-V> "+P
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-refactor.vim
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! ReplaceWordFunction(arg)
     execute '%s/' . expand('<cword>') . '/' . a:arg . '/gc'
 endfunction
@@ -52,50 +187,3 @@ command! -nargs=* RepWORD :call ReplaceWORDFunction(<f-args>)
 
 nnoremap <Leader>r  :Repword
 nnoremap <Leader>R  :RepWORD
-
-""
-" IsVerbose:
-"     Checks if text is verbose.
-function! IsVerbose(num)
-    if(a:num > 20)
-        return v:true
-    else
-        return v:false
-    endif
-endfunction
-
-""
-" ClipboardMsg
-"     Shows the first line of the most recent yank
-"     for both vim clipboard and system clipboard
-function! ClipboardMsg()
-    if (v:event.regtype !=# 'V')
-        let @"=getreg('"+yy')
-    endif
-
-    let l:yanked = getline('.')
-    if IsVerbose(str2nr(strlen(l:yanked)))
-        echo trim(l:yanked) '...'
-    else
-        echo trim(l:yanked)
-    endif
-endfunction
-
-augroup show_yank
-    au!
-    au TextYankPost * call ClipboardMsg()
-augroup END
-
-" paste from clipboard
-nnoremap <Leader>yp "+p
-nnoremap <Leader>yP "+P
-vnoremap <Leader>yp "+p
-vnoremap <Leader>yP "+P
-
-" yank into system clipboard
-vmap <Leader>yy "+yy<Bar>""y
-" NOTE:
-"   TextYankPost does not trigger when yanking
-"   from visual mode; that is to say ["+yy] does
-"   not trigger the TextYankPost event. Here, I
-"   use [""y] right after to trigger that event.:
