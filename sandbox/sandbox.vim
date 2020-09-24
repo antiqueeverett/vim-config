@@ -6,7 +6,6 @@
 
 if exists('g:loaded_autosave') | finish | endif
 let g:loaded_autosave = 1
-
 ""
 " Writable:
 "     Checks if current buffer is writable.
@@ -165,8 +164,9 @@ nnoremap <Leader>P  :PASTE<CR>
 vmap <C-C> "+yy
 
 " clipboard: paste after word [p]
-vnoremap <C-V> "+p
-nnoremap <C-V> "+p
+vnoremap <C-P> "+p
+inoremap <C-P> "+p
+nnoremap <C-P> "+p
 
 " clipboard: paste before word [P]
 " vnoremap <C-V> "+P
