@@ -2,7 +2,7 @@
 let mapleader = ';'
 
 " repeat find-in-line
-nnoremap <Leader>. ;
+nnoremap <Leader>; ;
 
 " [c]lear search highlight
 nnoremap <silent><Leader>c :let @/=""<CR>
