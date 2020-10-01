@@ -14,7 +14,7 @@ nnoremap <silent><C-S> :setlocal spell!<CR>
 nnoremap <Leader>= :vertical resize +25<CR>
 nnoremap <Leader>- :vertical resize -25<CR>
 
-" fluid navigation for splits
+" fluid vim navigation for splits
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
