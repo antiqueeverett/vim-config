@@ -187,3 +187,16 @@ command! -nargs=* RepWORD :call ReplaceWORDFunction(<f-args>)
 
 nnoremap <Leader>r  :Repword
 nnoremap <Leader>R  :RepWORD
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" auto refreshing nerdtree
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" function! AutoRefresh()
+"     execute 'echo "refresh"'
+" endfunction
+"
+" augroup NERDTree_autorefresh_au
+"     autocmd!
+"     autocmd WinEnter * :call AutoRefresh()
+" augroup END
+
