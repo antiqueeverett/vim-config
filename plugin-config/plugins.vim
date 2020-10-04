@@ -35,6 +35,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'lervag/vimtex'
 Plug 'airblade/vim-gitgutter'
+Plug 'eagletmt/neco-ghc'
+
+
 "Plug 'antiqueeverett/vim-undo'
 "Plug 'antiqueeverett/vim-cmake'
 "Plug 'antiqueeverett/vim-cursor'
