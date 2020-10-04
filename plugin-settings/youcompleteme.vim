@@ -22,8 +22,10 @@ let g:ycm_complete_in_comments=1
 let g:ycm_seed_identifiers_with_syntax=1
 let g:ycm_collect_identifiers_from_comments_and_strings=1
 
-" When using YCM with ALE, issue conflicting diagnostics.
-" YCM diagnostics are therefore disabled here.
+let g:ycm_semantic_triggers = {'haskell' : ['.']}
+
+" USING YCM WITH ALE:
+" YCM diagnostics are disabled in order to default to ALE diagnostics.
 let g:ycm_show_diagnostics_ui=0
 let g:ycm_echo_current_diagnostic=0
 let g:ycm_enable_diagnostic_signs=0
