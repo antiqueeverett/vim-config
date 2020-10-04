@@ -23,9 +23,6 @@ function! IsLastBuff()
     endif
 endfunction
 
-"autocmd BufDelete * call CloseOnLast()
-
-
 "resolving: E444: Cannot close last window
 function! CheckLastWindow()
     " Iff NERDTree window is the last remaining
@@ -35,7 +32,7 @@ function! CheckLastWindow()
         if len(getbufinfo({'buflisted':1})) == 1
             execute 'bd'
         else
-            execute 'bd'
+            execute 'bn'
         endif
     else
         call ToggleNTree()
