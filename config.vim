@@ -99,6 +99,7 @@ let g:plugin_config=[
             \'cmake.vim',
             \'cursor.vim',
             \'repeat.vim',
+            \'necoghc.vim',
             \'vimtext.vim',
             \'airline.vim',
             \'bufonly.vim',
