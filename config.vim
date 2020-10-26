@@ -75,7 +75,7 @@ set timeoutlen=1000 ttimeoutlen=0
 
 " set spelling dictionaries
 set spelllang=en_us,de_de spell
-set spellfile=~/Dropbox/config/spellings.utf-8.add
+set spellfile=~/Dropbox/config/vim/spellings.utf-8.add
 
 
 " list and source keymap and augroup configurations
