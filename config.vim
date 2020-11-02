@@ -1,3 +1,7 @@
+" auto read files changed outside vim
+set autoread
+au CursorHold,CursorHoldI,FocusGained,BufEnter * checktime
+
 " encoding
 set encoding=utf-8
 scriptencoding utf-8
