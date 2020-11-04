@@ -1,5 +1,6 @@
+###############################################################################
 # COMMENTING:
-#############
+###############################################################################
 snippet todo "→ todo" w
 /* todo: ${1}
  * date: `!v strftime("%Y-%m-%d %H:%M")`
@@ -7,13 +8,13 @@ snippet todo "→ todo" w
 endsnippet
 
 snippet ref "→ ref" w
-/* ${1:brief} see:
- * $2
+/* ${1:brief}
+ * see:$2
  * date: `!v strftime("%Y-%m-%d %H:%M")`
  */
 endsnippet
 
-snippet "func doc" "→ function doc" w
+snippet "fdoc" "→ function doc" w
 /**
  * ${1:func}
  *     ${2:brief}
@@ -25,8 +26,9 @@ snippet "func doc" "→ function doc" w
 endsnippet
 
 
+###############################################################################
 # GLOG:
-#######
+###############################################################################
 snippet glog "+ google logger" w
 #include <glog/logging.h>
 endsnippet
@@ -39,11 +41,11 @@ snippet info "+ glog info" w
 LOG(INFO) << ;
 endsnippet
 
-snippet warning "+ glog warning" w
+snippet warn "+ glog warning" w
 LOG(WARNING) << ;
 endsnippet
 
-snippet error "+ glog error" w
+snippet err "+ glog error" w
 LOG(ERROR) << ;
 endsnippet
 
@@ -56,8 +58,9 @@ LOG(DFATAL) << ;
 endsnippet
 
 
+###############################################################################
 # INCLUDES:
-##########
+###############################################################################
 snippet "inc vec" "→ #include <vector> " w
 #include <vector>
 endsnippet
@@ -92,8 +95,9 @@ snippet "inc stack" "→ #include <stack>" w
 endsnippet
 
 
+###############################################################################
 # STD:
-######
+###############################################################################
 snippet stos "→ to_string()" w
 std::to_string($1)
 endsnippet
@@ -127,8 +131,9 @@ std::stol($1)
 endsnippet
 
 
-# CODE SNIPPETS:
-################
+###############################################################################
+# CODE:
+###############################################################################
 snippet class " + .h class" b
 class ${1:`!v substitute(substitute(vim_snippets#Filename('$1','ClassName'),'^.','\u&',''), '_\(\w\)', '\u\1', 'g')`}
 {
@@ -147,23 +152,46 @@ std::cout << *i << " ";
 std::cout << "]" << std::endl;
 endsnippet
 
-snippet fo "→ for loop" b
+snippet for "→ for loop" b
 for (int ${1:i} = 0; $1 < ${2:container}; ++$1) {
 }
 endsnippet
 
-snippet efo "→ for loop" b
+snippet efor "→ for loop" b
 for (const auto& ${1:i}: ${2:container}) {
 }
 endsnippet
 
-snippet "read int" "→ std::cin int" w
+snippet readint "→ std::cin int" w
 int n;
 std::cin >> n;
 std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 endsnippet
 
-snippet "read str" "→ std::cin string" w
+snippet readstr "→ std::cin string" w
 std::string str;
 getline(std::cin, str);
+endsnippet
+
+snippet helloworld "→ template main.cpp" w
+#include <glog/logging.h>
+#include <gflags/gflags.h>
+
+#include <iostream>
+void initLogger(int& argc, char* argv[])
+{
+    google::ParseCommandLineFlags(&argc, &argv, true);
+    google::InitGoogleLogging(argv[0]);
+    google::SetLogDestination(google::GLOG_INFO, "Log.txt");
+    LOG(INFO) << "Logger successfully initialized";
+}
+
+int main(int argc, char* argv[])
+{
+    initLogger(argc, argv);
+
+    LOG(INFO) << "Hello world";
+    std::cin.ignore();
+    return 0;
+}
 endsnippet
