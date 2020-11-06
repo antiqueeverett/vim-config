@@ -95,7 +95,7 @@ set timeoutlen=1000 ttimeoutlen=0
 " set spelling dictionaries
 " fist check if its installed ! there seems to be something amiss here
 " set spelllang=en_us,de_de spell
-set spellfile=~/Dropbox/config/vim/spellings.utf-8.add
+set spellfile=~/Dropbox/resources/vim/spellings.utf-8.add
 
 
 " list and source keymap and augroup configurations
