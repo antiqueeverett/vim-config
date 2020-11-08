@@ -4,8 +4,8 @@
 "option: uses command heightt of 2 (for convenience) vs silence
 " autoevent is triggered allong with toher events .....and event messgs ....
 
-if exists('g:loaded_autosave') | finish | endif
-let g:loaded_autosave = 1
+if exists('g:load_autosave') | finish | endif
+let g:load_autosave = 1
 ""
 " Writable:
 "     Checks if current buffer is writable.
@@ -56,7 +56,7 @@ endfunction
 " AutoSave:
 "   Persist :write
 function! AutoSave()
-    if Savable()
+    if Savable() && g:load_autosave ==1
         execute 'write'
     endif
 endfunction
@@ -71,6 +71,18 @@ augroup vim_autosave_au
     autocmd TextChanged,InsertLeave,BufLeave,VimLeavePre * :call AutoSave()
 augroup END
 
+
+""
+" DisableAutoSave:
+"     Disables autosave.
+function! DisableAutoSave()
+    let g:load_autosave = 0
+endfunction
+
+augroup readonly
+    autocmd!
+    autocmd BufReadPost * : call DisableAutoSave()
+augroup END
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-undo.vim
