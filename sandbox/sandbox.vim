@@ -76,7 +76,7 @@ augroup END
 " DisableAutoSave:
 "     Disables autosave.
 function! DisableAutoSave()
-    let g:load_autosave = 0
+    "let g:load_autosave = 0
 endfunction
 
 augroup readonly
