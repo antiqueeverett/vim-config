@@ -16,14 +16,46 @@ endsnippet
 
 snippet "fdoc" "→ function doc" w
 /**
- * ${1:func}
- *     ${2:brief}
- * @param ${3:param}
- *     ${4:brief}
- * @return ${5:val}
- *     ${6:brief}
+ * ${1:Name of function}:
+ *   ${2:One line description}
+ *
+ * ${3:More detailed description includes explanation of parameters and error checking.}
+ *
+ * @param ${4}
+ *   ${5:Description of parameter foo including valid range and (any) error checking.}
+ *
+ * @retval ${6}
+ *   ${7: Description of return value of this method.}
  */
 endsnippet
+
+snippet "cdoc" "→ class doc" w
+/** ${1:Name of class}:
+ *   ${2:One line class description for Class.}
+ *
+ * @b Description
+ * ${3:A detailed description follows the one line description. Detailed description should include responsibility (what does this class do?).}
+ *
+ * @b Rationale
+ * ${4:Why did we choose to have that class the way it is?)}
+ *
+ * @b Resource @b Ownership
+ * ${5:Resource ownerships (acquired/transfered...)}
+ *
+ * @note
+ * ${6:A useful note for users of this class}
+ *
+ */
+endsnippet
+
+snippet "bdoc" "→ block comment doc" w
+/** ${1:Sysntax}:
+ *   ${2:Block description.}
+ */
+
+endsnippet
+
+
 
 
 ###############################################################################
