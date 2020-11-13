@@ -63,10 +63,10 @@ endfunction
 function! RunCMake()
     call Configure()
     if has('nvim')
-        FloatermNew --height=0.8 --width=0.8 --wintype=floating --name=cmakewin cmake.sh
+        FloatermNew --height=0.8 --width=0.8 --wintype=floating --name=cmakewin cmake.sh -j 16
     else
         set termwinsize=0x86
-        vert term cmake.sh
+        vert term cmake.sh -j 10
     endif
 endfunction
 
