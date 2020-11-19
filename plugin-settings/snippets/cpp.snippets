@@ -16,35 +16,41 @@ endsnippet
 
 snippet "fdoc" "→ function doc" w
 /**
- * ${1:Name of function}:
+ * ${1:function}:
  *   ${2:One line description}
  *
- * ${3:More detailed description includes explanation of parameters and error checking.}
+ * @param ${3}
+ *   ${4:Description of parameter foo including valid range and (any) error checking.}
  *
- * @param ${4}
- *   ${5:Description of parameter foo including valid range and (any) error checking.}
- *
- * @retval ${6}
- *   ${7: Description of return value of this method.}
+ * @retval ${5}
+ *   ${6: Description of return value of this method.}
  */
 endsnippet
 
 snippet "cdoc" "→ class doc" w
-/** ${1:Name of class}:
- *   ${2:One line class description for Class.}
+/**
+ * @file capture.h:
+ *    Image capture from a kinect device.
  *
  * @b Description
- * ${3:A detailed description follows the one line description. Detailed description should include responsibility (what does this class do?).}
+ *    Captures rgb, point cloud, and depth data,
+ *    providing an interface for these captures.
  *
  * @b Rationale
- * ${4:Why did we choose to have that class the way it is?)}
+ *    The Capture Class abstracts and simplifies
+ *    interface to captured image data. It also
+ *    centralizes encapsulates the core kinect
+ *    device operations.
  *
- * @b Resource @b Ownership
- * ${5:Resource ownerships (acquired/transfered...)}
+ * @b Resource
+ *    Implementation base on example provided
+ *    in Azure-Kinect-Sensor-SDK doc:
+ *    https://github.com/microsoft//tree/develop/examples/fastpointcloud
  *
- * @note
- * ${6:A useful note for users of this class}
- *
+ * @notes
+ *    @version 1.1
+ *    @author Everett M.
+ *    last major revision date: `!v strftime("%Y-%m-%d %H:%M")`
  */
 endsnippet
 
