@@ -168,6 +168,8 @@ endsnippet
 # CODE:
 ###############################################################################
 snippet class " + .h class" b
+#ifndef ${1:CLASS_H}
+#define $1
 class ${1:`!v substitute(substitute(vim_snippets#Filename('$1','ClassName'),'^.','\u&',''), '_\(\w\)', '\u\1', 'g')`}
 {
 private:
@@ -176,6 +178,7 @@ public:
 	$1();
 	~$1();
 };
+#endif /* $1 */
 endsnippet
 
 snippet printvec "→ print vec" b
