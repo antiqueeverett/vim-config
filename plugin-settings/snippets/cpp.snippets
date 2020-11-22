@@ -47,10 +47,10 @@ snippet "cdoc" "→ class doc" w
  *    in Azure-Kinect-Sensor-SDK doc:
  *    https://github.com/microsoft//tree/develop/examples/fastpointcloud
  *
- * @notes
- *    @version 1.1
- *    @author Everett M.
- *    last major revision date: `!v strftime("%Y-%m-%d %H:%M")`
+ * @b Notes
+ *    Last major revision date: `!v strftime("%Y-%m-%d %H:%M")`
+ *    @version: 1.1
+ *    @author : Everett M.
  */
 endsnippet
 
@@ -174,17 +174,15 @@ endsnippet
 # CODE:
 ###############################################################################
 snippet class " + .h class" b
-#ifndef ${1:CLASS_H}
-#define $1
-class ${1:`!v substitute(substitute(vim_snippets#Filename('$1','ClassName'),'^.','\u&',''), '_\(\w\)', '\u\1', 'g')`}
-{
+#ifndef $1_H
+#define $1_H
+class ${1:`!v substitute(substitute(vim_snippets#Filename('$1','ClassName'),'^.','\u&',''), '_\(\w\)', '\u\1', 'g')`} {
 private:
-	$3
 public:
-	$1();
-	~$1();
+    $1();
+    ~$1();
 };
-#endif /* $1 */
+#endif /* $1_H */
 endsnippet
 
 snippet printvec "→ print vec" b
