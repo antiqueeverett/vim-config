@@ -100,7 +100,7 @@ endfor
 
 
 " list and source plugin configurations
-let g:plugin_settings=[
+let g:pluginconfig=[
             \'plugins.vim',
             \'gruvbox.vim',
             \'undo.vim',
@@ -128,8 +128,8 @@ let g:plugin_settings=[
             \'youcompleteme.vim',
             \'rainbowparenth.vim']
 
-for file in g:plugin_settings
-    execute 'source $VIM_DOTFILES_PATH/plugin-settings/' . file
+for file in g:pluginconfig
+    execute 'source $VIM_DOTFILES_PATH/pluginconfig/' . file
 endfor
 
 
