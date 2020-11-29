@@ -41,11 +41,17 @@ let g:ale_cmake_cmakelint_options=''
 let g:ale_cmake_cmakeformat_executable='cmake-format'
 let g:ale_cmake_cmakeformat_options=''
 
+
+
+
+
 " CXX:
 " -- CAVEAT: in CMakeLists.text, put set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 let g:ale_c_parse_compile_commands=1
+let g:ale_c_parse_makefile=1
 let g:ale_cpp_clangtidy_executable='clang-tidy'
-let g:ale_cpp_clangtidy_options='-Wall -std=c++14 -x c++'
+let g:ale_cpp_clangtidy_options='-Wall -std=c++14 -x c++  -extra-arg=-I/usr/local/include -extra-arg=-I/usr/include/eigen3'
+
 let g:ale_cpp_clangtidy_checks=[
             \'-*',
             \'mpi-*',
@@ -114,7 +120,7 @@ let g:ale_cpp_clangtidy_checks=[
             \'cppcoreguidelines-cppcoreguidelines-interfaces-global-init',
             \'cppcoreguidelines-cppcoreguidelines-pro-type-static-cast-downcast',
             \]
-            "\'clang-analyzer-*',
+"\'clang-analyzer-*',
 
 " SHELL:
 let g:ale_sh_bashate_executable = ''
