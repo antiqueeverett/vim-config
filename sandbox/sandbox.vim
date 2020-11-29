@@ -78,6 +78,9 @@ augroup END
 function! DisableAutoSave()
     if &readonly
         let g:load_autosave = 0
+        set nobackup
+        set noswapfile
+        set noundofile
     endif
 endfunction
 

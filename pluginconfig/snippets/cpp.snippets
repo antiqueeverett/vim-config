@@ -176,11 +176,44 @@ endsnippet
 snippet class " + .h class" b
 #ifndef $1_H
 #define $1_H
+#define ${1/.*/\u$0/}
+
 class ${1:`!v substitute(substitute(vim_snippets#Filename('$1','ClassName'),'^.','\u&',''), '_\(\w\)', '\u\1', 'g')`} {
+
 private:
+    int m_someval;
+
 public:
+    // Default constructor
+    //
     $1();
-    ~$1();
+
+    // Point Constructor
+    //
+    explicit $1(const int& t_someval)
+        : m_someval(t_someval)
+    {
+    }
+
+    // Copy constructor
+    //
+    $1(const $1& t_$1) { m_val = t_$1.m_someval; }
+
+    // Copy Assignment [?]
+    //
+    $1& operator=(const $1& $1) { return *this; }
+
+    // Move constructor [?]
+    //
+    $1& operator=($1&& other) noexcept { return *this; }
+
+    // Move Assignment [?]
+    //
+    $1($1&&) = default;
+
+    // Destructor [?]
+    //
+    ~$1() = default;
 };
 #endif /* $1_H */
 endsnippet
