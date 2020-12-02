@@ -1,58 +1,58 @@
-" USE DIR OF WORKING BUFFER
+" use dir of working buffer
 augroup to_buff_dir
     autocmd!
     autocmd BufEnter * silent! lcd %:p:h
 augroup END
 
-" ALLOW EXTERNAL FILE UPDATES
+" allow external file updates
 set autoread
 augroup ext_update
     autocmd!
     autocmd CursorHold,CursorHoldI,FocusGained,BufEnter * checktime
 augroup END
 
-" TRIM WHITE SPACES:
+" trim white spaces:
 augroup strip_white_spaces
     autocmd!
     autocmd BufWritePre * %s/\s\+$//e
 augroup END
 
-" INITIALLY HIDE GIT-GUTTER SIGNS:
+" initially hide git-gutter signs:
 augroup hide_signs
     autocmd!
     autocmd BufRead * silent execute 'GitGutterSignsDisable'
 augroup END
 
-" LINE WRAPPING:
+" line wrapping:
 augroup wrap_lines
     autocmd!
     autocmd BufRead,BufNewFile * setlocal textwidth=80
 augroup END
 
-" THEME OVERRIDES:
+" theme overrides:
 augroup set_colors
     autocmd!
-    " Background and font
+    " background and font
     autocmd ColorScheme * highlight Normal
                 \ term=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
                 \ gui=NONE guibg=#1d2021 guifg=#abb2b9
 
-    " Cursor line
+    " cursor line
     autocmd ColorScheme * highlight CursorLine
                 \ term=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
                 \ gui=NONE guibg=NONE guifg=NONE
 
-    " Cursor line number
+    " cursor line number
     autocmd ColorScheme * highlight CursorLineNr
                 \ term=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
                 \ gui=NONE guibg=#1d2021 guifg=White
 
-    " Number line
+    " number line
     autocmd ColorScheme * highlight LineNr
                 \ term=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
                 \ gui=NONE guibg=#1d2021 guifg=#808b96
 
-    " Popup menu
+    " popup menu
     autocmd ColorScheme * highlight Menu
                 \ term=bold cterm=bold ctermbg=NONE ctermfg=NONE
                 \ gui=bold guibg=#1c2833 guifg=#eaecee
@@ -73,17 +73,17 @@ augroup set_colors
                 \ term=bold cterm=bold ctermbg=NONE ctermfg=NONE
                 \ gui=bold guibg=#1c2833 guifg=#eaecee
 
-    " Sign gutter
+    " sign gutter
     autocmd ColorScheme * highlight SignColumn
                 \ term=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
                 \ gui=NONE guibg=#21262c guifg=NONE
 
-    " Wrapping column
+    " wrapping column
     autocmd ColorScheme * highlight ColorColumn
                 \ term=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
                 \ gui=NONE guibg=#21262c guifg=NONE
 
-    " Spellings
+    " spellings
     autocmd ColorScheme * highlight SpellBad
                 \ term=bold cterm=underline,bold ctermbg=NONE ctermfg=NONE
                 \ gui=bold guibg=#1d2021 guifg=#8f3f71
@@ -100,22 +100,22 @@ augroup set_colors
                 \ term=bold cterm=underline,bold ctermbg=NONE ctermfg=NONE
                 \ gui=bold guibg=#1d2021 guifg=#8f3f71
 
-    " Search
+    " search
     autocmd ColorScheme * highlight Search
                 \ term=bold cterm=bold ctermbg=NONE ctermfg=NONE
                 \ gui=bold guibg=#f8f5d7 guifg=#1c2833
 
-    " Incremental search
+    " incremental search
     autocmd ColorScheme * highlight IncSearch
                 \ term=bold cterm=bold ctermbg=NONE ctermfg=NONE
                 \ gui=bold guibg=#f8f5d7 guifg=#1c2833
 
-    " Visual
+    " visual
     autocmd ColorScheme * highlight Visual
                 \ term=bold cterm=bold ctermbg=NONE ctermfg=NONE
                 \ gui=bold guibg=#f8f5d7 guifg=#1c2833
 
-    " Vertical split
+    " vertical split
     autocmd ColorScheme * highlight VertSplit
                 \ term=bold cterm=bold ctermbg=NONE ctermfg=NONE
                 \ gui=bold guibg=#21262c guifg=#5a5c5d
@@ -129,7 +129,7 @@ augroup set_colors
     " status line
     autocmd ColorScheme * highlight StatusLine   guibg=Black guifg=Grey
 
-    " tabline
+    " tab line
     autocmd ColorScheme * highlight TabLine      guibg=White guifg=Grey
     autocmd ColorScheme * highlight TabLineFill  guibg=White guifg=Grey
     autocmd ColorScheme * highlight TabLineSel   guibg=White guifg=Grey
