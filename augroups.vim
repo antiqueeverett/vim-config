@@ -1,7 +1,14 @@
-" ALWAYS CD TO CURRENT DIRECTORY:
+" USE DIR OF WORKING BUFFER
 augroup to_buff_dir
     autocmd!
     autocmd BufEnter * silent! lcd %:p:h
+augroup END
+
+" ALLOW EXTERNAL FILE UPDATES
+set autoread
+augroup ext_update
+    autocmd!
+    autocmd CursorHold,CursorHoldI,FocusGained,BufEnter * checktime
 augroup END
 
 " TRIM WHITE SPACES:
