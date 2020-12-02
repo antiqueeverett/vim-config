@@ -4,6 +4,9 @@ if empty(glob('~/.vim/autoload/plug.vim'))
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 endif
 
+" allow external file updates
+set autoread
+
 " encoding
 set encoding=utf-8
 scriptencoding utf-8

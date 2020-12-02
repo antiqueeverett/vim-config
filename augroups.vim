@@ -5,7 +5,6 @@ augroup to_buff_dir
 augroup END
 
 " allow external file updates
-set autoread
 augroup ext_update
     autocmd!
     autocmd CursorHold,CursorHoldI,FocusGained,BufEnter * checktime
