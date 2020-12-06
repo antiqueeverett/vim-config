@@ -50,7 +50,7 @@ let g:ale_cpp_parse_makefile=1
 let g:ale_cpp_parse_compile_commands=1
 
 let g:ale_cpp_clangtidy_executable='clang-tidy'
-let g:ale_cpp_clangtidy_options='-Wall -std=c++14 -x c++  -extra-arg=-I/usr/local/include -extra-arg=-I/usr/include/eigen3'
+let g:ale_cpp_clangtidy_options='-Wall -std=c++14 -x c++  -I /usr/include/eigen3'
 let g:ale_cpp_clangtidy_checks = ['-*', 'cppcoreguidelines-*']
 
 " let g:ale_cpp_clangtidy_checks=[
