@@ -43,14 +43,14 @@ let g:ale_cmake_cmakeformat_options=''
 
 " CXX:
 " -- CAVEAT: in CMakeLists.text, put set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-let g:ale_c_parse_makefile=1
-let g:ale_c_parse_compile_commands=1
+" let g:ale_c_parse_makefile=1
+" let g:ale_c_parse_compile_commands=1
 
-let g:ale_cpp_parse_makefile=1
-let g:ale_cpp_parse_compile_commands=1
+" let g:ale_cpp_parse_makefile=1
+" let g:ale_cpp_parse_compile_commands=1
 
 let g:ale_cpp_clangtidy_executable='clang-tidy'
-let g:ale_cpp_clangtidy_options='-Wall -std=c++14 -x c++  -I /usr/include/eigen3'
+let g:ale_cpp_clangtidy_options='-Wall -std=c++14 -x c++  -I /usr/include/eigen3 -I$HOME/Repositories/research/projects/sap/include'
 let g:ale_cpp_clangtidy_checks = ['-*', 'cppcoreguidelines-*']
 
 " let g:ale_cpp_clangtidy_checks=[
