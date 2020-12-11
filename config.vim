@@ -44,7 +44,7 @@ filetype plugin on
 
 " line wrap
 set wrap
-set colorcolumn=80
+set colorcolumn=65,80
 
 " number line style (keep order!)
 set relativenumber
