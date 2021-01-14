@@ -1,6 +1,4 @@
-###############################################################################
 # COMMENTING:
-###############################################################################
 snippet todo "→ todo" w
 /**
  * todo: ${1}
@@ -8,13 +6,16 @@ snippet todo "→ todo" w
  */
 endsnippet
 
-snippet note "→ note" w
+
+snippet ref "→ reference" w
 /**
  * $1
- * see:$2
+ * see:
+ * $2
  * date: `!v strftime("%Y-%m-%d %H:%M")`
  */
 endsnippet
+
 
 snippet "fdoc" "→ function doc" w
 /**
@@ -28,6 +29,7 @@ snippet "fdoc" "→ function doc" w
  *   ${6: Description of return value of this method.}
  */
 endsnippet
+
 
 snippet "cdoc" "→ class doc" w
 /**
@@ -64,11 +66,7 @@ snippet "bdoc" "→ block comment doc" w
 endsnippet
 
 
-
-
-###############################################################################
 # GLOG:
-###############################################################################
 snippet glog "+ google logger" w
 #include <glog/logging.h>
 #include <gflags/gflags.h>
@@ -99,141 +97,114 @@ LOG(DFATAL) << $1 ;
 endsnippet
 
 
-###############################################################################
 # INCLUDES:
-###############################################################################
-snippet "inc vec" "→ #include <vector> " w
+snippet "i vector" "→ #include <vector> " w
 #include <vector>
 endsnippet
 
-snippet "inc io" "→ #include <iostream> " w
+snippet "i iostream" "→ #include <iostream> " w
 #include <iostream>
 endsnippet
 
-snippet "inc arr" "→ #include <array> " w
+snippet "i array" "→ #include <array> " w
 #include <array>
 endsnippet
 
-snippet "inc glog" "→ #include google logging " w
+snippet "i glog" "→ #include <glog/logging.h> " w
 #include <gflags/gflags.h>
 #include <glog/logging.h>
 endsnippet
 
-snippet "inc math" "→ #include <cmath>" w
+snippet "i cmath" "→ #include <cmath>" w
 #include <cmath>
 endsnippet
 
-snippet "inc exce" "→ #include <exception>" w
+snippet "i exception" "→ #include <exception>" w
 #include <exception>
 endsnippet
 
-snippet "inc map" "→ #include <unordered_map>" w
+snippet "i map" "→ #include <unordered_map>" w
 #include <unordered_map>
 endsnippet
 
-snippet "inc stack" "→ #include <stack>" w
+snippet "i stack" "→ #include <stack>" w
 #include <stack>
 endsnippet
 
+snippet "i algorithm" "→ #include <algorithm>" w
+#include <algorithm>
+endsnippet
 
-###############################################################################
-# STD:
-###############################################################################
-snippet stos "→ to_string()" w
+snippet "i utility" "→ #include <utility>" w
+#include <utility>
+endsnippet
+
+snippet "i eigen" "→ #include <Eigen/Dense>" w
+#include <Eigen/Dense>
+endsnippet
+
+snippet "i eigen" "→ #include <Eigen/Dense>" w
+#include <Eigen/Dense>
+endsnippet
+
+
+# CONVERTING:
+snippet "to string" "→ to_string()" w
 std::to_string($1)
 endsnippet
 
-snippet stoi "→ std::stoi" w
+snippet "to integer" "→ std::stoi" w
 std::stoi($1)
 endsnippet
 
-snippet sa "→ std::array" w
-std::array<$1
+snippet "std array" "→ std::array" w
+std::array<$1>
 endsnippet
 
-snippet ss "→ std::string" w
+snippet "std string" "→ std::string" w
 std::string
 endsnippet
 
-snippet sv "→ std::vector" w
-std::vector<$1
+snippet "std vector" "→ std::vector" w
+std::vector<$1>
 endsnippet
 
-snippet sm "→ std::map" w
+snippet "std map" "→ std::map" w
 std::unordered_map<>
 endsnippet
 
-snippet sstack "→ std::stack" w
+snippet "std stack" "→ std::stack" w
 std::stack<$1
 endsnippet
 
-snippet sl "→ std::stol" w
+snippet "std stol" "→ std::stol" w
 std::stol($1)
 endsnippet
 
 
-###############################################################################
-# CODE:
-###############################################################################
+# DATA STRUCTURES:
 snippet class " + .h class" b
 #ifndef $1_H
 #define $1_H
-#define ${1/.*/\u$0/}
 
 class ${1:`!v substitute(substitute(vim_snippets#Filename('$1','ClassName'),'^.','\u&',''), '_\(\w\)', '\u\1', 'g')`} {
 
 private:
-    int m_someval;
 
 public:
-    // Default constructor
-    //
     $1();
-
-    // Point Constructor
-    //
-    explicit $1(const int& t_someval)
-        : m_someval(t_someval)
-    {
-    }
-
-    // Copy constructor
-    //
-    $1(const $1& t_$1) { m_val = t_$1.m_someval; }
-
-    // Copy Assignment [?]
-    //
-    $1& operator=(const $1& $1) { return *this; }
-
-    // Move constructor [?]
-    //
-    $1& operator=($1&& other) noexcept { return *this; }
-
-    // Move Assignment [?]
-    //
-    $1($1&&) = default;
-
-    // Destructor [?]
-    //
-    ~$1() = default;
 };
 #endif /* $1_H */
 endsnippet
 
-snippet printvec "→ print vec" b
-std::cout << "[ ";
-for (const auto& i = ${1:vec}.begin(); i != $1.end(); ++i)
-std::cout << *i << " ";
-std::cout << "]" << std::endl;
-endsnippet
-
+# HANDY:
 snippet for "→ for loop" b
-for (int ${1:i} = 0; $1 < ${2:container}; ++$1) {
+for (int ${1:i} = 0; $1 < ${2:size}; ++$1) {
 }
 endsnippet
 
 snippet efor "→ for loop" b
-for (const auto& ${1:i}: ${2:container}) {
+for (auto ) {
 }
 endsnippet
 
@@ -248,7 +219,7 @@ std::string str;
 getline(std::cin, str);
 endsnippet
 
-snippet helloworld "→ template main.cpp" w
+snippet "hello world" "→ template main.cpp" w
 #include <glog/logging.h>
 #include <gflags/gflags.h>
 
