@@ -7,5 +7,5 @@ let g:formatters_cmake=['cmake_format']
 
 nnoremap <Leader>i :Autoformat<CR>
 
-"-- uncomment to troubleshoot!
-"let g:autoformat_verbosemode=1
+" for troubleshooting
+let g:autoformat_verbosemode=0
