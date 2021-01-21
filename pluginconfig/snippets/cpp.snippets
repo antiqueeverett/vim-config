@@ -183,8 +183,11 @@ snippet "i timer" "→ #include 'timer.h'" w
 #include "timer.h"
 endsnippet
 
+snippet "i io" "→ #include 'io.h'" w
+#include "io.h"
+endsnippet
 
-# CONVERTING:
+
 snippet "to string" "→ to_string()" w
 std::to_string($1)
 endsnippet
@@ -193,31 +196,35 @@ snippet "to integer" "→ std::stoi" w
 std::stoi($1)
 endsnippet
 
-snippet "std array" "→ std::array" w
+snippet array "→ std::array" w
 std::array<$1>
 endsnippet
 
-snippet "std string" "→ std::string" w
+snippet future "→ std::future" w
+std::future<$1>
+endsnippet
+
+snippet "string" "→ std::string" w
 std::string
 endsnippet
 
-snippet "std vector" "→ std::vector" w
+snippet vector "→ std::vector" w
 std::vector<$1>
 endsnippet
 
-snippet "std map" "→ std::map" w
+snippet map "→ std::map" w
 std::unordered_map<>
 endsnippet
 
-snippet "std stack" "→ std::stack" w
+snippet stack "→ std::stack" w
 std::stack<$1>
 endsnippet
 
-snippet "std stol" "→ std::stol" w
+snippet stol "→ std::stol" w
 std::stol($1)
 endsnippet
 
-snippet "std shared" "→ std::std::shared_ptr" w
+snippet shared "→ std::std::shared_ptr" w
 std::shared_ptr<$1>
 endsnippet
 
@@ -238,12 +245,12 @@ public:
 endsnippet
 
 # HANDY:
-snippet for "→ for loop" b
+snippet fori "→ for loop" b
 for (int ${1:i} = 0; $1 < ${2:size}; ++$1) {
 }
 endsnippet
 
-snippet efor "→ for loop" b
+snippet for "→ for loop" b
 for (auto $1: $2) {
 }
 endsnippet
