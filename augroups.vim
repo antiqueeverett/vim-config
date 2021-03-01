@@ -36,10 +36,10 @@ augroup set_colors
                 \ term=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
                 \ gui=NONE guibg=#1d2021 guifg=#abb2b9
 
-    " cursor line
+    " cursor line ------
     autocmd ColorScheme * highlight CursorLine
-                \ term=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
-                \ gui=NONE guibg=NONE guifg=NONE
+                \ term=NONE cterm=underline ctermbg=NONE ctermfg=NONE
+                \ gui=NONE guibg=black  guifg=NONE
 
     " cursor line number
     autocmd ColorScheme * highlight CursorLineNr
@@ -102,12 +102,12 @@ augroup set_colors
     " search
     autocmd ColorScheme * highlight Search
                 \ term=bold cterm=bold ctermbg=NONE ctermfg=NONE
-                \ gui=bold guibg=#f8f5d7 guifg=#1c2833
+                \ gui=bold guibg=white guifg=black
 
     " incremental search
     autocmd ColorScheme * highlight IncSearch
                 \ term=bold cterm=bold ctermbg=NONE ctermfg=NONE
-                \ gui=bold guibg=#f8f5d7 guifg=#1c2833
+                \ gui=bold guibg=white guifg=black
 
     " visual
     autocmd ColorScheme * highlight Visual
@@ -133,5 +133,3 @@ augroup set_colors
     autocmd ColorScheme * highlight TabLineFill  guibg=White guifg=Grey
     autocmd ColorScheme * highlight TabLineSel   guibg=White guifg=Grey
 augroup END
-
-
