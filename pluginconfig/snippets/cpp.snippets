@@ -98,92 +98,88 @@ endsnippet
 
 
 # INCLUDES:
-snippet "i vector" "→ #include <vector> " w
+snippet "ivector" "→ #include <vector> " w
 #include <vector>
 endsnippet
 
-snippet "i iostream" "→ #include <iostream> " w
+snippet "iiostream" "→ #include <iostream> " w
 #include <iostream>
 endsnippet
 
-snippet "i array" "→ #include <array> " w
+snippet "iarray" "→ #include <array> " w
 #include <array>
 endsnippet
 
-snippet "i glog" "→ #include <glog/logging.h> " w
+snippet "iglog" "→ #include <glog/logging.h> " w
 #include <gflags/gflags.h>
 #include <glog/logging.h>
 endsnippet
 
-snippet "i cmath" "→ #include <cmath>" w
+snippet "icmath" "→ #include <cmath>" w
 #include <cmath>
 endsnippet
 
-snippet "i exception" "→ #include <exception>" w
+snippet "iexception" "→ #include <exception>" w
 #include <exception>
 endsnippet
 
-snippet "i map" "→ #include <unordered_map>" w
+snippet "imap" "→ #include <unordered_map>" w
 #include <unordered_map>
 endsnippet
 
-snippet "i stack" "→ #include <stack>" w
+snippet "istack" "→ #include <stack>" w
 #include <stack>
 endsnippet
 
-snippet "i algorithm" "→ #include <algorithm>" w
+snippet "ialgorithm" "→ #include <algorithm>" w
 #include <algorithm>
 endsnippet
 
-snippet "i utility" "→ #include <utility>" w
+snippet "iutility" "→ #include <utility>" w
 #include <utility>
 endsnippet
 
-snippet "i eigen" "→ #include <Eigen/Dense>" w
+snippet "ieigen" "→ #include <Eigen/Dense>" w
 #include <Eigen/Dense>
 endsnippet
 
-snippet "i eigen" "→ #include <Eigen/Dense>" w
-#include <Eigen/Dense>
-endsnippet
-
-snippet "i string" "→ #include <string>" w
+snippet "istring" "→ #include <string>" w
 #include <string>
 endsnippet
 
-snippet "i fstream" "→ #include <fstream>" w
+snippet "ifstream" "→ #include <fstream>" w
 #include <fstream>
 endsnippet
 
-snippet "i future" "→ #include <future>" w
+snippet "ifuture" "→ #include <future>" w
 #include <future>
 endsnippet
 
-snippet "i memory" "→ #include <memory>" w
+snippet "imemory" "→ #include <memory>" w
 #include <memory>
 endsnippet
 
-snippet "i utility" "→ #include <utility>" w
+snippet "iutility" "→ #include <utility>" w
 #include <utility>
 endsnippet
 
-snippet "i logger" "→ #include 'logger.h'" w
+snippet "ilogger" "→ #include 'logger.h'" w
 #include "logger.h"
 endsnippet
 
-snippet "i point" "→ #include 'point.h'" w
+snippet "ipoint" "→ #include 'point.h'" w
 #include "point.h"
 endsnippet
 
-snippet "i point3d" "→ #include 'point3d.h'" w
+snippet "ipoint3d" "→ #include 'point3d.h'" w
 #include "point3d.h"
 endsnippet
 
-snippet "i timer" "→ #include 'timer.h'" w
+snippet "itimer" "→ #include 'timer.h'" w
 #include "timer.h"
 endsnippet
 
-snippet "i io" "→ #include 'io.h'" w
+snippet "iio" "→ #include 'io.h'" w
 #include "io.h"
 endsnippet
 
@@ -197,11 +193,11 @@ std::stoi($1)
 endsnippet
 
 snippet array "→ std::array" w
-std::array<$1>
+std::array<$1
 endsnippet
 
 snippet future "→ std::future" w
-std::future<$1>
+std::future<$1
 endsnippet
 
 snippet "string" "→ std::string" w
@@ -209,27 +205,27 @@ std::string
 endsnippet
 
 snippet vector "→ std::vector" w
-std::vector<$1>
+std::vector<$1
 endsnippet
 
 snippet map "→ std::map" w
-std::unordered_map<>
+std::unordered_map<
 endsnippet
 
 snippet stack "→ std::stack" w
-std::stack<$1>
+std::stack<$1
 endsnippet
 
 snippet stol "→ std::stol" w
-std::stol($1)
+std::stol($1
 endsnippet
 
 snippet shared "→ std::std::shared_ptr" w
-std::shared_ptr<$1>
+std::shared_ptr<$1
 endsnippet
 
 snippet mshared "→ std::std::make_shared" w
-std::make_shared<$1>
+std::make_shared<$1
 endsnippet
 
 
@@ -249,12 +245,12 @@ public:
 endsnippet
 
 # HANDY:
-snippet fori "→ for loop" b
+snippet for "→ for loop" b
 for (int ${1:i} = 0; $1 < ${2:size}; ++$1) {
 }
 endsnippet
 
-snippet for "→ for loop" b
+snippet fo "→ for loop" b
 for (auto $1: $2) {
 }
 endsnippet
