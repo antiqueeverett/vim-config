@@ -30,18 +30,18 @@ Plug 'lervag/vimtex'
 Plug 'airblade/vim-gitgutter'
 Plug 'eagletmt/neco-ghc'
 Plug 'octol/vim-cpp-enhanced-highlight'
-
-
+Plug 'sgeb/vim-matlab'
+Plug 'timakro/vim-searchant'
 "Plug 'antiqueeverett/vim-undo'
 "Plug 'antiqueeverett/vim-cmake'
 "Plug 'antiqueeverett/vim-cursor'
 "Plug 'antiqueeverett/vim-autosave'
 "Plug 'antiqueeverett/vim-clipboard'
-Plug 'antiqueeverett/vim-motion-tutor'
+"Plug 'antiqueeverett/vim-motion-tutor'
 call plug#end()
 
 
-
+" Plug 'octol/vim-cpp-enhanced-highlight'
 let g:cpp_class_scope_highlight = 1
 let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1
@@ -49,3 +49,10 @@ let g:cpp_posix_standard = 1
 let g:cpp_experimental_simple_template_highlight = 1
 let g:cpp_experimental_template_highlight = 1
 let g:cpp_concepts_highlight = 1
+
+
+" Plug 'lazywei/vim-matlab'
+augroup matlabSpell
+    autocmd!
+    autocmd BufRead,BufNewFile *.m setlocal nospell
+augroup END
