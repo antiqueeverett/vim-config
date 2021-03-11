@@ -57,7 +57,7 @@ endfunction
 "   Persist :write
 function! AutoSave()
     if Savable() && g:load_autosave ==1
-        execute 'write'
+        silent! execute 'write'
     endif
 endfunction
 
