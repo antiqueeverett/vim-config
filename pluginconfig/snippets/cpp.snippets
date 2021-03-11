@@ -1,4 +1,8 @@
 # COMMENTING:
+# option (b) beginning of line
+# option (i) in-word expansion
+# option (w) word boundary
+
 snippet todo "→ todo" w
 /**
  * todo: ${1}
@@ -67,119 +71,112 @@ endsnippet
 
 
 # GLOG:
-snippet glog "+ google logger" w
+snippet "iglog" "+ google logger" w
 #include <glog/logging.h>
 #include <gflags/gflags.h>
 endsnippet
 
-snippet init-glog "+ init glog" w
-google::InitGoogleLogging(argv[0]);
-endsnippet
 
-snippet info "+ glog info" w
+snippet "info" "+ glog info" w
 LOG(INFO) << $1 ;
 endsnippet
 
-snippet warn "+ glog warning" w
+snippet "warn" "+ glog warning" w
 LOG(WARNING) << $1 ;
 endsnippet
 
-snippet err "+ glog error" w
+snippet "err" "+ glog error" w
 LOG(ERROR) << $1 ;
 endsnippet
 
-snippet fatal "+ glog fatal" w
+snippet "fatal" "+ glog fatal" w
 LOG(FATAL) << $1 ;
 endsnippet
 
-snippet dfatal "+ glog dfatal" w
+snippet "dfatal" "+ glog dfatal" w
 LOG(DFATAL) << $1 ;
 endsnippet
 
 
 # INCLUDES:
-snippet "ivector" "→ #include <vector> " w
+snippet "ivector" "→ #include <vector> " b
 #include <vector>
 endsnippet
 
-snippet "iiostream" "→ #include <iostream> " w
+snippet "iiostream" "→ #include <iostream> " b
 #include <iostream>
 endsnippet
 
-snippet "iarray" "→ #include <array> " w
+snippet "iarray" "→ #include <array> " b
 #include <array>
 endsnippet
 
-snippet "iglog" "→ #include <glog/logging.h> " w
+snippet "iglog" "→ #include <glog/logging.h> " b
 #include <gflags/gflags.h>
 #include <glog/logging.h>
 endsnippet
 
-snippet "icmath" "→ #include <cmath>" w
+snippet "icmath" "→ #include <cmath>" b
 #include <cmath>
 endsnippet
 
-snippet "iexception" "→ #include <exception>" w
+snippet "iexception" "→ #include <exception>" b
 #include <exception>
 endsnippet
 
-snippet "imap" "→ #include <unordered_map>" w
+snippet "imap" "→ #include <unordered_map>" b
 #include <unordered_map>
 endsnippet
 
-snippet "istack" "→ #include <stack>" w
+snippet "istack" "→ #include <stack>" b
 #include <stack>
 endsnippet
 
-snippet "ialgorithm" "→ #include <algorithm>" w
+snippet "ialgorithm" "→ #include <algorithm>" b
 #include <algorithm>
 endsnippet
 
-snippet "iutility" "→ #include <utility>" w
+snippet "iutility" "→ #include <utility>" b
 #include <utility>
 endsnippet
 
-snippet "ieigen" "→ #include <Eigen/Dense>" w
+snippet "ieigen" "→ #include <Eigen/Dense>" b
 #include <Eigen/Dense>
 endsnippet
 
-snippet "istring" "→ #include <string>" w
+snippet "istring" "→ #include <string>" b
 #include <string>
 endsnippet
 
-snippet "ifstream" "→ #include <fstream>" w
+snippet "ifstream" "→ #include <fstream>" b
 #include <fstream>
 endsnippet
 
-snippet "ifuture" "→ #include <future>" w
+snippet "ifuture" "→ #include <future>" b
 #include <future>
 endsnippet
 
-snippet "imemory" "→ #include <memory>" w
+snippet "imemory" "→ #include <memory>" b
 #include <memory>
 endsnippet
 
-snippet "iutility" "→ #include <utility>" w
+snippet "iutility" "→ #include <utility>" b
 #include <utility>
 endsnippet
 
-snippet "ilogger" "→ #include 'logger.h'" w
+snippet "ilogger" "→ #include 'logger.h'" b
 #include "logger.h"
 endsnippet
 
-snippet "ipoint" "→ #include 'point.h'" w
+snippet "ipoint" "→ #include 'point.h'" b
 #include "point.h"
 endsnippet
 
-snippet "ipoint3d" "→ #include 'point3d.h'" w
-#include "point3d.h"
-endsnippet
-
-snippet "itimer" "→ #include 'timer.h'" w
+snippet "itimer" "→ #include 'timer.h'" b
 #include "timer.h"
 endsnippet
 
-snippet "iio" "→ #include 'io.h'" w
+snippet "iio" "→ #include 'io.h'" b
 #include "io.h"
 endsnippet
 
@@ -200,7 +197,7 @@ snippet future "→ std::future" w
 std::future<$1
 endsnippet
 
-snippet "string" "→ std::string" w
+snippet string "→ std::string" w
 std::string
 endsnippet
 
@@ -230,7 +227,7 @@ endsnippet
 
 
 # DATA STRUCTURES:
-snippet class " + .h class" b
+snippet class " + .h class" w
 #ifndef $1_H
 #define $1_H
 
@@ -244,14 +241,23 @@ public:
 #endif /* $1_H */
 endsnippet
 
+snippet namespace " + .h namespace" w
+#ifndef $1_H
+#define $1_H
+
+namespace ${1:`!v substitute(substitute(vim_snippets#Filename('$1','ClassName'),'^.','\u&',''), '_\(\w\)', '\u\1', 'g')`} {
+}
+#endif /* $1_H */
+endsnippet
+
 # HANDY:
-snippet for "→ for loop" b
-for (int ${1:i} = 0; $1 < ${2:size}; ++$1) {
+snippet for "→ for loop" w
+for (int ${1:i} = 0; $1 < ${2:size}; $1++) {
 }
 endsnippet
 
-snippet fo "→ for loop" b
-for (auto $1: $2) {
+snippet fo "→ for loop" w
+for (auto& $1: $2) {
 }
 endsnippet
 
