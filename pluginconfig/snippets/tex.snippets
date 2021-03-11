@@ -72,7 +72,7 @@ snippet cit "→ cite" i
 endsnippet
 
 snippet cita "→ citeA" i
-\citeA{$1}
+\citeauthor{$1}
 endsnippet
 
 snippet comm "→ comment" i
@@ -95,28 +95,11 @@ snippet eq "→ equation" i
 Eq.~\eqref{eq:$1}
 endsnippet
 
-snippet aut "→ description" i
+snippet author "→ description" i
 % ${1:file name}:
 %     ${2:brief}
 %
 % author: Everett
 % created: `!v strftime("%Y-%m-%d %H:%M")`
 % Github: https://github.com/antiqueeverett/
-endsnippet
-
-snippet tab "→ table" i
-\begingroup
-\renewcommand{\arraystretch}{1.65}  % Default value: 1
-\setlength\tabcolsep{1.4pt}         % default value: 6pt
-\begin{table}[h]
-	\caption{Caption.}\label{tab:label}
-	\begin{tabular}{p{2.8cm}p{6.9cm}}
-		\toprule
-		Heading One & Heading Two \\
-		\midrule
-		Content One & Content Two \\
-		\bottomrule
-	\end{tabular}
-\end{table}
-\endgroup
 endsnippet
