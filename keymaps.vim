@@ -5,7 +5,7 @@ let mapleader = ';'
 nnoremap <Leader>; ;
 
 " [c]lear search highlight
-nmap <silent><Leader>c <Plug>SearchantStop
+nnoremap <silent><Leader>c :let @/=""<CR>
 
 " [s]pell
 nnoremap <silent><C-S> :setlocal spell!<CR>
@@ -28,19 +28,19 @@ inoremap <C-H> <C-W><C-H>
 
 
 " write buffer
-nnoremap <Leader><ENTER> :w<CR>
+nnoremap <Leader><ENTER> :silent! w<CR>
 
 " delete current buffer
-nnoremap <silent><Leader>d :bd<CR>
+nnoremap <silent><Leader>d :silent! bd<CR>
 
 " exit vim
-nnoremap <silent><Leader>q :q!<CR>
+nnoremap <silent><Leader>q :silent! q!<CR>
 
 " cycle to previous buffer
-nnoremap <silent><S-Tab> :bN<CR>
+nnoremap <silent><S-Tab> :silent! bN<CR>
 
 " cycle to next buffer
-nnoremap <silent><leader><Tab> :bn<CR>
+nnoremap <silent><leader><Tab> :silent! bn<CR>
 
 " source .vimrc
 nnoremap <silent><Leader>$ :source ~/.vimrc<Bar>echo 'done!'<CR>
