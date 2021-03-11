@@ -36,7 +36,7 @@ augroup set_colors
                 \ term=NONE cterm=NONE ctermbg=NONE ctermfg=NONE
                 \ gui=NONE guibg=#1d2021 guifg=#abb2b9
 
-    " cursor line ------
+    " cursor line
     autocmd ColorScheme * highlight CursorLine
                 \ term=NONE cterm=underline ctermbg=NONE ctermfg=NONE
                 \ gui=NONE guibg=black  guifg=NONE
