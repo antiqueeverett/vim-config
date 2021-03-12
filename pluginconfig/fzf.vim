@@ -11,13 +11,6 @@ nnoremap <Leader>/ :Files $HOME<CR>
 ""
 " fzf from git root:
 function! FuzzyFind()
-    let project = system('git rev-parse --show-toplevel')[:-2]
-    let submodule = project . '/.git'
-
-    if !empty(glob(submodule))
-        exe 'Files' . '/home/everett/Repositories/'
-    else
-        exe 'Files' . project
-    endif
-
+    let project = system('fuzzy.sh')[:-2]
+    exe 'Files' . project
 endfunction
