@@ -59,17 +59,14 @@ function! OpenMail()
 endfunction
 
 
+
+
 " open term and run cmake
-function! RunCMake()
-    call Configure()
-    if has('nvim')
-        FloatermNew --height=0.8 --width=0.8 --wintype=floating --name=cmakewin cmake.sh -j 16
-    else
-        set termwinsize=0x86
-        vert term cmake.sh -j 10
-    endif
+function! AsyncCMake()
+    copen 40
+    AsyncRun cmake.sh -j 16
 endfunction
 
 nnoremap <silent><Leader>M :call OpenMail()<CR>
 nnoremap <silent><C-O> :call OpenTermWindow()<CR>
-nnoremap <silent><Leader>1 :call RunCMake()<CR>
+nnoremap <silent><Leader>1 :call AsyncCMake()<CR>

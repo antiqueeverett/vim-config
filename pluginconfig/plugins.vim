@@ -33,6 +33,9 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 
 Plug 'google/vim-searchindex'
 Plug 'sgeb/vim-matlab'
+Plug 'skywind3000/asyncrun.vim'
+
+
 "Plug 'timakro/vim-searchant'
 "Plug 'antiqueeverett/vim-undo'
 "Plug 'antiqueeverett/vim-cmake'
