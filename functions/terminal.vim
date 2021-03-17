@@ -29,15 +29,15 @@ function! TermColors()
 endfunc
 
 
-" config term
+"" Config
+"    Settings for floating term environment
 function! Configure()
-    call TermShell()
-    call TermColors()
 endfunction
 
 
-" open term
-function! OpenTermWindow()
+"" CallFloatTerm
+"    Call floating window
+function! CallFloatTerm()
     call Configure()
     if has('nvim')
         FloatermNew --height=0.8 --width=0.8 --wintype=floating --name=terminalwin
@@ -46,9 +46,9 @@ function! OpenTermWindow()
     endif
 endfunction
 
-
-" open term and check email
-function! OpenMail()
+"" MuttMail
+"    Open Mutt in floating window
+function! MuttMail()
     call Configure()
     if has('nvim')
         FloatermNew --height=0.8 --width=0.8 --wintype=floating --name=emailwin neomutt
@@ -58,15 +58,25 @@ function! OpenMail()
     endif
 endfunction
 
-
-
-
-" open term and run cmake
-function! AsyncCMake()
+"" AsyncTex
+"    Execute Tex build asynchronously
+function! AsyncTex()
     copen 40
-    AsyncRun cmake.sh -j 16
+    AsyncRun time tex.sh main.tex
 endfunction
 
-nnoremap <silent><Leader>M :call OpenMail()<CR>
-nnoremap <silent><C-O> :call OpenTermWindow()<CR>
+"" AsyncCMake
+"    Execute CMake build asynchronously
+function! AsyncCMake()
+    copen 40
+    AsyncRun cmake.sh -j 10
+endfunction
+
+
+"" Key maps
+nnoremap <silent><Leader>2 :call AsyncTex()<CR>
 nnoremap <silent><Leader>1 :call AsyncCMake()<CR>
+
+nnoremap <silent><Leader>M :call MuttMail()<CR>
+
+nnoremap <silent><C-O> :call CallFloatTerm()<CR>
