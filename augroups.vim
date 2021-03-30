@@ -4,6 +4,12 @@ augroup to_buff_dir
     autocmd BufEnter * silent! lcd %:p:h
 augroup END
 
+"silence pesky read only for git diff
+augroup noro_in_diff
+    autocmd!
+    autocmd BufEnter * if &diff | set noro |endif
+augroup END
+
 " allow external file updates
 augroup ext_update
     autocmd!
